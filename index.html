@@ -1,0 +1,1450 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Ink & Equity</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="Ink & Equity, advocates at Lucknow: practice areas by law and forum, people, notes and resources.">
+<link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Jost:wght@400;500;600&family=Tiro+Devanagari+Hindi:ital@0;1&family=Noto+Sans+Devanagari:wght@400;500;600&display=swap">
+<style>
+/* Layout concept: a bound law report. Running head with status, headnote blocks, marginal notes,
+   gold double rules. Brand kit: Ink Navy / Ivory / Champagne Gold / Fresh Teal / Slate, Cormorant Garamond + Jost. */
+:root {
+  --ink: #0B1F3A;
+  --ivory: #F8F4EC;
+  --gold: #C9A24B;
+  --teal: #1FA5A0;
+  --slate: #5B6675;
+
+  --bg: #F8F4EC;
+  --bg2: #EFE8D8;
+  --bg3: #E5DCC7;
+  --fg: #0B1F3A;
+  --fg2: #4A5666;
+  --rule: rgba(11, 31, 58, .2);
+  --rule2: rgba(11, 31, 58, .1);
+  --gold-deco: #C9A24B;
+  --gold-ink: #7E6119;
+  --teal-ink: #0C6D69;
+  --card: #FFFDF8;
+  --btn-bg: #0B1F3A;
+  --btn-fg: #F8F4EC;
+  --focus: #0C6D69;
+  --warn-bg: #FBF0D5;
+  --warn-fg: #6A4C08;
+
+  --f-display: "Cormorant Garamond", "Noto Serif Devanagari", Georgia, "Times New Roman", serif;
+  --f-body: "Jost", "Noto Sans Devanagari", "Segoe UI", system-ui, sans-serif;
+  --lh: 1.65;
+  --gut: 24px;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #08162B; --bg2: #0D2240; --bg3: #14305A; --fg: #F1ECE0; --fg2: #AAB4C2;
+    --rule: rgba(241, 236, 224, .22); --rule2: rgba(241, 236, 224, .1);
+    --gold-deco: #D4AF5A; --gold-ink: #DDBC6B; --teal-ink: #4FD1CA; --card: #0D2240;
+    --btn-bg: #D4AF5A; --btn-fg: #08162B; --focus: #4FD1CA; --warn-bg: #3A2F10; --warn-fg: #F0D58B;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #08162B; --bg2: #0D2240; --bg3: #14305A; --fg: #F1ECE0; --fg2: #AAB4C2;
+  --rule: rgba(241, 236, 224, .22); --rule2: rgba(241, 236, 224, .1);
+  --gold-deco: #D4AF5A; --gold-ink: #DDBC6B; --teal-ink: #4FD1CA; --card: #0D2240;
+  --btn-bg: #D4AF5A; --btn-fg: #08162B; --focus: #4FD1CA; --warn-bg: #3A2F10; --warn-fg: #F0D58B;
+  color-scheme: dark;
+}
+html[lang="hi"] {
+  --f-display: "Tiro Devanagari Hindi", "Noto Serif Devanagari", "Cormorant Garamond", Georgia, serif;
+  --f-body: "Noto Sans Devanagari", "Jost", "Segoe UI", system-ui, sans-serif;
+  --lh: 1.9;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0; background: var(--bg); color: var(--fg);
+  font-family: var(--f-body); font-size: 17px; line-height: var(--lh);
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+  overflow-x: hidden;
+}
+body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 60; background: var(--bg); }
+body::after {
+  content: ""; position: fixed; inset: 0; pointer-events: none; z-index: 0; opacity: .5;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 .5  0 0 0 0 .45  0 0 0 0 .3  0 0 0 .05 0'/></filter><rect width='160' height='160' filter='url(%23n)'/></svg>");
+}
+img, svg { max-width: 100%; }
+a { color: var(--teal-ink); text-underline-offset: 3px; text-decoration-thickness: 1px; }
+a:hover { text-decoration-thickness: 2px; }
+:focus-visible { outline: 2px solid var(--focus); outline-offset: 3px; border-radius: 2px; }
+button { font: inherit; color: inherit; cursor: pointer; }
+.skip { position: absolute; left: -999px; top: 8px; background: var(--btn-bg); color: var(--btn-fg); padding: 8px 14px; z-index: 100; }
+.skip:focus { left: 8px; }
+#app { position: relative; z-index: 1; }
+h1, h2, h3, h4 { font-family: var(--f-display); font-weight: 500; line-height: 1.12; margin: 0; text-wrap: balance; letter-spacing: -.005em; }
+html[lang="hi"] h1, html[lang="hi"] h2, html[lang="hi"] h3 { line-height: 1.35; letter-spacing: 0; }
+p { margin: 0 0 1em; max-width: 68ch; }
+.sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+.wrap { width: 100%; max-width: 1240px; margin-inline: auto; padding-inline: 0; }
+
+/* ---------- header ---------- */
+.hdr { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 50; background: color-mix(in srgb, var(--bg) 92%, transparent); backdrop-filter: blur(8px); border-bottom: 1px solid var(--rule); }
+.hdr-in { display: flex; align-items: center; gap: 18px; min-height: 64px; flex-wrap: wrap; padding-block: 6px; }
+.brand { display: flex; align-items: baseline; gap: 10px; text-decoration: none; color: var(--fg); background: none; border: 0; padding: 0; }
+.brand .mark { font-family: var(--f-display); font-size: 30px; font-weight: 500; letter-spacing: .01em; }
+.brand .mark i { color: var(--gold-ink); font-style: italic; padding: 0 2px; }
+.brand small { font-size: 12px; color: var(--fg2); letter-spacing: .08em; }
+.nav { display: flex; gap: 4px; margin-left: auto; flex-wrap: wrap; }
+.nav button { background: none; border: 0; padding: 8px 12px; font-size: 15px; position: relative; color: var(--fg); }
+.nav button::after { content: ""; position: absolute; left: 12px; right: 12px; bottom: 4px; height: 1px; background: var(--gold-deco); transform: scaleX(0); transform-origin: left; transition: transform .25s ease; }
+.nav button:hover::after, .nav button[aria-current="page"]::after { transform: scaleX(1); }
+.tools { display: flex; gap: 6px; align-items: center; }
+.tbtn { border: 1px solid var(--rule); background: transparent; padding: 6px 11px; font-size: 13px; border-radius: 999px; min-height: 34px; }
+.tbtn:hover { border-color: var(--gold-deco); }
+.menu-btn { display: none; }
+.prog { position: absolute; left: 0; bottom: -1px; height: 2px; background: var(--gold-deco); width: 0; }
+@media (max-width: 900px) {
+  .menu-btn { display: inline-flex; margin-left: auto; }
+  .nav { display: none; width: 100%; flex-direction: column; margin-left: 0; order: 5; border-top: 1px solid var(--rule2); padding-top: 6px; }
+  .nav.open { display: flex; }
+  .nav button { text-align: left; padding: 12px 4px; }
+  .tools { order: 4; }
+}
+
+/* ---------- running head ---------- */
+.runhead { display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; padding-block: 14px; font-size: 13px; color: var(--fg2); border-bottom: 3px double var(--rule); }
+.runhead .path button { background: none; border: 0; padding: 0; color: inherit; text-decoration: underline; text-underline-offset: 3px; }
+.status { display: inline-flex; gap: 8px; align-items: center; background: var(--warn-bg); color: var(--warn-fg); padding: 2px 10px; border-radius: 999px; font-size: 12px; }
+.status::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: currentColor; }
+
+/* ---------- hero ---------- */
+.hero { display: grid; grid-template-columns: minmax(0, 1.05fr) minmax(0, .95fr); gap: 32px; align-items: center; padding-block: 48px 40px; }
+.hero h1 { font-size: clamp(44px, 7.2vw, 96px); font-weight: 500; line-height: 1.0; }
+html[lang="hi"] .hero h1 { font-size: clamp(36px, 5.6vw, 76px); line-height: 1.25; }
+.hero h1 .ln { display: block; overflow: hidden; }
+.hero h1 .ln > span { display: inline-block; transform: translateY(105%); animation: rise .9s cubic-bezier(.2, .7, .2, 1) forwards; }
+.hero h1 .ln:nth-child(2) > span { animation-delay: .14s; }
+.hero h1 .ln:nth-child(3) > span { animation-delay: .28s; }
+@keyframes rise { to { transform: none; } }
+.hero h1 em { color: var(--gold-ink); }
+.lede { font-size: 19px; color: var(--fg2); max-width: 54ch; margin-top: 22px; }
+.hero-amp { width: 100%; aspect-ratio: 1 / 1; max-height: 560px; display: block; }
+.hero-amp text { font-family: "Cormorant Garamond", Georgia, serif; font-style: italic; }
+.ctas { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 26px; }
+.btn { display: inline-flex; align-items: center; gap: 8px; background: var(--btn-bg); color: var(--btn-fg); border: 1px solid var(--btn-bg); padding: 11px 20px; font-size: 15px; text-decoration: none; border-radius: 2px; transition: transform .15s ease, box-shadow .15s ease; }
+.btn:hover { transform: translateY(-1px); box-shadow: 0 4px 0 var(--gold-deco); }
+.btn.ghost { background: transparent; color: var(--fg); border-color: var(--rule); }
+.btn.ghost:hover { border-color: var(--gold-deco); box-shadow: 0 4px 0 var(--gold-deco); }
+.btn[disabled] { opacity: .5; cursor: not-allowed; transform: none; box-shadow: none; }
+.fora-strip { display: flex; flex-wrap: wrap; gap: 8px 22px; padding-block: 16px; border-block: 1px solid var(--rule); font-size: 14px; color: var(--fg2); }
+.fora-strip b { font-weight: 500; color: var(--fg); }
+@media (max-width: 860px) { .hero { grid-template-columns: 1fr; } .hero-amp { max-height: 300px; order: -1; } }
+@media (prefers-reduced-motion: reduce) { .hero h1 .ln > span { animation: none; transform: none; } * { transition: none !important; scroll-behavior: auto !important; } }
+
+/* ---------- sections ---------- */
+.sec { padding-block: 64px; }
+.sec + .sec { border-top: 3px double var(--rule); }
+.sec-h { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 2fr); gap: 32px; margin-bottom: 36px; align-items: end; }
+.sec-h h2 { font-size: clamp(32px, 4.4vw, 58px); }
+.sec-h p { color: var(--fg2); margin: 0; }
+@media (max-width: 800px) { .sec-h { grid-template-columns: 1fr; gap: 12px; } .sec { padding-block: 44px; } }
+
+/* two-column law report body */
+.report { display: grid; grid-template-columns: minmax(0, 1fr) 280px; gap: 56px; padding-block: 40px 72px; }
+.report > .main { min-width: 0; }
+.marg { font-size: 14.5px; color: var(--fg2); border-left: 1px solid var(--gold-deco); padding-left: 18px; align-self: start; position: sticky; top: 96px; display: grid; gap: 22px; }
+.marg h4 { font-family: var(--f-body); font-size: 12px; letter-spacing: .1em; font-weight: 600; color: var(--gold-ink); margin-bottom: 6px; text-transform: uppercase; }
+html[lang="hi"] .marg h4 { letter-spacing: 0; text-transform: none; font-size: 14px; }
+.marg p { margin: 0 0 6px; }
+@media (max-width: 1000px) { .report { grid-template-columns: 1fr; gap: 28px; } .marg { position: static; border-left: 0; padding-left: 0; border-top: 1px solid var(--rule); padding-top: 20px; } }
+.page-title { font-size: clamp(40px, 6vw, 80px); margin-bottom: 14px; }
+html[lang="hi"] .page-title { font-size: clamp(32px, 5vw, 62px); }
+.headnote { background: var(--card); border: 1px solid var(--rule); border-left: 4px solid var(--gold-deco); padding: 20px 24px; margin: 26px 0 34px; }
+.headnote b { font-family: var(--f-display); font-size: 22px; font-weight: 600; display: block; margin-bottom: 6px; }
+.headnote p { margin: 0; max-width: none; }
+.h3 { font-size: 28px; margin: 38px 0 14px; padding-bottom: 8px; border-bottom: 1px solid var(--rule); }
+
+/* provisions table */
+.prov { width: 100%; border-collapse: collapse; font-size: 15.5px; }
+.prov th, .prov td { text-align: left; padding: 11px 14px 11px 0; vertical-align: top; border-bottom: 1px solid var(--rule2); }
+.prov th { font-weight: 500; width: 40%; font-family: var(--f-display); font-size: 19px; }
+.prov td small { display: block; color: var(--fg2); font-size: 13.5px; }
+.table-scroll { overflow-x: auto; }
+@media (max-width: 600px) { .prov th, .prov td { display: block; width: 100%; padding-right: 0; } .prov tr { display: block; border-bottom: 1px solid var(--rule2); padding: 8px 0; } .prov th, .prov td { border: 0; padding-block: 3px; } }
+
+/* steps */
+.steps { list-style: none; margin: 0; padding: 0; counter-reset: s; position: relative; }
+.steps li { counter-increment: s; position: relative; padding: 0 0 22px 56px; }
+.steps li::before { content: counter(s); position: absolute; left: 0; top: 0; width: 38px; height: 38px; border-radius: 50%; border: 1px solid var(--gold-deco); display: grid; place-items: center; font-family: var(--f-display); font-size: 20px; background: var(--bg); z-index: 1; }
+.steps li::after { content: ""; position: absolute; left: 19px; top: 38px; bottom: 0; width: 1px; background: var(--rule); }
+.steps li:last-child::after { display: none; }
+.steps b { display: block; font-weight: 500; font-size: 17px; }
+
+.chips { display: flex; flex-wrap: wrap; gap: 8px; }
+.chip { border: 1px solid var(--rule); border-radius: 999px; padding: 4px 12px; font-size: 13.5px; background: transparent; color: var(--fg); }
+button.chip:hover, button.chip[aria-pressed="true"] { border-color: var(--gold-deco); background: var(--bg2); }
+.pill { display: inline-block; border: 1px solid var(--teal-ink); color: var(--teal-ink); border-radius: 3px; padding: 0 8px; font-size: 12.5px; }
+
+/* ---------- practice index (home) ---------- */
+.pidx { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.05fr); gap: 48px; }
+.pidx ol { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--rule); }
+.pidx li button { width: 100%; text-align: left; background: none; border: 0; border-bottom: 1px solid var(--rule); padding: 14px 8px 14px 0; display: flex; justify-content: space-between; align-items: baseline; gap: 12px; font-family: var(--f-display); font-size: 26px; line-height: 1.2; transition: padding .2s ease, color .2s ease; }
+html[lang="hi"] .pidx li button { font-size: 21px; }
+.pidx li button span { font-family: var(--f-body); font-size: 13px; color: var(--fg2); text-align: right; }
+.pidx li button:hover, .pidx li button.on { padding-left: 14px; color: var(--gold-ink); }
+.pprev { position: sticky; top: 100px; align-self: start; background: var(--card); border: 1px solid var(--rule); padding: 26px; min-height: 280px; }
+.pprev h3 { font-size: 32px; margin-bottom: 10px; }
+.pprev p { font-size: 15.5px; color: var(--fg2); }
+@media (max-width: 900px) { .pidx { grid-template-columns: 1fr; } .pprev { position: static; } }
+
+/* people */
+.ppl { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 22px; }
+.person { text-align: left; background: var(--card); border: 1px solid var(--rule); padding: 22px; display: grid; gap: 14px; transition: border-color .2s ease, transform .2s ease; }
+.person:hover { border-color: var(--gold-deco); transform: translateY(-2px); }
+.mono { width: 76px; height: 76px; border-radius: 50%; display: grid; place-items: center; background: var(--ink); color: var(--gold); font-family: var(--f-display); font-size: 34px; font-style: italic; position: relative; }
+:root[data-theme="dark"] .mono { background: var(--bg3); }
+.mono::after { content: ""; position: absolute; inset: 4px; border-radius: 50%; border: 1px solid var(--gold-deco); opacity: .7; }
+.person h3 { font-size: 26px; }
+.person small { color: var(--fg2); font-size: 14px; }
+
+/* frames: slots for material that only people can supply */
+.frame { border: 1.5px dashed var(--rule); padding: 18px 20px; color: var(--fg2); font-size: 15px; background: repeating-linear-gradient(135deg, transparent 0 11px, var(--rule2) 11px 12px); }
+.frame b { color: var(--fg); font-weight: 500; display: block; }
+
+/* notes */
+.notes { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 0; border-top: 1px solid var(--rule); }
+.note { text-align: left; background: none; border: 0; border-bottom: 1px solid var(--rule); padding: 22px 22px 22px 0; display: grid; gap: 8px; align-content: start; }
+.note:hover h3 { color: var(--gold-ink); }
+.note h3 { font-size: 27px; transition: color .2s ease; }
+.note small { color: var(--fg2); }
+.article p { font-size: 18px; max-width: 64ch; }
+.article > p:first-of-type::first-letter { font-family: var(--f-display); float: left; font-size: 4.2em; line-height: .8; padding: 6px 10px 0 0; color: var(--gold-ink); }
+html[lang="hi"] .article > p:first-of-type::first-letter { all: unset; }
+.cite { border: 1px solid var(--rule); background: var(--card); padding: 14px 18px; font-size: 14.5px; margin: 20px 0; }
+.cite ul { margin: 6px 0 0; padding-left: 18px; }
+.cite li { margin-bottom: 4px; }
+
+/* fora ladder */
+.streams { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 28px; }
+.ladder { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr); gap: 44px; }
+.rungs { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column-reverse; gap: 0; position: relative; }
+.rungs li { position: relative; }
+.rungs button { width: 100%; text-align: left; background: var(--card); border: 1px solid var(--rule); border-left: 4px solid var(--rule); padding: 14px 16px; display: grid; gap: 2px; margin-bottom: 14px; transition: border-color .2s ease, transform .2s ease; }
+.rungs li:not(:first-child) button::after { content: ""; position: absolute; left: 22px; bottom: -14px; height: 14px; width: 1px; background: var(--gold-deco); }
+.rungs button b { font-family: var(--f-display); font-size: 23px; font-weight: 500; line-height: 1.2; }
+.rungs button span { font-size: 13.5px; color: var(--fg2); }
+.rungs button:hover, .rungs button[aria-pressed="true"] { border-left-color: var(--gold-deco); transform: translateX(4px); }
+.rungs button[aria-pressed="true"] { background: var(--bg2); }
+.rung-detail { background: var(--card); border: 1px solid var(--rule); padding: 28px; align-self: start; position: sticky; top: 100px; }
+.rung-detail h3 { font-size: 32px; margin-bottom: 12px; }
+@media (max-width: 900px) { .ladder { grid-template-columns: 1fr; } .rung-detail { position: static; } }
+
+/* limitation */
+.ltools { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 20px; }
+.ltools input { flex: 1 1 260px; border: 1px solid var(--rule); background: var(--card); color: var(--fg); padding: 11px 14px; font: inherit; border-radius: 2px; }
+.q { background: var(--card); border: 1px solid var(--rule); padding: 24px; margin-top: 24px; }
+.q h3 { font-size: 26px; margin-bottom: 14px; }
+.opts { display: grid; gap: 8px; }
+.opts button { text-align: left; background: transparent; border: 1px solid var(--rule); padding: 10px 14px; border-radius: 2px; }
+.opts button:hover:not([disabled]) { border-color: var(--gold-deco); }
+.opts button.ok { border-color: var(--teal-ink); background: color-mix(in srgb, var(--teal) 14%, transparent); }
+.opts button.no { border-color: #B3402F; background: color-mix(in srgb, #B3402F 10%, transparent); }
+.why { margin-top: 12px; font-size: 15px; color: var(--fg2); }
+
+/* forms */
+.form { display: grid; gap: 16px; max-width: 640px; }
+.form label { display: grid; gap: 5px; font-size: 14.5px; }
+.form input, .form select, .form textarea { border: 1px solid var(--rule); background: var(--card); color: var(--fg); padding: 11px 13px; font: inherit; border-radius: 2px; width: 100%; }
+.form textarea { min-height: 130px; resize: vertical; }
+.form .chk { display: flex; gap: 10px; align-items: flex-start; font-size: 14.5px; }
+.form .chk input { width: 20px; height: 20px; margin-top: 3px; flex: none; }
+.err { color: #B3402F; font-size: 13.5px; min-height: 1em; }
+:root[data-theme="dark"] .err { color: #FF8F7C; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .err { color: #FF8F7C; } }
+.preview { background: var(--card); border: 1px solid var(--rule); padding: 18px; white-space: pre-wrap; font-size: 15px; margin-top: 18px; }
+
+/* resources */
+.fam { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; }
+.famc { background: var(--card); border: 1px solid var(--rule); padding: 24px; display: grid; gap: 10px; align-content: start; position: relative; overflow: hidden; }
+.famc::before { content: ""; position: absolute; right: -30px; top: -30px; width: 90px; height: 90px; border-radius: 50%; border: 1px solid var(--gold-deco); opacity: .5; }
+.famc h3 { font-size: 28px; }
+.famc small { color: var(--fg2); }
+
+/* client room */
+.room { display: grid; grid-template-columns: 320px minmax(0, 1fr); gap: 30px; }
+.room .login { background: var(--ink); color: var(--ivory); padding: 26px; display: grid; gap: 14px; align-content: start; }
+.room .login input { background: transparent; border: 1px solid rgba(248, 244, 236, .4); color: var(--ivory); padding: 10px 12px; font: inherit; }
+.room .panes { display: grid; gap: 16px; }
+@media (max-width: 800px) { .room { grid-template-columns: 1fr; } }
+
+/* palette */
+.pal-bg { position: fixed; inset: 0; z-index: 90; background: rgba(8, 22, 43, .6); display: none; align-items: flex-start; justify-content: center; padding: 12vh 16px 16px; }
+.pal-bg.open { display: flex; }
+.pal { width: min(620px, 100%); background: var(--bg); border: 1px solid var(--gold-deco); box-shadow: 0 20px 60px rgba(0, 0, 0, .35); }
+.pal input { width: 100%; border: 0; border-bottom: 1px solid var(--rule); background: transparent; color: var(--fg); font: inherit; font-size: 19px; padding: 16px 18px; outline: none; }
+.pal ul { list-style: none; margin: 0; padding: 6px; max-height: 50vh; overflow: auto; }
+.pal li button { width: 100%; text-align: left; background: none; border: 0; padding: 10px 12px; display: flex; justify-content: space-between; gap: 12px; }
+.pal li button.on, .pal li button:hover { background: var(--bg2); }
+.pal li small { color: var(--fg2); }
+
+/* footer */
+.ftr { background: var(--ink); color: #E9E3D3; margin-inline: calc(-1 * max(16px, env(safe-area-inset-left, 0px))); padding: 56px max(16px, env(safe-area-inset-right, 0px)) 36px max(16px, env(safe-area-inset-left, 0px)); margin-top: 40px; }
+:root[data-theme="dark"] .ftr { background: #050E1D; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .ftr { background: #050E1D; } }
+.ftr a { color: #E6C877; }
+.ftr .cols { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 32px; }
+.ftr h4 { font-family: var(--f-body); font-size: 12px; letter-spacing: .12em; font-weight: 600; color: #C9A24B; margin-bottom: 10px; text-transform: uppercase; }
+html[lang="hi"] .ftr h4 { letter-spacing: 0; text-transform: none; font-size: 14px; }
+.ftr p, .ftr li { font-size: 14.5px; margin: 0 0 6px; color: #CFC8B6; }
+.ftr ul { list-style: none; padding: 0; margin: 0; }
+.ftr .fine { border-top: 1px solid rgba(248, 244, 236, .2); margin-top: 32px; padding-top: 22px; font-size: 13px; color: #A9A491; max-width: 90ch; }
+.ftr button.lnk { background: none; border: 0; padding: 0; color: #E6C877; text-decoration: underline; text-underline-offset: 3px; text-align: left; font-size: 14.5px; }
+.ftr .brand { color: #F8F4EC; }
+.ftr .brand .mark i { color: #D4AF5A; }
+.toast { position: fixed; left: 50%; bottom: calc(18px + env(safe-area-inset-bottom, 0px)); transform: translateX(-50%); background: var(--ink); color: var(--ivory); padding: 10px 18px; border: 1px solid var(--gold-deco); z-index: 99; font-size: 14.5px; }
+.toast[hidden] { display: none; }
+.kv { display: grid; grid-template-columns: 150px minmax(0, 1fr); gap: 8px 18px; font-size: 15.5px; }
+.kv dt { color: var(--fg2); }
+.kv dd { margin: 0; }
+@media (max-width: 560px) { .kv { grid-template-columns: 1fr; gap: 0; } .kv dd { margin-bottom: 10px; } }
+
+</style>
+</head>
+<body>
+<div id="app"></div>
+<div class="pal-bg" id="palbg" role="dialog" aria-modal="true" aria-label="Search"><div class="pal"><input id="palq" type="search" autocomplete="off" aria-label="Search"><ul id="pall"></ul></div></div>
+<div class="toast" id="toast" hidden role="status"></div>
+
+<script>
+/* Data: twelve practice areas, described by law and forum, never by results. */
+const L = (en, hi) => ({ en, hi });
+const PRACTICE = [
+  {
+    slug: 'constitutional', stream: 'writ',
+    name: L('Constitutional Law and Writs', 'संवैधानिक विधि और रिट'),
+    short: L('Articles 32, 226 and 227', 'अनुच्छेद 32, 226 और 227'),
+    head: L(
+      'Disputes about the power of the State: whether an order, rule or action respects the fundamental rights and the limits the Constitution sets. Most are heard as writ petitions, which are decided on documents rather than oral evidence.',
+      'राज्य की शक्ति से जुड़े विवाद: कोई आदेश, नियम या कार्रवाई मौलिक अधिकारों और संविधान की सीमाओं के अनुरूप है या नहीं। अधिकांश मामले रिट याचिका के रूप में सुने जाते हैं, जिनका निर्णय मौखिक साक्ष्य के बजाय दस्तावेज़ों पर होता है।'),
+    laws: [
+      ['Constitution of India, 1950', 'Arts. 12, 14, 19, 21', L('The State, equality, freedoms and life and liberty.', 'राज्य, समानता, स्वतंत्रताएँ तथा जीवन और दैहिक स्वतंत्रता।')],
+      ['Constitution of India, 1950', 'Art. 32', L('Direct remedy in the Supreme Court for fundamental rights.', 'मौलिक अधिकारों के लिए सर्वोच्च न्यायालय में सीधा उपचार।')],
+      ['Constitution of India, 1950', 'Arts. 226, 227', L('Writs and superintendence by the High Court.', 'उच्च न्यायालय की रिट और अधीक्षण शक्ति।')],
+      ['Rules of the Court, 1952', 'Allahabad High Court', L('Procedure for writ petitions and special appeals.', 'रिट याचिकाओं और विशेष अपीलों की प्रक्रिया।')]
+    ],
+    fora: [L('Supreme Court of India (Art. 32)', 'भारत का सर्वोच्च न्यायालय (अनु. 32)'), L('Allahabad High Court at Lucknow and Prayagraj (Arts. 226, 227)', 'इलाहाबाद उच्च न्यायालय, लखनऊ और प्रयागराज (अनु. 226, 227)'), L('Delhi High Court, where the authority or the cause of action lies in Delhi', 'दिल्ली उच्च न्यायालय, जहाँ प्राधिकारी या वाद-कारण दिल्ली में हो')],
+    steps: [
+      L('Read the order and the rule behind it. Identify the authority, its power and the right said to be affected.', 'आदेश और उसके पीछे का नियम पढ़ें। प्राधिकारी, उसकी शक्ति और प्रभावित अधिकार की पहचान करें।'),
+      L('Check the alternative remedy and the delay. A statutory appeal or a long gap can decide whether a writ is entertained.', 'वैकल्पिक उपचार और विलंब देखें। वैधानिक अपील या लंबा अंतराल तय कर सकता है कि रिट सुनी जाएगी या नहीं।'),
+      L('Draft the petition: facts in date order, grounds, annexures and the prayer.', 'याचिका का प्रारूप: तिथिवार तथ्य, आधार, संलग्नक और प्रार्थना।'),
+      L('Listing, notice, counter-affidavit and rejoinder.', 'सूचीबद्धता, नोटिस, प्रतिशपथपत्र और प्रत्युत्तर।'),
+      L('Hearing and judgment. Onward: a special appeal against a single judge, or a special leave petition.', 'सुनवाई और निर्णय। आगे: एकल न्यायाधीश के विरुद्ध विशेष अपील, या विशेष अनुमति याचिका।')
+    ],
+    time: L('No fixed period for a writ, but long delay can defeat relief. Appeals and special leave petitions have fixed periods.', 'रिट के लिए कोई निश्चित अवधि नहीं, परंतु लंबा विलंब राहत रोक सकता है। अपील और विशेष अनुमति याचिका की अवधि निश्चित है।')
+  },
+  {
+    slug: 'civil', stream: 'civil',
+    name: L('Civil Litigation', 'सिविल वाद'),
+    short: L('Suits, injunctions, decrees', 'वाद, निषेधाज्ञा, डिक्री'),
+    head: L(
+      'Disputes between private parties about rights, money, property and contracts, decided by a civil court on pleadings and evidence. The Code of Civil Procedure sets the path from plaint to decree and appeal.',
+      'अधिकारों, धन, संपत्ति और संविदाओं से जुड़े निजी पक्षों के विवाद, जिन्हें दीवानी न्यायालय अभिवचन और साक्ष्य पर तय करता है। सिविल प्रक्रिया संहिता वाद-पत्र से डिक्री और अपील तक का मार्ग तय करती है।'),
+    laws: [
+      ['Code of Civil Procedure, 1908', 'ss. 9, 26, 96, 100, 115', L('Jurisdiction, institution, appeals, second appeal and revision.', 'क्षेत्राधिकार, वाद की संस्थापना, अपील, द्वितीय अपील और पुनरीक्षण।')],
+      ['Code of Civil Procedure, 1908', 'Orders VI, VII, VIII, XXXIX', L('Pleadings, plaint, written statement, temporary injunctions.', 'अभिवचन, वाद-पत्र, लिखित कथन, अस्थायी निषेधाज्ञा।')],
+      ['Specific Relief Act, 1963', 'Chs. II, VII', L('Specific performance and injunctions.', 'विनिर्दिष्ट पालन और निषेधाज्ञा।')],
+      ['Limitation Act, 1963', 'ss. 3, 5, 12, 14', L('Bar of limitation, extension, exclusion of time.', 'परिसीमा का वर्जन, विस्तार, समय का अपवर्जन।')],
+      ['Indian Contract Act, 1872', '—', L('Formation, performance and breach of contracts.', 'संविदाओं का गठन, पालन और भंग।')],
+      ['Bharatiya Sakshya Adhiniyam, 2023', '—', L('Proof of facts and admissibility of evidence.', 'तथ्यों का प्रमाण और साक्ष्य की ग्राह्यता।')]
+    ],
+    fora: [L('Civil Judge (Junior Division / Senior Division)', 'सिविल जज (कनिष्ठ / वरिष्ठ खंड)'), L('District Judge', 'जिला न्यायाधीश'), L('Allahabad High Court', 'इलाहाबाद उच्च न्यायालय'), L('Supreme Court of India', 'भारत का सर्वोच्च न्यायालय')],
+    steps: [
+      L('Establish the cause of action, the court with jurisdiction and the valuation of the suit.', 'वाद-कारण, क्षेत्राधिकार वाले न्यायालय और वाद के मूल्यांकन को स्थापित करें।'),
+      L('Plaint with documents, court fee and verification. Summons issue to the defendant.', 'दस्तावेज़ों, न्यायालय-शुल्क और सत्यापन के साथ वाद-पत्र। प्रतिवादी को समन जारी होते हैं।'),
+      L('Written statement, replication, framing of issues.', 'लिखित कथन, प्रत्युत्तर, वाद-बिंदुओं का निर्धारण।'),
+      L('Evidence, cross-examination and final arguments.', 'साक्ष्य, प्रतिपरीक्षा और अंतिम बहस।'),
+      L('Judgment and decree; then appeal or execution.', 'निर्णय और डिक्री; फिर अपील या निष्पादन।')
+    ],
+    time: L('Most money and contract suits are governed by a three-year period from when the right to sue accrues. See the limitation reference.', 'अधिकांश धन और संविदा वादों में वाद का अधिकार उत्पन्न होने से तीन वर्ष की अवधि लागू होती है। परिसीमा संदर्भ देखें।')
+  },
+  {
+    slug: 'criminal', stream: 'criminal',
+    name: L('Criminal Law', 'आपराधिक विधि'),
+    short: L('BNS, BNSS, bail, trial', 'बीएनएस, बीएनएसएस, जमानत, विचारण'),
+    head: L(
+      'Matters under the Bharatiya Nyaya Sanhita and the Bharatiya Nagarik Suraksha Sanhita, from the first report to trial and appeal, for the accused and the complainant alike.',
+      'भारतीय न्याय संहिता और भारतीय नागरिक सुरक्षा संहिता के अंतर्गत मामले, प्रथम सूचना से विचारण और अपील तक, अभियुक्त और परिवादी दोनों के लिए।'),
+    laws: [
+      ['Bharatiya Nyaya Sanhita, 2023', '—', L('Offences and punishments.', 'अपराध और दंड।')],
+      ['Bharatiya Nagarik Suraksha Sanhita, 2023', 's. 35', L('Arrest without warrant; notice of appearance.', 'वारंट के बिना गिरफ़्तारी; उपस्थिति का नोटिस।')],
+      ['Bharatiya Nagarik Suraksha Sanhita, 2023', 'ss. 479, 480', L('Detention of undertrial prisoners; bail in non-bailable offences.', 'विचाराधीन बंदियों की निरुद्धि; अजमानतीय अपराधों में जमानत।')],
+      ['Bharatiya Nagarik Suraksha Sanhita, 2023', 'ss. 482, 483', L('Anticipatory bail; special powers of the High Court and Court of Session on bail.', 'अग्रिम जमानत; जमानत पर उच्च न्यायालय और सत्र न्यायालय की विशेष शक्तियाँ।')],
+      ['Bharatiya Nagarik Suraksha Sanhita, 2023', 's. 528', L('Inherent powers of the High Court.', 'उच्च न्यायालय की अंतर्निहित शक्तियाँ।')],
+      ['Bharatiya Sakshya Adhiniyam, 2023', '—', L('Evidence in criminal trials.', 'आपराधिक विचारण में साक्ष्य।')]
+    ],
+    fora: [L('Magistrates', 'मजिस्ट्रेट'), L('Court of Session', 'सत्र न्यायालय'), L('Allahabad High Court', 'इलाहाबाद उच्च न्यायालय'), L('Supreme Court of India', 'भारत का सर्वोच्च न्यायालय')],
+    steps: [
+      L('First information or complaint; understand what is alleged and under which provisions.', 'प्रथम सूचना या परिवाद; क्या आरोप है और किन धाराओं में, यह समझें।'),
+      L('Investigation. Rights on arrest, notice of appearance and the question of bail.', 'अन्वेषण। गिरफ़्तारी पर अधिकार, उपस्थिति का नोटिस और जमानत का प्रश्न।'),
+      L('Report, cognizance and framing of charge, or discharge.', 'रिपोर्ट, संज्ञान और आरोप तय होना, या उन्मोचन।'),
+      L('Trial: prosecution evidence, statement of the accused, defence evidence, arguments.', 'विचारण: अभियोजन साक्ष्य, अभियुक्त का कथन, बचाव साक्ष्य, बहस।'),
+      L('Judgment, then appeal, revision or a petition under the inherent power.', 'निर्णय, फिर अपील, पुनरीक्षण या अंतर्निहित शक्ति के अधीन याचिका।')
+    ],
+    time: L('Limits on taking cognizance depend on the offence. Appeals against conviction have fixed periods.', 'संज्ञान लेने की सीमा अपराध पर निर्भर है। दोषसिद्धि के विरुद्ध अपील की अवधि निश्चित है।')
+  },
+  {
+    slug: 'land-revenue', stream: 'land',
+    name: L('Land and Revenue', 'भूमि और राजस्व'),
+    short: L('Mutation, partition, revenue appeals', 'दाखिल-खारिज, बँटवारा, राजस्व अपील'),
+    head: L(
+      'Agricultural land in Uttar Pradesh is governed by its own code and its own courts. Records of rights, mutation, succession, partition and revenue appeals are decided by revenue officers, with the High Court above them.',
+      'उत्तर प्रदेश की कृषि भूमि की अपनी संहिता और अपने न्यायालय हैं। अधिकार-अभिलेख, दाखिल-खारिज, उत्तराधिकार, बँटवारा और राजस्व अपीलें राजस्व अधिकारी तय करते हैं, जिनके ऊपर उच्च न्यायालय है।'),
+    laws: [
+      ['Uttar Pradesh Revenue Code, 2006', 'ss. 31 to 40', L('Record of rights, correction, mutation on succession and transfer.', 'अधिकार-अभिलेख, सुधार, उत्तराधिकार और अंतरण पर दाखिल-खारिज।')],
+      ['Uttar Pradesh Revenue Code, 2006', 'ss. 75 to 80', L('Classes of bhumidhar and use of a holding.', 'भूमिधर के वर्ग और जोत का उपयोग।')],
+      ['Uttar Pradesh Revenue Code, 2006', 's. 108', L('General order of succession to a male bhumidhar.', 'पुरुष भूमिधर के उत्तराधिकार का सामान्य क्रम।')],
+      ['Uttar Pradesh Revenue Code, 2006', 'ss. 116, 144', L('Suit for division of a holding; declaratory suit.', 'जोत के विभाजन का वाद; घोषणात्मक वाद।')],
+      ['Uttar Pradesh Revenue Code, 2006', 'ss. 207 to 211', L('First and second appeal, revision and review.', 'प्रथम और द्वितीय अपील, पुनरीक्षण और पुनर्विलोकन।')],
+      ['U.P. Imposition of Ceiling on Land Holdings Act, 1960', '—', L('Ceiling on holdings and surplus land.', 'जोत की सीमा और अधिशेष भूमि।')]
+    ],
+    fora: [L('Revenue Inspector and Tahsildar', 'राजस्व निरीक्षक और तहसीलदार'), L('Sub-Divisional Officer', 'उप-जिलाधिकारी'), L('Commissioner and Board of Revenue', 'आयुक्त और राजस्व परिषद'), L('Allahabad High Court', 'इलाहाबाद उच्च न्यायालय')],
+    steps: [
+      L('Pull the khatauni and khasra for the plot and read what is recorded.', 'भूखंड का खतौनी और खसरा निकालें और दर्ज विवरण पढ़ें।'),
+      L('Identify the proceeding: mutation, correction, division, declaration or ceiling.', 'कार्यवाही की पहचान करें: दाखिल-खारिज, सुधार, विभाजन, घोषणा या सीमा-निर्धारण।'),
+      L('File before the revenue court the schedule names; keep the report of succession or transfer on record.', 'अनुसूची में नामित राजस्व न्यायालय में दाखिल करें; उत्तराधिकार या अंतरण की रिपोर्ट अभिलेख पर रखें।'),
+      L('Appeal or revision within the stated periods.', 'निर्धारित अवधि में अपील या पुनरीक्षण।'),
+      L('Writ before the High Court against a revenue order, where the law allows.', 'जहाँ विधि अनुमति दे, राजस्व आदेश के विरुद्ध उच्च न्यायालय में रिट।')
+    ],
+    time: L('Appeals from a Tahsildar’s mutation order lie within 30 days; revenue appeals and revision have their own periods.', 'तहसीलदार के दाखिल-खारिज आदेश के विरुद्ध अपील 30 दिन में; राजस्व अपील और पुनरीक्षण की अपनी अवधियाँ हैं।'),
+    library: true
+  },
+  {
+    slug: 'property', stream: 'civil',
+    name: L('Real Estate and Property', 'अचल संपत्ति'),
+    short: L('Title, sale, lease, RERA', 'स्वत्व, विक्रय, पट्टा, रेरा'),
+    head: L(
+      'Buying, selling, leasing and mortgaging immovable property, and disputes over title and possession. The documents are checked against the Transfer of Property Act, the Registration Act and the stamp law.',
+      'अचल संपत्ति का क्रय, विक्रय, पट्टा और बंधक, तथा स्वत्व और कब्ज़े के विवाद। दस्तावेज़ों को संपत्ति अंतरण अधिनियम, रजिस्ट्रीकरण अधिनियम और स्टांप विधि से मिलाकर जाँचा जाता है।'),
+    laws: [
+      ['Transfer of Property Act, 1882', 'ss. 53A, 54, 58, 105', L('Part performance, sale, mortgage, lease.', 'आंशिक पालन, विक्रय, बंधक, पट्टा।')],
+      ['Registration Act, 1908', 'ss. 17, 49', L('Documents that must be registered; effect of non-registration.', 'जिन दस्तावेज़ों का पंजीकरण अनिवार्य है; अपंजीकरण का प्रभाव।')],
+      ['Indian Stamp Act, 1899', 'as amended in Uttar Pradesh', L('Stamp duty and its effect on admissibility.', 'स्टांप शुल्क और ग्राह्यता पर उसका प्रभाव।')],
+      ['Real Estate (Regulation and Development) Act, 2016', 's. 31', L('Complaints to the Authority by allottees.', 'आबंटितियों द्वारा प्राधिकरण में शिकायतें।')],
+      ['Uttar Pradesh Urban Planning and Development Act, 1973', '—', L('Development authorities, layouts and building control.', 'विकास प्राधिकरण, लेआउट और भवन नियंत्रण।')]
+    ],
+    fora: [L('Sub-Registrar', 'उप-निबंधक'), L('Civil Courts', 'दीवानी न्यायालय'), L('U.P. RERA Authority and Appellate Tribunal', 'उ.प्र. रेरा प्राधिकरण और अपीलीय अधिकरण'), L('Allahabad High Court', 'इलाहाबाद उच्च न्यायालय')],
+    steps: [
+      L('Trace title through the chain of documents and the revenue or municipal record.', 'दस्तावेज़ों की श्रृंखला तथा राजस्व या नगर अभिलेख से स्वत्व की कड़ी जाँचें।'),
+      L('Check encumbrances, registration and stamp.', 'भार, पंजीकरण और स्टांप की जाँच करें।'),
+      L('Draft the sale deed, lease or agreement with clear description of the property.', 'संपत्ति के स्पष्ट वर्णन के साथ विक्रय-पत्र, पट्टा या करार का प्रारूप।'),
+      L('Register the document and apply for mutation or the local record entry.', 'दस्तावेज़ पंजीकृत कराएँ और दाखिल-खारिज या स्थानीय अभिलेख में प्रविष्टि के लिए आवेदन करें।'),
+      L('If a dispute arises, the suit, the RERA complaint or the writ is chosen by the nature of the grievance.', 'विवाद होने पर वाद, रेरा शिकायत या रिट का चयन शिकायत की प्रकृति से होता है।')
+    ],
+    time: L('A suit for possession on title is governed by a twelve-year period from when possession becomes adverse.', 'स्वत्व पर कब्ज़े का वाद उस समय से बारह वर्ष की अवधि में है जब कब्ज़ा प्रतिकूल हो जाए।')
+  },
+  {
+    slug: 'service', stream: 'service',
+    name: L('Service Matters', 'सेवा संबंधी मामले'),
+    short: L('Appointment, discipline, promotion, retiral dues', 'नियुक्ति, अनुशासन, पदोन्नति, सेवानिवृत्ति देय'),
+    head: L(
+      'Disputes between a public servant and the State: appointment, seniority, promotion, disciplinary proceedings and retiral benefits. The service rules and Articles 14, 16 and 311 supply the standards.',
+      'लोक सेवक और राज्य के बीच विवाद: नियुक्ति, ज्येष्ठता, पदोन्नति, अनुशासनात्मक कार्यवाही और सेवानिवृत्ति लाभ। सेवा नियम और अनुच्छेद 14, 16 तथा 311 मानक तय करते हैं।'),
+    laws: [
+      ['Constitution of India, 1950', 'Arts. 14, 16, 309, 311', L('Equality, equal opportunity in public employment, service rules, safeguards on dismissal.', 'समानता, सार्वजनिक नियोजन में समान अवसर, सेवा नियम, बर्खास्तगी पर सुरक्षा उपाय।')],
+      ['U.P. Government Servant (Discipline and Appeal) Rules, 1999', '—', L('Charges, inquiry, penalties and departmental appeal.', 'आरोप, जाँच, दंड और विभागीय अपील।')],
+      ['Financial Handbook / Fundamental Rules', '—', L('Pay, leave, pension and retiral dues.', 'वेतन, अवकाश, पेंशन और सेवानिवृत्ति देय।')],
+      ['Administrative Tribunals Act, 1985', '—', L('Tribunals for central government employees.', 'केंद्र सरकार के कर्मचारियों के लिए अधिकरण।')]
+    ],
+    fora: [L('Departmental appellate authority', 'विभागीय अपीलीय प्राधिकारी'), L('Tribunal, where one is constituted', 'अधिकरण, जहाँ गठित हो'), L('Allahabad High Court (Art. 226)', 'इलाहाबाद उच्च न्यायालय (अनु. 226)'), L('Supreme Court of India', 'भारत का सर्वोच्च न्यायालय')],
+    steps: [
+      L('Collect the order, the service rules and the service record.', 'आदेश, सेवा नियम और सेवा-अभिलेख एकत्र करें।'),
+      L('Use the departmental appeal or representation where the rules provide one.', 'जहाँ नियम प्रावधान करते हों वहाँ विभागीय अपील या अभ्यावेदन करें।'),
+      L('Approach the tribunal or the High Court with the grounds and the relief.', 'आधारों और अनुतोष के साथ अधिकरण या उच्च न्यायालय जाएँ।'),
+      L('Interim protection is considered on the facts.', 'तथ्यों के आधार पर अंतरिम संरक्षण पर विचार होता है।'),
+      L('Judgment and onward appeal.', 'निर्णय और आगे की अपील।')
+    ],
+    time: L('Delay in service matters is closely examined; a departmental appeal should not be left unattended.', 'सेवा मामलों में विलंब की बारीकी से जाँच होती है; विभागीय अपील को अनदेखा न छोड़ें।')
+  },
+  {
+    slug: 'tax', stream: 'tax',
+    name: L('Tax: Income-tax and GST', 'कर: आयकर और जीएसटी'),
+    short: L('Notices, assessments, appeals', 'नोटिस, निर्धारण, अपील'),
+    head: L(
+      'Assessments, notices, appeals and recovery under the Income-tax Act and the GST law. Since 1 April 2026 the Income-tax Act, 2025 applies to Tax Year 2026-27 onward, and earlier years continue under the 1961 Act.',
+      'आयकर अधिनियम और जीएसटी विधि के अंतर्गत निर्धारण, नोटिस, अपील और वसूली। 1 अप्रैल 2026 से आयकर अधिनियम, 2025 कर वर्ष 2026-27 से लागू है, और पूर्व वर्ष 1961 के अधिनियम के अधीन चलते हैं।'),
+    laws: [
+      ['Income-tax Act, 1961', 'ss. 143, 147, 148, 246A, 249, 253, 260A', L('Assessment, reassessment, appeals to the CIT(A), Tribunal and High Court (for earlier years).', 'निर्धारण, पुनर्निर्धारण, आयुक्त (अपील), अधिकरण और उच्च न्यायालय में अपीलें (पूर्व वर्षों के लिए)।')],
+      ['Income-tax Act, 2025', 'in force from 1 April 2026', L('536 sections; applies to Tax Year 2026-27 onward. See the Notice Decoder for verified section mapping.', '536 धाराएँ; कर वर्ष 2026-27 से लागू। सत्यापित धारा-मानचित्रण के लिए नोटिस डिकोडर देखें।')],
+      ['Central Goods and Services Tax Act, 2017', 'ss. 73, 74, 74A, 107, 112, 117', L('Show-cause and adjudication, appeal, Appellate Tribunal and High Court.', 'कारण बताओ और न्यायनिर्णयन, अपील, अपीलीय अधिकरण और उच्च न्यायालय।')],
+      ['Uttar Pradesh Goods and Services Tax Act, 2017', '—', L('State levy administered alongside the Central Act.', 'केंद्रीय अधिनियम के साथ प्रशासित राज्य कर।')]
+    ],
+    fora: [L('Assessing Officer / Proper Officer', 'निर्धारण अधिकारी / उचित अधिकारी'), L('CIT (Appeals) / GST Appellate Authority', 'आयुक्त (अपील) / जीएसटी अपीलीय प्राधिकारी'), L('Income Tax Appellate Tribunal / GST Appellate Tribunal', 'आयकर अपीलीय अधिकरण / जीएसटी अपीलीय अधिकरण'), L('High Court and Supreme Court', 'उच्च न्यायालय और सर्वोच्च न्यायालय')],
+    steps: [
+      L('Identify the year and therefore the Act that applies.', 'वर्ष और इसलिए लागू अधिनियम की पहचान करें।'),
+      L('Read what the notice asks, the section it cites and the date by which it asks for a reply.', 'नोटिस क्या माँगता है, कौन सी धारा उद्धृत है और उत्तर की तिथि क्या है, यह पढ़ें।'),
+      L('Assemble records and file the reply on the portal.', 'अभिलेख जुटाएँ और पोर्टल पर उत्तर दाखिल करें।'),
+      L('First appeal within the period the Act gives.', 'अधिनियम द्वारा दी गई अवधि में प्रथम अपील।'),
+      L('Tribunal, then High Court on a substantial question of law.', 'अधिकरण, फिर विधि के सारभूत प्रश्न पर उच्च न्यायालय।')
+    ],
+    time: L('First appeal against an income-tax order: 30 days under the 1961 Act. First appeal under GST: three months.', 'आयकर आदेश के विरुद्ध प्रथम अपील: 1961 अधिनियम में 30 दिन। जीएसटी में प्रथम अपील: तीन माह।'),
+    decoder: true
+  },
+  {
+    slug: 'cyber', stream: 'cyber',
+    name: L('Cyber and IT Law', 'साइबर और आईटी विधि'),
+    short: L('IT Act, data protection', 'आईटी अधिनियम, डेटा संरक्षण'),
+    head: L(
+      'Offences and civil claims arising from computers, accounts and data: unauthorised access, identity misuse, cheating online, obscene material and takedown, and obligations under the data protection law.',
+      'कंप्यूटर, खातों और डेटा से उत्पन्न अपराध और दीवानी दावे: अनधिकृत पहुँच, पहचान का दुरुपयोग, ऑनलाइन छल, अश्लील सामग्री और हटाने के आदेश, तथा डेटा संरक्षण विधि के दायित्व।'),
+    laws: [
+      ['Information Technology Act, 2000', 'ss. 43, 66, 66C, 66D, 67', L('Damage to computers, hacking, identity theft, cheating by personation, obscene material.', 'कंप्यूटर को क्षति, हैकिंग, पहचान की चोरी, प्रतिरूपण द्वारा छल, अश्लील सामग्री।')],
+      ['Information Technology Act, 2000', 'ss. 46, 57', L('Adjudicating Officer for compensation; appeal to the Appellate Tribunal.', 'क्षतिपूर्ति के लिए न्यायनिर्णायक अधिकारी; अपीलीय अधिकरण में अपील।')],
+      ['Digital Personal Data Protection Act, 2023', 'Rules of 2025', L('Notice, consent and grievance duties for data fiduciaries, phased in from 2026-27.', 'डेटा न्यासियों के लिए सूचना, सहमति और शिकायत दायित्व, 2026-27 से चरणबद्ध।')],
+      ['Bharatiya Nyaya Sanhita, 2023', '—', L('Cheating, forgery and related offences apply alongside the IT Act.', 'छल, कूटरचना और संबद्ध अपराध आईटी अधिनियम के साथ लागू होते हैं।')]
+    ],
+    fora: [L('Police and Magistrate', 'पुलिस और मजिस्ट्रेट'), L('Adjudicating Officer under the IT Act', 'आईटी अधिनियम के अधीन न्यायनिर्णायक अधिकारी'), L('Appellate Tribunal', 'अपीलीय अधिकरण'), L('High Court', 'उच्च न्यायालय')],
+    steps: [
+      L('Preserve the evidence: screenshots with dates, URLs, transaction references and messages.', 'साक्ष्य सुरक्षित रखें: तिथि सहित स्क्रीनशॉट, यूआरएल, लेन-देन संदर्भ और संदेश।'),
+      L('Report through the national cyber crime portal or the police, as the situation requires.', 'स्थिति के अनुसार राष्ट्रीय साइबर अपराध पोर्टल या पुलिस के माध्यम से रिपोर्ट करें।'),
+      L('Pick the track: criminal complaint, civil claim for compensation, or takedown request.', 'मार्ग चुनें: आपराधिक परिवाद, क्षतिपूर्ति का दीवानी दावा, या हटाने का अनुरोध।'),
+      L('Electronic evidence is admitted on the certificate the evidence law requires.', 'इलेक्ट्रॉनिक साक्ष्य साक्ष्य-विधि द्वारा अपेक्षित प्रमाणपत्र पर स्वीकार होता है।')
+    ],
+    time: L('Prompt reporting helps preservation of records held by platforms and banks.', 'शीघ्र रिपोर्ट से मंचों और बैंकों के पास रखे अभिलेखों का संरक्षण संभव होता है।')
+  },
+  {
+    slug: 'family', stream: 'family',
+    name: L('Family Law', 'पारिवारिक विधि'),
+    short: L('Marriage, maintenance, custody, succession', 'विवाह, भरण-पोषण, अभिरक्षा, उत्तराधिकार'),
+    head: L(
+      'Marriage and its end, maintenance, guardianship and custody, domestic violence remedies and succession, handled with attention to the personal law that applies to the parties.',
+      'विवाह और उसकी समाप्ति, भरण-पोषण, संरक्षकता और अभिरक्षा, घरेलू हिंसा के उपचार और उत्तराधिकार, पक्षकारों पर लागू व्यक्तिगत विधि का ध्यान रखते हुए।'),
+    laws: [
+      ['Hindu Marriage Act, 1955', '—', L('Marriage, restitution, judicial separation, divorce.', 'विवाह, दाम्पत्य अधिकारों की पुनर्स्थापना, न्यायिक पृथक्करण, विवाह-विच्छेद।')],
+      ['Special Marriage Act, 1954', '—', L('Civil marriage across faiths.', 'विभिन्न धर्मों के बीच सिविल विवाह।')],
+      ['Hindu Succession Act, 1956', 'as amended in 2005', L('Succession to property, including daughters’ coparcenary rights.', 'संपत्ति में उत्तराधिकार, पुत्रियों के सहदायिक अधिकार सहित।')],
+      ['Guardians and Wards Act, 1890', '—', L('Guardianship and custody of minors.', 'अवयस्कों की संरक्षकता और अभिरक्षा।')],
+      ['Protection of Women from Domestic Violence Act, 2005', '—', L('Protection orders and residence.', 'संरक्षण आदेश और निवास।')],
+      ['Bharatiya Nagarik Suraksha Sanhita, 2023', 's. 144', L('Maintenance of wives, children and parents.', 'पत्नी, संतान और माता-पिता का भरण-पोषण।')]
+    ],
+    fora: [L('Family Court', 'कुटुंब न्यायालय'), L('Magistrate (domestic violence and maintenance)', 'मजिस्ट्रेट (घरेलू हिंसा और भरण-पोषण)'), L('Allahabad High Court', 'इलाहाबाद उच्च न्यायालय'), L('Supreme Court of India', 'भारत का सर्वोच्च न्यायालय')],
+    steps: [
+      L('Identify the personal law and the relief sought.', 'लागू व्यक्तिगत विधि और माँगे गए अनुतोष की पहचान करें।'),
+      L('Consider mediation and counselling, which family courts encourage.', 'मध्यस्थता और परामर्श पर विचार करें, जिसे कुटुंब न्यायालय प्रोत्साहित करते हैं।'),
+      L('File the petition with the documents for the relief.', 'अनुतोष के दस्तावेज़ों सहित याचिका दाखिल करें।'),
+      L('Interim orders on maintenance and custody where needed.', 'आवश्यकता होने पर भरण-पोषण और अभिरक्षा पर अंतरिम आदेश।'),
+      L('Decree, and appeal if required.', 'डिक्री, और आवश्यक हो तो अपील।')
+    ],
+    time: L('Appeals from Family Court orders are time-bound; check the order date at once.', 'कुटुंब न्यायालय के आदेशों के विरुद्ध अपील समय-बद्ध है; आदेश की तिथि तुरंत देखें।')
+  },
+  {
+    slug: 'banking', stream: 'banking',
+    name: L('Banking and Recovery', 'बैंकिंग और वसूली'),
+    short: L('SARFAESI, DRT, IBC, cheque cases', 'सरफ़ाएसी, डीआरटी, आईबीसी, चेक मामले'),
+    head: L(
+      'Disputes between lenders and borrowers: enforcement of security, recovery tribunals, insolvency applications and dishonoured cheques.',
+      'ऋणदाताओं और उधारकर्ताओं के बीच विवाद: प्रतिभूति का प्रवर्तन, वसूली अधिकरण, दिवाला आवेदन और अनादृत चेक।'),
+    laws: [
+      ['SARFAESI Act, 2002', 'ss. 13, 17', L('Enforcement of security interest; application before the DRT.', 'प्रतिभूति हित का प्रवर्तन; डीआरटी में आवेदन।')],
+      ['Recovery of Debts and Bankruptcy Act, 1993', '—', L('Debt Recovery Tribunals and Appellate Tribunals.', 'ऋण वसूली अधिकरण और अपीलीय अधिकरण।')],
+      ['Insolvency and Bankruptcy Code, 2016', 'ss. 7, 9, 61', L('Initiation of insolvency and appeals to the NCLAT.', 'दिवाला की शुरुआत और एनसीएलएटी में अपीलें।')],
+      ['Negotiable Instruments Act, 1881', 's. 138', L('Dishonour of cheques.', 'चेक का अनादर।')]
+    ],
+    fora: [L('Debt Recovery Tribunal', 'ऋण वसूली अधिकरण'), L('Debt Recovery Appellate Tribunal', 'ऋण वसूली अपीलीय अधिकरण'), L('NCLT and NCLAT (insolvency)', 'एनसीएलटी और एनसीएलएटी (दिवाला)'), L('High Court and Supreme Court', 'उच्च न्यायालय और सर्वोच्च न्यायालय')],
+    steps: [
+      L('Read the loan documents, the security and the notice served.', 'ऋण दस्तावेज़, प्रतिभूति और तामील किया गया नोटिस पढ़ें।'),
+      L('Reply within the time the notice allows.', 'नोटिस द्वारा दिए गए समय में उत्तर दें।'),
+      L('Apply to the DRT, or defend the recovery or insolvency application.', 'डीआरटी में आवेदन करें, या वसूली या दिवाला आवेदन का प्रतिवाद करें।'),
+      L('Appeal to the appellate tribunal; pre-deposit rules apply.', 'अपीलीय अधिकरण में अपील; पूर्व-जमा के नियम लागू होते हैं।')
+    ],
+    time: L('Statutory periods here are short. Check the date of the notice or order first.', 'यहाँ वैधानिक अवधियाँ कम हैं। पहले नोटिस या आदेश की तिथि देखें।')
+  },
+  {
+    slug: 'arbitration', stream: 'arbitration',
+    name: L('Arbitration and Mediation', 'मध्यस्थता और सुलह'),
+    short: L('Awards, interim relief, enforcement', 'पंचाट, अंतरिम राहत, प्रवर्तन'),
+    head: L(
+      'Commercial disputes resolved outside the ordinary court: appointment of arbitrators, interim relief, challenge to awards and enforcement.',
+      'सामान्य न्यायालय के बाहर सुलझाए गए वाणिज्यिक विवाद: मध्यस्थों की नियुक्ति, अंतरिम राहत, पंचाट को चुनौती और प्रवर्तन।'),
+    laws: [
+      ['Arbitration and Conciliation Act, 1996', 'ss. 9, 11, 34, 36, 37', L('Interim measures, appointment, setting aside, enforcement, appeals.', 'अंतरिम उपाय, नियुक्ति, अपास्त करना, प्रवर्तन, अपीलें।')],
+      ['Commercial Courts Act, 2015', '—', L('Commercial disputes of specified value.', 'निर्दिष्ट मूल्य के वाणिज्यिक विवाद।')],
+      ['Mediation Act, 2023', '—', L('Mediation framework and settlement agreements.', 'मध्यस्थता की रूपरेखा और समझौता-करार।')]
+    ],
+    fora: [L('Arbitral tribunal', 'मध्यस्थ अधिकरण'), L('Court under the Act (commercial or district court)', 'अधिनियम के अधीन न्यायालय (वाणिज्यिक या जिला न्यायालय)'), L('High Court', 'उच्च न्यायालय'), L('Supreme Court of India', 'भारत का सर्वोच्च न्यायालय')],
+    steps: [
+      L('Read the arbitration clause: seat, number of arbitrators, rules.', 'मध्यस्थता खंड पढ़ें: स्थान, मध्यस्थों की संख्या, नियम।'),
+      L('Notice invoking arbitration; appointment, by agreement or by the court.', 'मध्यस्थता आह्वान का नोटिस; सहमति से या न्यायालय द्वारा नियुक्ति।'),
+      L('Pleadings, evidence and hearing before the tribunal.', 'अधिकरण के समक्ष अभिवचन, साक्ष्य और सुनवाई।'),
+      L('Award; challenge under section 34 within the period the Act gives.', 'पंचाट; अधिनियम में दी गई अवधि में धारा 34 के अधीन चुनौती।')
+    ],
+    time: L('A challenge to an award is limited to three months, extendable by thirty days at most.', 'पंचाट की चुनौती तीन माह तक सीमित है, अधिकतम तीस दिन बढ़ाई जा सकती है।')
+  },
+  {
+    slug: 'consumer', stream: 'consumer',
+    name: L('Consumer Disputes', 'उपभोक्ता विवाद'),
+    short: L('District, State and National Commissions', 'जिला, राज्य और राष्ट्रीय आयोग'),
+    head: L(
+      'Complaints about defective goods and deficient services, and unfair trade practices, brought before the Consumer Commissions on the basis of the value of the consideration paid.',
+      'दोषपूर्ण वस्तुओं और त्रुटिपूर्ण सेवाओं तथा अनुचित व्यापार प्रथाओं की शिकायतें, जो चुकाए गए प्रतिफल के मूल्य के आधार पर उपभोक्ता आयोगों में लाई जाती हैं।'),
+    laws: [
+      ['Consumer Protection Act, 2019', 'ss. 34, 47, 58', L('Pecuniary jurisdiction of District, State and National Commissions.', 'जिला, राज्य और राष्ट्रीय आयोगों का आर्थिक क्षेत्राधिकार।')],
+      ['Consumer Protection Act, 2019', 's. 35', L('How a complaint is filed.', 'परिवाद कैसे दाखिल होता है।')],
+      ['Consumer Protection Act, 2019', 'ss. 41, 51, 67', L('Appeals to the State Commission, National Commission and Supreme Court.', 'राज्य आयोग, राष्ट्रीय आयोग और सर्वोच्च न्यायालय में अपीलें।')]
+    ],
+    fora: [L('District Commission', 'जिला आयोग'), L('State Commission', 'राज्य आयोग'), L('National Commission', 'राष्ट्रीय आयोग'), L('Supreme Court of India', 'भारत का सर्वोच्च न्यायालय')],
+    steps: [
+      L('Gather the bill, warranty, communications and proof of payment.', 'बिल, वारंटी, पत्राचार और भुगतान का प्रमाण जुटाएँ।'),
+      L('Send a written notice to the seller or service provider.', 'विक्रेता या सेवा प्रदाता को लिखित नोटिस भेजें।'),
+      L('File the complaint in the Commission with jurisdiction.', 'क्षेत्राधिकार वाले आयोग में परिवाद दाखिल करें।'),
+      L('Reply by the opposite party, evidence by affidavit, final hearing.', 'विपक्षी का उत्तर, शपथपत्र पर साक्ष्य, अंतिम सुनवाई।')
+    ],
+    time: L('A complaint is filed within two years from the date the cause of action arises, subject to the Act.', 'परिवाद वाद-कारण उत्पन्न होने की तिथि से दो वर्ष के भीतर दाखिल होता है, अधिनियम के अधीन।')
+  }
+];
+const PBY = Object.fromEntries(PRACTICE.map(p => [p.slug, p]));
+
+/* Data: ladders of fora. Each rung is listed bottom to top. */
+const STREAMS = [
+  { id: 'civil', name: L('Civil suit', 'दीवानी वाद'), rungs: [
+    { n: L('Civil Judge (Junior Division)', 'सिविल जज (कनिष्ठ खंड)'), src: 'CPC s. 15; Bengal, Agra and Assam Civil Courts Act, 1887', t: L('First-instance court for suits within its pecuniary limit. The limits are fixed by notification.', 'अपने आर्थिक क्षेत्राधिकार के भीतर वादों का प्रथम न्यायालय। सीमाएँ अधिसूचना द्वारा तय होती हैं।') },
+    { n: L('Civil Judge (Senior Division)', 'सिविल जज (वरिष्ठ खंड)'), src: 'CPC s. 15; 1887 Act', t: L('Hears suits above the junior court’s limit and unlimited in value in the class of suits assigned to it.', 'कनिष्ठ न्यायालय की सीमा से ऊपर के वाद सुनता है।') },
+    { n: L('District Judge', 'जिला न्यायाधीश'), src: 'CPC s. 96; 1887 Act', t: L('Hears first appeals from decrees of subordinate courts within the appeal limits fixed by law.', 'विधि द्वारा तय अपील-सीमाओं के भीतर अधीनस्थ न्यायालयों की डिक्री की प्रथम अपील सुनता है।') },
+    { n: L('High Court', 'उच्च न्यायालय'), src: 'CPC ss. 96, 100, 115', t: L('First appeal in larger suits; second appeal only on a substantial question of law; revision of jurisdictional errors.', 'बड़े वादों में प्रथम अपील; द्वितीय अपील केवल विधि के सारभूत प्रश्न पर; क्षेत्राधिकार की त्रुटियों का पुनरीक्षण।') },
+    { n: L('Supreme Court of India', 'भारत का सर्वोच्च न्यायालय'), src: 'Constitution Arts. 133, 136', t: L('Civil appeals in qualifying cases, and special leave to appeal in the Court’s discretion.', 'योग्य मामलों में दीवानी अपीलें, और न्यायालय के विवेक पर विशेष अनुमति।') }
+  ] },
+  { id: 'criminal', name: L('Criminal case', 'आपराधिक मामला'), rungs: [
+    { n: L('Magistrate', 'मजिस्ट्रेट'), src: 'BNSS (classes of criminal courts)', t: L('Tries less serious offences, takes cognizance of complaints and police reports and decides bail in many cases.', 'कम गंभीर अपराधों का विचारण करता है, परिवादों और पुलिस रिपोर्टों पर संज्ञान लेता है और अनेक मामलों में जमानत तय करता है।') },
+    { n: L('Court of Session', 'सत्र न्यायालय'), src: 'BNSS (Court of Session)', t: L('Tries the more serious offences and hears appeals from Magistrates, as the Sanhita provides. Has bail powers under section 483.', 'अधिक गंभीर अपराधों का विचारण करता है और संहिता के अनुसार मजिस्ट्रेटों की अपीलें सुनता है। धारा 483 के अधीन जमानत की शक्ति है।') },
+    { n: L('High Court', 'उच्च न्यायालय'), src: 'BNSS ss. 483, 528', t: L('Appeals, revisions, bail and the inherent power under section 528 to prevent abuse of process.', 'अपीलें, पुनरीक्षण, जमानत और प्रक्रिया के दुरुपयोग को रोकने के लिए धारा 528 की अंतर्निहित शक्ति।') },
+    { n: L('Supreme Court of India', 'भारत का सर्वोच्च न्यायालय'), src: 'Constitution Arts. 134, 136', t: L('Appeals in specified criminal cases and special leave.', 'निर्दिष्ट आपराधिक मामलों में अपीलें और विशेष अनुमति।') }
+  ] },
+  { id: 'writ', name: L('Writ and constitutional', 'रिट और संवैधानिक'), rungs: [
+    { n: L('The authority itself', 'स्वयं प्राधिकारी'), src: 'The statute or rule in question', t: L('A representation or statutory appeal is usually the first step and often a condition for relief.', 'अभ्यावेदन या वैधानिक अपील प्रायः पहला कदम है और अक्सर राहत की शर्त भी।') },
+    { n: L('High Court, single judge', 'उच्च न्यायालय, एकल न्यायाधीश'), src: 'Constitution Arts. 226, 227', t: L('Issues writs for fundamental rights and for other legal rights; supervises courts and tribunals.', 'मौलिक अधिकारों और अन्य विधिक अधिकारों के लिए रिट जारी करता है; न्यायालयों और अधिकरणों का अधीक्षण करता है।') },
+    { n: L('High Court, Division Bench', 'उच्च न्यायालय, खंडपीठ'), src: 'Rules of the Court, 1952', t: L('A special appeal lies against a single judge’s judgment in a writ petition, as the Rules provide.', 'नियमों के अनुसार रिट याचिका में एकल न्यायाधीश के निर्णय के विरुद्ध विशेष अपील होती है।') },
+    { n: L('Supreme Court of India', 'भारत का सर्वोच्च न्यायालय'), src: 'Constitution Arts. 32, 136', t: L('Direct petitions for fundamental rights under Article 32, or special leave from the High Court.', 'अनुच्छेद 32 के अधीन मौलिक अधिकारों के लिए सीधी याचिका, या उच्च न्यायालय से विशेष अनुमति।') }
+  ] },
+  { id: 'land', name: L('Land and revenue (U.P.)', 'भूमि और राजस्व (उ.प्र.)'), rungs: [
+    { n: L('Revenue Inspector / Lekhpal', 'राजस्व निरीक्षक / लेखपाल'), src: 'UP Revenue Code, 2006, ss. 16, 33', t: L('Keeps village records. On a report of succession, records it if uncontested or refers it to the Tahsildar if disputed.', 'ग्राम अभिलेख रखता है। उत्तराधिकार की रिपोर्ट पर विवाद न हो तो दर्ज करता है, विवाद हो तो तहसीलदार को भेजता है।') },
+    { n: L('Tahsildar (Judicial)', 'तहसीलदार (न्यायिक)'), src: 'ss. 14, 32, 35', t: L('Decides mutation on succession or transfer after proclamation and inquiry, and corrects records.', 'उद्घोषणा और जाँच के बाद उत्तराधिकार या अंतरण पर दाखिल-खारिज तय करता है और अभिलेख सुधारता है।') },
+    { n: L('Sub-Divisional Officer', 'उप-जिलाधिकारी'), src: 's. 35(2); Third Schedule', t: L('Hears appeals from the Tahsildar’s mutation order within 30 days. For revenue suits, the Third Schedule names the court.', 'तहसीलदार के दाखिल-खारिज आदेश की अपील 30 दिन में सुनता है। राजस्व वादों के लिए तृतीय अनुसूची न्यायालय का नाम देती है।') },
+    { n: L('Commissioner / Board of Revenue', 'आयुक्त / राजस्व परिषद'), src: 'ss. 207 to 211', t: L('Appeals as the Third Schedule provides (first appeal in 30 days, second appeal in 90 days on a substantial question of law); revision within 60 days; the Board reviews its own orders.', 'तृतीय अनुसूची के अनुसार अपीलें (प्रथम अपील 30 दिन, विधि के सारभूत प्रश्न पर द्वितीय अपील 90 दिन); पुनरीक्षण 60 दिन में; परिषद अपने आदेशों का पुनर्विलोकन करती है।') },
+    { n: L('High Court', 'उच्च न्यायालय'), src: 'Constitution Arts. 226, 227', t: L('Writ jurisdiction over revenue orders for jurisdictional and legal errors.', 'क्षेत्राधिकार और विधि की त्रुटियों के लिए राजस्व आदेशों पर रिट क्षेत्राधिकार।') }
+  ] },
+  { id: 'service', name: L('Service matter', 'सेवा मामला'), rungs: [
+    { n: L('Disciplinary or appointing authority', 'अनुशासनिक या नियुक्ति प्राधिकारी'), src: 'Service rules', t: L('Passes the order of appointment, promotion, penalty or retirement.', 'नियुक्ति, पदोन्नति, दंड या सेवानिवृत्ति का आदेश पारित करता है।') },
+    { n: L('Departmental appellate authority', 'विभागीय अपीलीय प्राधिकारी'), src: 'U.P. Government Servant (Discipline and Appeal) Rules, 1999', t: L('The rules provide for an appeal or representation within a stated time.', 'नियम निर्धारित समय में अपील या अभ्यावेदन का प्रावधान करते हैं।') },
+    { n: L('Tribunal', 'अधिकरण'), src: 'Administrative Tribunals Act, 1985', t: L('For central government employees. For State employees, a tribunal only where one is constituted.', 'केंद्र सरकार के कर्मचारियों के लिए। राज्य कर्मचारियों के लिए केवल जहाँ अधिकरण गठित हो।') },
+    { n: L('High Court', 'उच्च न्यायालय'), src: 'Constitution Art. 226', t: L('Writ jurisdiction over service orders.', 'सेवा आदेशों पर रिट क्षेत्राधिकार।') },
+    { n: L('Supreme Court of India', 'भारत का सर्वोच्च न्यायालय'), src: 'Constitution Art. 136', t: L('Special leave to appeal.', 'अपील की विशेष अनुमति।') }
+  ] },
+  { id: 'tax', name: L('Income-tax', 'आयकर'), rungs: [
+    { n: L('Assessing Officer', 'निर्धारण अधिकारी'), src: 'Income-tax Act, 1961, ss. 143, 147, 148', t: L('Assessment and reassessment; most proceedings are conducted electronically through the faceless scheme.', 'निर्धारण और पुनर्निर्धारण; अधिकांश कार्यवाही फेसलेस योजना से इलेक्ट्रॉनिक रूप में होती है।') },
+    { n: L('Commissioner (Appeals)', 'आयुक्त (अपील)'), src: 'ss. 246A, 249', t: L('First appeal. Under the 1961 Act the appeal is filed within 30 days of service of the notice of demand or the order.', 'प्रथम अपील। 1961 के अधिनियम में अपील माँग-नोटिस या आदेश की तामील से 30 दिन में दाखिल होती है।') },
+    { n: L('Income Tax Appellate Tribunal', 'आयकर अपीलीय अधिकरण'), src: 's. 253', t: L('Second appeal on facts and law. Under the 1961 Act, 60 days from the date the order is communicated.', 'तथ्य और विधि पर द्वितीय अपील। 1961 के अधिनियम में आदेश की सूचना से 60 दिन।') },
+    { n: L('High Court', 'उच्च न्यायालय'), src: 's. 260A', t: L('Appeal on a substantial question of law.', 'विधि के सारभूत प्रश्न पर अपील।') },
+    { n: L('Supreme Court of India', 'भारत का सर्वोच्च न्यायालय'), src: 's. 261', t: L('Appeal in cases the High Court certifies as fit, and by special leave.', 'उन मामलों में अपील जिन्हें उच्च न्यायालय उपयुक्त प्रमाणित करे, और विशेष अनुमति से।') }
+  ] },
+  { id: 'gst', name: L('GST', 'जीएसटी'), rungs: [
+    { n: L('Proper Officer', 'उचित अधिकारी'), src: 'CGST Act, 2017, ss. 73, 74, 74A', t: L('Issues show-cause notices and adjudicates demands.', 'कारण बताओ नोटिस जारी करता है और माँगों का न्यायनिर्णयन करता है।') },
+    { n: L('Appellate Authority', 'अपीलीय प्राधिकारी'), src: 's. 107', t: L('First appeal within three months of the order, with a pre-deposit of a part of the disputed tax.', 'आदेश से तीन माह में प्रथम अपील, विवादित कर के एक भाग की पूर्व-जमा सहित।') },
+    { n: L('Appellate Tribunal (GSTAT)', 'अपीलीय अधिकरण (जीएसटीएटी)'), src: 'ss. 109, 112', t: L('Second appeal against the Appellate Authority’s order.', 'अपीलीय प्राधिकारी के आदेश के विरुद्ध द्वितीय अपील।') },
+    { n: L('High Court', 'उच्च न्यायालय'), src: 's. 117', t: L('Appeal on a substantial question of law.', 'विधि के सारभूत प्रश्न पर अपील।') },
+    { n: L('Supreme Court of India', 'भारत का सर्वोच्च न्यायालय'), src: 's. 118', t: L('Appeal in specified cases and special leave.', 'निर्दिष्ट मामलों में अपील और विशेष अनुमति।') }
+  ] },
+  { id: 'consumer', name: L('Consumer complaint', 'उपभोक्ता परिवाद'), rungs: [
+    { n: L('District Commission', 'जिला आयोग'), src: 'Consumer Protection Act, 2019, s. 34', t: L('Complaints where the consideration paid is up to ₹50 lakh.', 'जहाँ चुकाया गया प्रतिफल ₹50 लाख तक हो।') },
+    { n: L('State Commission', 'राज्य आयोग'), src: 'ss. 41, 47', t: L('Original complaints above ₹50 lakh and up to ₹2 crore; appeals from the District Commission.', '₹50 लाख से ऊपर और ₹2 करोड़ तक के मूल परिवाद; जिला आयोग से अपीलें।') },
+    { n: L('National Commission', 'राष्ट्रीय आयोग'), src: 'ss. 51, 58', t: L('Original complaints above ₹2 crore; appeals from the State Commission.', '₹2 करोड़ से ऊपर के मूल परिवाद; राज्य आयोग से अपीलें।') },
+    { n: L('Supreme Court of India', 'भारत का सर्वोच्च न्यायालय'), src: 's. 67', t: L('Appeal against the National Commission’s order.', 'राष्ट्रीय आयोग के आदेश के विरुद्ध अपील।') }
+  ] },
+  { id: 'arbitration', name: L('Arbitration', 'मध्यस्थता'), rungs: [
+    { n: L('Arbitral tribunal', 'मध्यस्थ अधिकरण'), src: 'Arbitration and Conciliation Act, 1996', t: L('Decides the dispute and passes the award.', 'विवाद तय करता है और पंचाट पारित करता है।') },
+    { n: L('Court under the Act', 'अधिनियम के अधीन न्यायालय'), src: 'ss. 9, 11, 34, 36', t: L('Interim relief, appointment of arbitrators, challenge to the award and enforcement. A challenge is filed within three months, extendable by thirty days.', 'अंतरिम राहत, मध्यस्थों की नियुक्ति, पंचाट को चुनौती और प्रवर्तन। चुनौती तीन माह में, तीस दिन बढ़ाई जा सकती है।') },
+    { n: L('High Court', 'उच्च न्यायालय'), src: 's. 37', t: L('Appeals from specified orders of the court.', 'न्यायालय के निर्दिष्ट आदेशों की अपीलें।') },
+    { n: L('Supreme Court of India', 'भारत का सर्वोच्च न्यायालय'), src: 'Art. 136', t: L('Special leave to appeal.', 'अपील की विशेष अनुमति।') }
+  ] },
+  { id: 'banking', name: L('Recovery and insolvency', 'वसूली और दिवाला'), rungs: [
+    { n: L('Debt Recovery Tribunal', 'ऋण वसूली अधिकरण'), src: 'RDDBFI Act, 1993; SARFAESI Act, s. 17', t: L('Recovery applications by banks and challenges to measures taken under SARFAESI.', 'बैंकों के वसूली आवेदन और सरफ़ाएसी के उपायों को चुनौती।') },
+    { n: L('Debt Recovery Appellate Tribunal', 'ऋण वसूली अपीलीय अधिकरण'), src: 'RDDBFI Act, 1993', t: L('Appeal against the Tribunal’s order, subject to pre-deposit.', 'अधिकरण के आदेश के विरुद्ध अपील, पूर्व-जमा के अधीन।') },
+    { n: L('High Court', 'उच्च न्यायालय'), src: 'Constitution Arts. 226, 227', t: L('Writ jurisdiction over tribunal orders in appropriate cases.', 'उपयुक्त मामलों में अधिकरण के आदेशों पर रिट क्षेत्राधिकार।') },
+    { n: L('NCLT → NCLAT → Supreme Court', 'एनसीएलटी → एनसीएलएटी → सर्वोच्च न्यायालय'), src: 'IBC ss. 7, 9, 61, 62', t: L('The separate insolvency track runs from the National Company Law Tribunal to its Appellate Tribunal and then the Supreme Court.', 'दिवाला की अलग धारा राष्ट्रीय कंपनी विधि अधिकरण से उसके अपीलीय अधिकरण और फिर सर्वोच्च न्यायालय तक चलती है।') }
+  ] },
+  { id: 'family', name: L('Family matter', 'पारिवारिक मामला'), rungs: [
+    { n: L('Family Court / Magistrate', 'कुटुंब न्यायालय / मजिस्ट्रेट'), src: 'Family Courts Act, 1984; BNSS s. 144', t: L('Matrimonial and custody petitions; maintenance and domestic violence applications before the Magistrate.', 'वैवाहिक और अभिरक्षा याचिकाएँ; मजिस्ट्रेट के समक्ष भरण-पोषण और घरेलू हिंसा के आवेदन।') },
+    { n: L('High Court', 'उच्च न्यायालय'), src: 'Family Courts Act, 1984, s. 19', t: L('Appeal from Family Court judgments and orders.', 'कुटुंब न्यायालय के निर्णयों और आदेशों की अपील।') },
+    { n: L('Supreme Court of India', 'भारत का सर्वोच्च न्यायालय'), src: 'Art. 136', t: L('Special leave to appeal.', 'अपील की विशेष अनुमति।') }
+  ] },
+  { id: 'cyber', name: L('Cyber and IT', 'साइबर और आईटी'), rungs: [
+    { n: L('Police / Magistrate', 'पुलिस / मजिस्ट्रेट'), src: 'IT Act, 2000; BNSS', t: L('Criminal complaint and investigation for offences under the IT Act and the Sanhita.', 'आईटी अधिनियम और संहिता के अपराधों के लिए आपराधिक परिवाद और अन्वेषण।') },
+    { n: L('Adjudicating Officer', 'न्यायनिर्णायक अधिकारी'), src: 'IT Act, 2000, s. 46', t: L('Civil claims for compensation for contraventions of Chapter IX.', 'अध्याय IX के उल्लंघनों के लिए क्षतिपूर्ति के दीवानी दावे।') },
+    { n: L('Appellate Tribunal', 'अपीलीय अधिकरण'), src: 's. 57', t: L('Appeal against the Adjudicating Officer’s order.', 'न्यायनिर्णायक अधिकारी के आदेश के विरुद्ध अपील।') },
+    { n: L('High Court', 'उच्च न्यायालय'), src: 'Arts. 226, 227', t: L('Writ and supervisory jurisdiction.', 'रिट और अधीक्षण क्षेत्राधिकार।') }
+  ] }
+];
+
+/* Data: limitation reference. Each row names its source. Status: awaiting partner review. */
+const LIM = [
+  { ref: 'Limitation Act, 1963, Art. 113', area: 'civil', what: L('Any suit for which no period is provided elsewhere', 'कोई भी वाद जिसके लिए अन्यत्र अवधि न दी गई हो'), per: L('3 years', '3 वर्ष'), from: L('When the right to sue accrues', 'जब वाद का अधिकार उत्पन्न हो') },
+  { ref: 'Limitation Act, 1963, Art. 54', area: 'civil', what: L('Suit for specific performance of a contract', 'संविदा के विनिर्दिष्ट पालन का वाद'), per: L('3 years', '3 वर्ष'), from: L('The date fixed for performance; if none is fixed, when the plaintiff has notice that performance is refused', 'पालन के लिए निश्चित तिथि; यदि कोई नहीं, तो जब वादी को पालन से इनकार की सूचना मिले') },
+  { ref: 'Limitation Act, 1963, Art. 55', area: 'civil', what: L('Compensation for breach of contract', 'संविदा भंग के लिए क्षतिपूर्ति'), per: L('3 years', '3 वर्ष'), from: L('When the contract is broken', 'जब संविदा भंग हो') },
+  { ref: 'Limitation Act, 1963, Art. 58', area: 'civil', what: L('Suit to obtain any other declaration', 'कोई अन्य घोषणा प्राप्त करने का वाद'), per: L('3 years', '3 वर्ष'), from: L('When the right to sue first accrues', 'जब वाद का अधिकार पहली बार उत्पन्न हो') },
+  { ref: 'Limitation Act, 1963, Art. 59', area: 'civil', what: L('Suit to cancel or set aside an instrument', 'लिखत को रद्द या अपास्त करने का वाद'), per: L('3 years', '3 वर्ष'), from: L('When the facts entitling the plaintiff to relief first become known to him', 'जब राहत के हकदार बनाने वाले तथ्य पहली बार उसे ज्ञात हों') },
+  { ref: 'Limitation Act, 1963, Art. 64', area: 'civil', what: L('Suit for possession based on previous possession and not on title', 'पूर्व कब्ज़े पर आधारित, स्वत्व पर नहीं, कब्ज़े का वाद'), per: L('12 years', '12 वर्ष'), from: L('The date of dispossession', 'बेदखली की तिथि') },
+  { ref: 'Limitation Act, 1963, Art. 65', area: 'civil', what: L('Suit for possession of immovable property based on title', 'स्वत्व पर आधारित अचल संपत्ति के कब्ज़े का वाद'), per: L('12 years', '12 वर्ष'), from: L('When the defendant’s possession becomes adverse to the plaintiff', 'जब प्रतिवादी का कब्ज़ा वादी के प्रतिकूल हो जाए') },
+  { ref: 'Limitation Act, 1963, Art. 136', area: 'civil', what: L('Execution of a decree or order of any civil court', 'किसी दीवानी न्यायालय की डिक्री या आदेश का निष्पादन'), per: L('12 years', '12 वर्ष'), from: L('When the decree or order becomes enforceable', 'जब डिक्री या आदेश प्रवर्तनीय हो') },
+  { ref: 'Limitation Act, 1963, Art. 137', area: 'civil', what: L('Any other application for which no period is provided', 'कोई अन्य आवेदन जिसके लिए अवधि न दी गई हो'), per: L('3 years', '3 वर्ष'), from: L('When the right to apply accrues', 'जब आवेदन का अधिकार उत्पन्न हो') },
+  { ref: 'Limitation Act, 1963, Art. 116', area: 'appeal', what: L('Appeal to the High Court from a decree or order; appeal to any other court', 'डिक्री या आदेश से उच्च न्यायालय में अपील; अन्य न्यायालय में अपील'), per: L('90 days / 30 days', '90 दिन / 30 दिन'), from: L('The date of the decree or order appealed from', 'जिस डिक्री या आदेश की अपील हो उसकी तिथि') },
+  { ref: 'UP Revenue Code, 2006, s. 35(2)', area: 'revenue', what: L('Appeal from the Tahsildar’s order on mutation, to the Sub-Divisional Officer', 'दाखिल-खारिज पर तहसीलदार के आदेश की अपील, उप-जिलाधिकारी को'), per: L('30 days', '30 दिन'), from: L('The date of the order', 'आदेश की तिथि') },
+  { ref: 'UP Revenue Code, 2006, s. 207', area: 'revenue', what: L('First appeal in a revenue proceeding', 'राजस्व कार्यवाही में प्रथम अपील'), per: L('30 days', '30 दिन'), from: L('The date of the order or decree', 'आदेश या डिक्री की तिथि') },
+  { ref: 'UP Revenue Code, 2006, s. 208', area: 'revenue', what: L('Second appeal; only on a substantial question of law', 'द्वितीय अपील; केवल विधि के सारभूत प्रश्न पर'), per: L('90 days', '90 दिन'), from: L('The date of the order or decree in the first appeal', 'प्रथम अपील के आदेश या डिक्री की तिथि') },
+  { ref: 'UP Revenue Code, 2006, s. 209', area: 'revenue', what: L('Application to set aside an ex parte or default order', 'एकपक्षीय या चूक के आदेश को अपास्त करने का आवेदन'), per: L('30 days', '30 दिन'), from: L('The date of the order', 'आदेश की तिथि') },
+  { ref: 'UP Revenue Code, 2006, s. 210', area: 'revenue', what: L('Revision before the Board of Revenue or the Commissioner where no appeal lies', 'जहाँ अपील न हो वहाँ राजस्व परिषद या आयुक्त के समक्ष पुनरीक्षण'), per: L('60 days', '60 दिन'), from: L('The date of the order challenged', 'चुनौती दिए गए आदेश की तिथि') },
+  { ref: 'UP Revenue Code, 2006, s. 211', area: 'revenue', what: L('Review by the Board of Revenue', 'राजस्व परिषद द्वारा पुनर्विलोकन'), per: L('60 days', '60 दिन'), from: L('The date of the order', 'आदेश की तिथि') },
+  { ref: 'Income-tax Act, 1961, s. 249', area: 'tax', what: L('Appeal to the Commissioner (Appeals), for years under the 1961 Act', 'आयुक्त (अपील) को अपील, 1961 के अधिनियम के अधीन वर्षों के लिए'), per: L('30 days', '30 दिन'), from: L('Service of the notice of demand or the order', 'माँग-नोटिस या आदेश की तामील') },
+  { ref: 'Income-tax Act, 1961, s. 253(3)', area: 'tax', what: L('Appeal to the Income Tax Appellate Tribunal', 'आयकर अपीलीय अधिकरण में अपील'), per: L('60 days', '60 दिन'), from: L('The date the order is communicated', 'आदेश की सूचना की तिथि') },
+  { ref: 'CGST Act, 2017, s. 107', area: 'tax', what: L('First appeal against an adjudication order', 'न्यायनिर्णयन आदेश के विरुद्ध प्रथम अपील'), per: L('3 months', '3 माह'), from: L('Communication of the decision or order', 'निर्णय या आदेश की सूचना') },
+  { ref: 'Arbitration and Conciliation Act, 1996, s. 34(3)', area: 'adr', what: L('Application to set aside an arbitral award', 'पंचाट को अपास्त करने का आवेदन'), per: L('3 months + up to 30 days', '3 माह + अधिकतम 30 दिन'), from: L('Receipt of the award', 'पंचाट प्राप्त होना') },
+  { ref: 'Consumer Protection Act, 2019, s. 69', area: 'consumer', what: L('Complaint to a Consumer Commission', 'उपभोक्ता आयोग में परिवाद'), per: L('2 years', '2 वर्ष'), from: L('The date the cause of action arises', 'वाद-कारण उत्पन्न होने की तिथि') },
+  { ref: 'Code of Civil Procedure, Order VIII Rule 1', area: 'civil', what: L('Written statement by the defendant', 'प्रतिवादी का लिखित कथन'), per: L('30 days, extendable to 90 days', '30 दिन, 90 दिन तक बढ़ाया जा सकता है'), from: L('Service of summons', 'समन की तामील') }
+];
+const LIM_AREAS = [['all', L('All', 'सभी')], ['civil', L('Civil', 'दीवानी')], ['appeal', L('Appeals', 'अपीलें')], ['revenue', L('Revenue', 'राजस्व')], ['tax', L('Tax', 'कर')], ['adr', L('Arbitration', 'मध्यस्थता')], ['consumer', L('Consumer', 'उपभोक्ता')]];
+const LIM_PRINCIPLES = [
+  { ref: 'Limitation Act, 1963, s. 3', t: L('A suit, appeal or application made after the prescribed period must be dismissed, even if limitation is not set up as a defence.', 'निर्धारित अवधि के बाद किया गया वाद, अपील या आवेदन खारिज होना चाहिए, भले परिसीमा को बचाव के रूप में न उठाया गया हो।') },
+  { ref: 's. 5', t: L('An appeal or application (other than under Order XXI of the Code of Civil Procedure) may be admitted after the period if there was sufficient cause. It does not extend the period for filing a suit.', 'अपील या आवेदन (सिविल प्रक्रिया संहिता के आदेश XXI के अधीन आवेदन को छोड़कर) पर्याप्त कारण होने पर अवधि के बाद स्वीकार हो सकता है। यह वाद दाखिल करने की अवधि नहीं बढ़ाता।') },
+  { ref: 's. 12', t: L('In an appeal or application for leave to appeal, the day of the order, and the time needed to obtain a copy of the decree or order, are excluded.', 'अपील या अपील की अनुमति के आवेदन में आदेश का दिन, और डिक्री या आदेश की प्रति पाने में लगा समय, अपवर्जित है।') },
+  { ref: 's. 14', t: L('Time spent bona fide prosecuting another proceeding in a court without jurisdiction is excluded.', 'अधिकारहीन न्यायालय में सद्भावपूर्वक अन्य कार्यवाही चलाने में लगा समय अपवर्जित है।') },
+  { ref: 's. 18, s. 19', t: L('An acknowledgment of liability in writing, or a part payment, made before the period expires, starts a fresh period.', 'अवधि समाप्त होने से पहले दायित्व की लिखित स्वीकृति, या आंशिक भुगतान, नई अवधि आरंभ करता है।') }
+];
+const QUIZ = [
+  { q: L('A buyer wants to sue for specific performance of an agreement that fixed 30 June as the date of completion. Which period applies?', 'एक क्रेता उस करार के विनिर्दिष्ट पालन का वाद करना चाहता है जिसमें पूर्ति की तिथि 30 जून तय थी। कौन सी अवधि लागू होगी?'), o: [L('One year', 'एक वर्ष'), L('Three years from 30 June', '30 जून से तीन वर्ष'), L('Twelve years', 'बारह वर्ष')], a: 1, w: L('Article 54 gives three years from the date fixed for performance.', 'अनुच्छेद 54 पालन के लिए निश्चित तिथि से तीन वर्ष देता है।'), s: 'Limitation Act, 1963, Art. 54' },
+  { q: L('Which article governs a suit for possession of immovable property based on title?', 'स्वत्व पर आधारित अचल संपत्ति के कब्ज़े के वाद पर कौन सा अनुच्छेद लागू है?'), o: [L('Article 65, twelve years', 'अनुच्छेद 65, बारह वर्ष'), L('Article 113, three years', 'अनुच्छेद 113, तीन वर्ष'), L('Article 137, three years', 'अनुच्छेद 137, तीन वर्ष')], a: 0, w: L('Article 65: twelve years from when the defendant’s possession becomes adverse.', 'अनुच्छेद 65: प्रतिवादी का कब्ज़ा प्रतिकूल होने से बारह वर्ष।'), s: 'Limitation Act, 1963, Art. 65' },
+  { q: L('A Tahsildar passes a mutation order on 1 March. By when must an appeal reach the Sub-Divisional Officer?', 'तहसीलदार 1 मार्च को दाखिल-खारिज आदेश पारित करता है। उप-जिलाधिकारी के पास अपील कब तक पहुँचनी चाहिए?'), o: [L('Within 30 days of the order', 'आदेश से 30 दिन के भीतर'), L('Within 60 days of the order', 'आदेश से 60 दिन के भीतर'), L('There is no time limit', 'कोई समय-सीमा नहीं')], a: 0, w: L('Section 35(2) of the Revenue Code provides an appeal to the Sub-Divisional Officer within 30 days.', 'राजस्व संहिता की धारा 35(2) उप-जिलाधिकारी को 30 दिन में अपील का प्रावधान करती है।'), s: 'UP Revenue Code, 2006, s. 35(2)' },
+  { q: L('A second appeal in a revenue proceeding may be entertained only if:', 'राजस्व कार्यवाही में द्वितीय अपील तभी स्वीकार की जा सकती है जब:'), o: [L('The amount is large', 'राशि बड़ी हो'), L('It involves a substantial question of law', 'उसमें विधि का सारभूत प्रश्न हो'), L('The first appeal was dismissed', 'प्रथम अपील खारिज हुई हो')], a: 1, w: L('Section 208 requires the court to be satisfied that a substantial question of law is involved. The period is 90 days.', 'धारा 208 में न्यायालय का संतुष्ट होना आवश्यक है कि विधि का सारभूत प्रश्न शामिल है। अवधि 90 दिन है।'), s: 'UP Revenue Code, 2006, s. 208' },
+  { q: L('Time spent in a wrong court acting in good faith is:', 'सद्भाव से गलत न्यायालय में लगा समय:'), o: [L('Counted against the litigant', 'वादकारी के विरुद्ध गिना जाता है'), L('Excluded when counting limitation, on the conditions in section 14', 'धारा 14 की शर्तों पर परिसीमा गिनने में अपवर्जित होता है'), L('Ignored in all cases', 'सभी मामलों में अनदेखा किया जाता है')], a: 1, w: L('Section 14 excludes time spent bona fide in a court without jurisdiction, on its conditions.', 'धारा 14 अपनी शर्तों पर अधिकारहीन न्यायालय में सद्भाव से लगे समय को अपवर्जित करती है।'), s: 'Limitation Act, 1963, s. 14' },
+  { q: L('A tax appeal to the Income Tax Appellate Tribunal under the 1961 Act must be filed within:', '1961 के अधिनियम के अधीन आयकर अपीलीय अधिकरण में अपील कितने समय में दाखिल होनी चाहिए?'), o: [L('30 days of the order', 'आदेश से 30 दिन'), L('60 days of communication of the order', 'आदेश की सूचना से 60 दिन'), L('Six months', 'छह माह')], a: 1, w: L('Section 253(3): sixty days from the date the order is communicated.', 'धारा 253(3): आदेश की सूचना की तिथि से साठ दिन।'), s: 'Income-tax Act, 1961, s. 253(3)' }
+];
+
+/* Data: Ink & Equity Notes. Each carries sources and a review status. Bylines are left for the partners to assign. */
+const NOTES = [
+  {
+    slug: 'mutation-is-not-title', date: '2026-10-24', area: 'land-revenue',
+    title: L('Mutation is not title', 'दाखिल-खारिज स्वत्व नहीं है'),
+    dek: L('What a khatauni entry proves, what it does not, and where title is actually decided.', 'खतौनी की प्रविष्टि क्या सिद्ध करती है, क्या नहीं, और स्वत्व वास्तव में कहाँ तय होता है।'),
+    body: [
+      L('In Uttar Pradesh, a name entered in the khatauni after mutation is often treated as proof of ownership. The courts do not treat it that way. Mutation is a record kept for fiscal purposes: it shows who is to pay the land revenue and who is in possession according to the record. It does not decide who owns the land.',
+        'उत्तर प्रदेश में दाखिल-खारिज के बाद खतौनी में दर्ज नाम को अक्सर स्वामित्व का प्रमाण मान लिया जाता है। न्यायालय ऐसा नहीं मानते। दाखिल-खारिज राजकोषीय प्रयोजन का अभिलेख है: यह बताता है कि भू-राजस्व कौन देगा और अभिलेख के अनुसार कब्ज़ा किसका है। यह तय नहीं करता कि भूमि का स्वामी कौन है।'),
+      L('The Supreme Court has said this repeatedly. In Sawarni v. Inder Kaur it held that mutation proceedings are summary and neither create nor extinguish title. Balwant Singh v. Daulat Singh repeated that an entry in the revenue record carries no presumption of title. Suraj Bhan v. Financial Commissioner applied the same view and added that such an entry does not confer title on the person named.',
+        'सर्वोच्च न्यायालय ने यह बात बार-बार कही है। सावर्णी बनाम इंदर कौर में कहा गया कि दाखिल-खारिज की कार्यवाही संक्षिप्त है और स्वत्व न बनाती है, न समाप्त करती है। बलवंत सिंह बनाम दौलत सिंह में दोहराया गया कि राजस्व अभिलेख की प्रविष्टि से स्वत्व की कोई उपधारणा नहीं बनती। सूरज भान बनाम वित्तीय आयुक्त में यही दृष्टिकोण अपनाया गया और जोड़ा गया कि ऐसी प्रविष्टि नामित व्यक्ति को स्वत्व प्रदान नहीं करती।'),
+      L('Under the Uttar Pradesh Revenue Code, 2006 the sequence is statutory. A person who takes possession by succession reports it to the Revenue Inspector under section 33. A person who takes possession by transfer reports it to the Tahsildar under section 34. The Tahsildar acts under section 35 after a proclamation and inquiry, and an appeal lies to the Sub-Divisional Officer within 30 days. Section 37 bars a suit or proceeding in a revenue court until the report is made.',
+        'उत्तर प्रदेश राजस्व संहिता, 2006 में क्रम वैधानिक है। उत्तराधिकार से कब्ज़ा पाने वाला धारा 33 के अधीन राजस्व निरीक्षक को रिपोर्ट करता है। अंतरण से कब्ज़ा पाने वाला धारा 34 के अधीन तहसीलदार को रिपोर्ट करता है। तहसीलदार उद्घोषणा और जाँच के बाद धारा 35 के अधीन कार्रवाई करता है, और उप-जिलाधिकारी को 30 दिन में अपील होती है। रिपोर्ट किए जाने तक धारा 37 राजस्व न्यायालय में वाद या कार्यवाही को वर्जित करती है।'),
+      L('The practical point is that a mutation order does not settle a title dispute, and the absence of one does not end a title. A party whose rights rest on a sale deed, a will or a decree should keep those documents in order. Where title is genuinely in dispute, the remedy that decides it is needed, such as a declaratory suit: under section 144 a person claiming to be a bhumidhar or asami may sue for a declaration of rights in the holding. Mutation still matters, because a person who is not in the record meets practical obstacles in dealing with the land.',
+        'व्यावहारिक बात यह है कि दाखिल-खारिज का आदेश स्वत्व विवाद का निपटारा नहीं करता, और उसका अभाव स्वत्व समाप्त नहीं करता। जिसके अधिकार विक्रय-पत्र, वसीयत या डिक्री पर टिके हों, वह उन दस्तावेज़ों को व्यवस्थित रखे। जहाँ स्वत्व वास्तव में विवादित हो, वहाँ उसे तय करने वाला उपचार चाहिए, जैसे घोषणात्मक वाद: धारा 144 के अधीन भूमिधर या आसामी होने का दावा करने वाला जोत में अधिकारों की घोषणा के लिए वाद कर सकता है। दाखिल-खारिज फिर भी महत्त्वपूर्ण है, क्योंकि अभिलेख में नाम न होने पर भूमि के लेन-देन में व्यावहारिक बाधाएँ आती हैं।')
+    ],
+    src: [
+      ['Sawarni v. Inder Kaur, (1996) 6 SCC 223', null],
+      ['Balwant Singh v. Daulat Singh, (1997) 7 SCC 137', null],
+      ['Suraj Bhan v. Financial Commissioner, (2007) 6 SCC 186', null],
+      ['Uttar Pradesh Revenue Code, 2006, ss. 33, 34, 35, 37, 144', 'http://uprevenuecode.com/home/section_details/53']
+    ]
+  },
+  {
+    slug: 'writ-and-alternative-remedy', date: '2026-10-24', area: 'constitutional',
+    title: L('The writ and the alternative remedy', 'रिट और वैकल्पिक उपचार'),
+    dek: L('Why a High Court may refuse to hear a writ when an appeal exists, and the exceptions.', 'अपील उपलब्ध होने पर उच्च न्यायालय रिट सुनने से क्यों मना कर सकता है, और अपवाद क्या हैं।'),
+    body: [
+      L('A High Court has power under Article 226 to issue writs. It also follows a rule of its own making: it will ordinarily not entertain a writ petition where an effective alternative remedy exists. The rule is one of discretion. It is not a bar on the power.',
+        'उच्च न्यायालय को अनुच्छेद 226 के अधीन रिट जारी करने की शक्ति है। वह स्वयं बनाए एक नियम का भी पालन करता है: जहाँ प्रभावी वैकल्पिक उपचार हो, वहाँ वह सामान्यतः रिट याचिका स्वीकार नहीं करता। यह नियम विवेक का है। यह शक्ति पर रोक नहीं है।'),
+      L('In Whirlpool Corporation v. Registrar of Trade Marks the Supreme Court listed the situations in which a writ may be entertained despite an alternative remedy: enforcement of a fundamental right, violation of the principles of natural justice, an order or proceeding wholly without jurisdiction, and a challenge to the vires of an Act. Harbanslal Sahnia v. Indian Oil Corporation Ltd followed it and described the rule as one of self-imposed restraint.',
+        'व्हर्लपूल कॉरपोरेशन बनाम रजिस्ट्रार ऑफ ट्रेड मार्क्स में सर्वोच्च न्यायालय ने वे स्थितियाँ गिनाईं जिनमें वैकल्पिक उपचार होने पर भी रिट स्वीकार हो सकती है: मौलिक अधिकार का प्रवर्तन, नैसर्गिक न्याय के सिद्धांतों का उल्लंघन, पूरी तरह क्षेत्राधिकार-रहित आदेश या कार्यवाही, और किसी अधिनियम की वैधता को चुनौती। हरबंसलाल साहनिया बनाम इंडियन ऑयल कॉरपोरेशन ने इसका अनुसरण किया और इसे स्व-आरोपित संयम का नियम बताया।'),
+      L('In tax matters the Court has been firm. In Commissioner of Income Tax v. Chhabil Dass Agarwal it held that where a statute provides a complete machinery of appeal, the High Court should not ordinarily bypass it, and that the petitioner must show an exceptional circumstance.',
+        'कर मामलों में न्यायालय दृढ़ रहा है। आयकर आयुक्त बनाम छबिल दास अग्रवाल में कहा गया कि जहाँ कानून अपील की पूर्ण व्यवस्था देता है, वहाँ उच्च न्यायालय को सामान्यतः उसे लाँघना नहीं चाहिए, और याचिकाकर्ता को असाधारण परिस्थिति दिखानी होगी।'),
+      L('For a litigant the lesson is to read the order first for the remedy it points to. If a statutory appeal exists, use it within time. If a writ is still the right course, the petition should say why in the grounds, by reference to one of the recognised exceptions.',
+        'वादकारी के लिए सीख यह है कि पहले आदेश में यह देखें कि वह किस उपचार की ओर इंगित करता है। यदि वैधानिक अपील है तो समय के भीतर उसका प्रयोग करें। यदि रिट फिर भी सही मार्ग है, तो याचिका के आधारों में मान्य अपवादों में से किसी का हवाला देकर कारण बताना चाहिए।')
+    ],
+    src: [
+      ['Whirlpool Corporation v. Registrar of Trade Marks, (1998) 8 SCC 1', null],
+      ['Harbanslal Sahnia v. Indian Oil Corporation Ltd, (2003) 2 SCC 107', null],
+      ['Commissioner of Income Tax v. Chhabil Dass Agarwal, (2014) 1 SCC 603', null],
+      ['Constitution of India, Art. 226', null]
+    ]
+  },
+  {
+    slug: 'counting-limitation', date: '2026-10-24', area: 'civil',
+    title: L('Counting limitation without surprises', 'परिसीमा बिना चूक के गिनना'),
+    dek: L('Five provisions that change the count, and one case where extension is not available.', 'पाँच प्रावधान जो गणना बदलते हैं, और एक मामला जिसमें विस्तार उपलब्ध नहीं।'),
+    body: [
+      L('Limitation is counted from the day the right to sue or appeal accrues, and the period is fixed by the Schedule to the Limitation Act, 1963. Article 113 supplies three years for any suit for which no period is provided elsewhere.',
+        'परिसीमा उस दिन से गिनी जाती है जब वाद या अपील का अधिकार उत्पन्न होता है, और अवधि परिसीमा अधिनियम, 1963 की अनुसूची से तय होती है। अनुच्छेद 113 उन सभी वादों के लिए तीन वर्ष देता है जिनके लिए अन्यत्र अवधि न दी गई हो।'),
+      L('Five provisions change the count in practice. Section 12 excludes the day of the order appealed from and the time needed to obtain a copy. Section 14 excludes time spent in good faith in a court that had no jurisdiction. Sections 18 and 19 start a fresh period when liability is acknowledged in writing or a part payment is made before the period expires. Section 5 allows delay in an appeal or application to be condoned for sufficient cause, but it does not apply to suits.',
+        'व्यवहार में पाँच प्रावधान गणना बदलते हैं। धारा 12 जिस आदेश की अपील है उसका दिन और प्रति पाने में लगा समय अपवर्जित करती है। धारा 14 अधिकारहीन न्यायालय में सद्भाव से लगा समय अपवर्जित करती है। धारा 18 और 19 अवधि समाप्त होने से पहले दायित्व की लिखित स्वीकृति या आंशिक भुगतान होने पर नई अवधि आरंभ करती हैं। धारा 5 अपील या आवेदन में विलंब को पर्याप्त कारण पर क्षमा करने देती है, पर वादों पर लागू नहीं होती।'),
+      L('Some statutes carry their own limit and exclude section 5. In Union of India v. Popular Construction Co. the Supreme Court held that section 5 does not apply to an application to set aside an arbitral award, because section 34(3) of the Arbitration and Conciliation Act, 1996 fixes three months and allows only a further thirty days.',
+        'कुछ कानूनों की अपनी सीमा होती है और वे धारा 5 को बाहर रखते हैं। यूनियन ऑफ इंडिया बनाम पॉपुलर कंस्ट्रक्शन कंपनी में सर्वोच्च न्यायालय ने कहा कि पंचाट को अपास्त करने के आवेदन पर धारा 5 लागू नहीं होती, क्योंकि मध्यस्थता और सुलह अधिनियम, 1996 की धारा 34(3) तीन माह देती है और केवल तीस दिन और।'),
+      L('A reliable habit is to write the dates down at the first meeting: the date of the order, the date the copy was applied for, the date it was received and the date the period ends. The limitation reference on this site lists the common periods, each with its provision.',
+        'एक भरोसेमंद आदत है पहली बैठक में ही तिथियाँ लिख लेना: आदेश की तिथि, प्रति के लिए आवेदन की तिथि, प्रति मिलने की तिथि और अवधि समाप्त होने की तिथि। इस साइट का परिसीमा संदर्भ सामान्य अवधियों को उनके प्रावधान सहित देता है।')
+    ],
+    src: [
+      ['Limitation Act, 1963, ss. 3, 5, 12, 14, 18, 19 and Art. 113', null],
+      ['Union of India v. Popular Construction Co., (2001) 8 SCC 470', null],
+      ['Arbitration and Conciliation Act, 1996, s. 34(3)', null]
+    ]
+  },
+  {
+    slug: 'bail-under-bnss', date: '2026-10-24', area: 'criminal',
+    title: L('Bail under the BNSS: where to look', 'बीएनएसएस में जमानत: कहाँ देखें'),
+    dek: L('The sections that moved, two Supreme Court decisions on arrest and anticipatory bail, and a drafting habit.', 'जो धाराएँ बदलीं, गिरफ़्तारी और अग्रिम जमानत पर सर्वोच्च न्यायालय के दो निर्णय, और प्रारूपण की एक आदत।'),
+    body: [
+      L('The Bharatiya Nagarik Suraksha Sanhita, 2023 replaced the Code of Criminal Procedure from 1 July 2024. The bail provisions kept their structure but were renumbered.',
+        'भारतीय नागरिक सुरक्षा संहिता, 2023 ने 1 जुलाई 2024 से दंड प्रक्रिया संहिता का स्थान लिया। जमानत के प्रावधानों की संरचना वही रही, पर उनके क्रमांक बदल गए।'),
+      L('Section 480 deals with bail in non-bailable offences. Section 482 deals with anticipatory bail, a direction to release a person on bail if arrested. Section 483 gives special powers on bail to the High Court and the Court of Session. Section 479 limits the detention of undertrial prisoners: a person who has served a stated fraction of the maximum sentence may be released on bail, with a lower fraction for a first offender. The fractions and the exceptions are in the section itself.',
+        'धारा 480 अजमानतीय अपराधों में जमानत से संबंधित है। धारा 482 अग्रिम जमानत से संबंधित है, यानी गिरफ़्तारी की स्थिति में जमानत पर छोड़ने का निर्देश। धारा 483 उच्च न्यायालय और सत्र न्यायालय को जमानत की विशेष शक्तियाँ देती है। धारा 479 विचाराधीन बंदियों की निरुद्धि सीमित करती है: अधिकतम दंड का निर्धारित अंश भोग चुका व्यक्ति जमानत पर छोड़ा जा सकता है, प्रथम अपराधी के लिए छोटा अंश। अंश और अपवाद धारा में ही हैं।'),
+      L('On arrest, section 35 requires the police, in the cases it lists, to issue a notice of appearance rather than arrest. In Arnesh Kumar v. State of Bihar the Supreme Court held that arrest should not be automatic in offences punishable up to seven years, and that the police must record their reasons.',
+        'गिरफ़्तारी के समय धारा 35 उन मामलों में, जो उसमें गिनाए गए हैं, पुलिस से गिरफ़्तारी के बजाय उपस्थिति का नोटिस जारी करने की अपेक्षा करती है। अरनेश कुमार बनाम बिहार राज्य में सर्वोच्च न्यायालय ने कहा कि सात वर्ष तक के दंडनीय अपराधों में गिरफ़्तारी स्वतः नहीं होनी चाहिए, और पुलिस को कारण दर्ज करने होंगे।'),
+      L('In Sushila Aggarwal v. State (NCT of Delhi) the Court held that anticipatory bail need not, as a rule, be limited in time, though a court may impose conditions in a given case.',
+        'सुशीला अग्रवाल बनाम राज्य (दिल्ली) में न्यायालय ने कहा कि अग्रिम जमानत सामान्यतः समय-सीमित होना आवश्यक नहीं, यद्यपि किसी मामले में न्यायालय शर्तें लगा सकता है।'),
+      L('In any new application, cite the section numbers of the Sanhita. Mention the Code equivalent only where an older judgment is relied on.',
+        'किसी भी नए आवेदन में संहिता की धारा संख्याएँ उद्धृत करें। पुरानी संहिता का समतुल्य केवल तभी बताएँ जब किसी पुराने निर्णय पर भरोसा हो।')
+    ],
+    src: [
+      ['Bharatiya Nagarik Suraksha Sanhita, 2023, ss. 35, 479, 480, 482, 483', null],
+      ['Arnesh Kumar v. State of Bihar, (2014) 8 SCC 273', null],
+      ['Sushila Aggarwal v. State (NCT of Delhi), (2020) 5 SCC 1', null]
+    ]
+  },
+  {
+    slug: 'which-income-tax-act', date: '2026-10-24', area: 'tax',
+    title: L('Which Income-tax Act does my notice come under?', 'मेरा नोटिस किस आयकर अधिनियम के अधीन है?'),
+    dek: L('The year decides the Act, and the Act decides the section numbers.', 'वर्ष तय करता है कि कौन सा अधिनियम, और अधिनियम तय करता है कि कौन सी धारा।'),
+    body: [
+      L('The Income-tax Act, 2025 came into force on 1 April 2026. It has 536 sections against the 819 of the 1961 Act, and it applies from Tax Year 2026-27 onward. Earlier years, including financial year 2025-26, continue under the 1961 Act.',
+        'आयकर अधिनियम, 2025 1 अप्रैल 2026 से लागू हुआ। इसमें 536 धाराएँ हैं, जबकि 1961 के अधिनियम में 819 थीं, और यह कर वर्ष 2026-27 से लागू है। पूर्व वर्ष, वित्त वर्ष 2025-26 सहित, 1961 के अधिनियम के अधीन चलते हैं।'),
+      L('A notice received now can therefore cite either Act, and the section numbers differ. The return of income, section 139 of the old Act, is section 263 of the new one. The new tax regime, section 115BAC, is section 202. One source reports reassessment, sections 147 to 151A, as section 279 and marks it for verification. For other sections published tables disagree, so check the enacted text and the concordance notified by the Central Board of Direct Taxes.',
+        'इसलिए अब मिलने वाला नोटिस किसी भी अधिनियम का हवाला दे सकता है, और धारा संख्याएँ अलग हैं। आय का विवरणी, पुराने अधिनियम की धारा 139, नए में धारा 263 है। नई कर व्यवस्था, धारा 115BAC, धारा 202 है। एक स्रोत पुनर्निर्धारण, धाराएँ 147 से 151A, को धारा 279 बताता है और उसे सत्यापन के लिए चिह्नित करता है। अन्य धाराओं पर प्रकाशित तालिकाएँ भिन्न हैं, इसलिए अधिनियमित पाठ और केंद्रीय प्रत्यक्ष कर बोर्ड द्वारा अधिसूचित समतुल्यता तालिका देखें।'),
+      L('Check the notice first. The Income Tax Department offers an Authenticate Notice/Order check that needs no login. Communications issued since 1 October 2019 carry a Document Identification Number.',
+        'पहले नोटिस की जाँच करें। आयकर विभाग बिना लॉगिन के ‘नोटिस/आदेश प्रमाणित करें’ सुविधा देता है। 1 अक्टूबर 2019 के बाद जारी संचार में दस्तावेज़ पहचान संख्या होती है।'),
+      L('Then note the year, the Act, the section cited and the date by which a reply is asked. The Notice Decoder, a companion site, follows these steps.',
+        'फिर वर्ष, अधिनियम, उद्धृत धारा और उत्तर की माँगी गई तिथि लिख लें। सहयोगी साइट नोटिस डिकोडर इन्हीं चरणों का अनुसरण करती है।')
+    ],
+    src: [
+      ['TaxGuru: Income-tax Act 2025 vs 1961 section mapping', 'https://taxguru.in/income-tax/income-tax-act-2025-1961-section-mapping-cheat-sheet-sections-day.html'],
+      ['Income Tax Department: Authenticate Notice/Order FAQ', 'https://www.incometax.gov.in/iec/foportal/help/authenticate-notice-faq']
+    ]
+  }
+];
+
+/* Data: people, family of sites, contact facts, navigation. Facts come from the firm's published pages and the brief. */
+const PEOPLE = [
+  {
+    slug: 'rishabh-raj', name: 'Rishabh Raj', ini: 'R',
+    role: L('Founding Partner', 'संस्थापक भागीदार'),
+    areas: [L('Civil and land matters', 'दीवानी और भूमि मामले'), L('Land and revenue', 'भूमि और राजस्व'), L('Service matters', 'सेवा मामले'), L('Constitutional writs', 'संवैधानिक रिट')],
+    quals: ['BBA LLB, Symbiosis Law School, Noida', 'St. Francis College', 'Enrolled 2018'],
+    bars: ['Oudh Bar Association', 'Supreme Court Bar Association', 'Central Bar Association, Lucknow'],
+    line: L('Founder of the firm, practising civil, land and revenue, service and constitutional writ matters.', 'फर्म के संस्थापक; दीवानी, भूमि और राजस्व, सेवा तथा संवैधानिक रिट मामलों में कार्यरत।')
+  },
+  {
+    slug: 'vedant-bhargav', name: 'Vedant Bhargav', ini: 'V',
+    role: L('Managing Partner', 'प्रबंध भागीदार'),
+    areas: [L('Case management and firm operations', 'मामला प्रबंधन और फर्म संचालन')],
+    quals: [], bars: [],
+    line: L('Co-founder of the firm and its managing partner.', 'फर्म के सह-संस्थापक और प्रबंध भागीदार।')
+  },
+  {
+    slug: 'radhika-singh', name: 'Radhika Singh', ini: 'R',
+    role: L('Partner', 'भागीदार'),
+    areas: [L('Tax', 'कर'), L('Constitutional law', 'संवैधानिक विधि'), L('Service law', 'सेवा विधि')],
+    quals: [], bars: [],
+    line: L('Partner practising tax, constitutional and service law.', 'कर, संवैधानिक और सेवा विधि में कार्यरत भागीदार।')
+  },
+  {
+    slug: 'hanumant-lal-srivastava', name: 'Hanumant Lal Srivastava', ini: 'H',
+    role: L('Partner', 'भागीदार'),
+    areas: [L('Trial-court practice', 'विचारण न्यायालय में वकालत')],
+    quals: [], bars: [],
+    line: L('Partner practising before the trial courts.', 'विचारण न्यायालयों में कार्यरत भागीदार।')
+  }
+];
+const PBYSLUG = Object.fromEntries(PEOPLE.map(p => [p.slug, p]));
+
+/* Addresses of the companion sites. Filled in when the pages are published. */
+const LINKS = { land: 'https://claude.ai/artifact/EeQKJBNL1qhALGKVP73FoR', decoder: 'https://claude.ai/artifact/E7nYdjaMQSHqt8aDQV8h4S', dive: 'https://claude.ai/artifact/HHfMSSZSBAYD4tWw5NVRUw', century: 'https://claude.ai/artifact/ViNzFSzEmnJfcZrtfxz15G' };
+const FAMILY = [
+  { key: 'land', name: L('UP Land and Revenue Library', 'उ.प्र. भूमि एवं राजस्व पुस्तकालय'), addr: 'ieqlaw.com/bhoomi', desc: L('Hindi-first guides to mutation, partition, succession and revenue appeals, each citing its provision.', 'दाखिल-खारिज, बँटवारा, उत्तराधिकार और राजस्व अपीलों पर हिंदी-प्रथम मार्गदर्शिकाएँ, हर एक अपने प्रावधान सहित।') },
+  { key: 'decoder', name: L('Notice Decoder', 'नोटिस डिकोडर'), addr: 'noticedecoder.in', desc: L('Income-tax and GST notices in plain language, from the notice in hand to the appeal route.', 'आयकर और जीएसटी नोटिस सरल भाषा में, हाथ में रखे नोटिस से अपील के मार्ग तक।') },
+  { key: 'dive', name: L('Academy Dive', 'एकेडमी डाइव'), addr: 'academydive.in', desc: L('A twelve-module course in courtroom practice, with a certificate anyone can verify.', 'न्यायालय-कार्य पर बारह मॉड्यूल का पाठ्यक्रम, ऐसे प्रमाणपत्र के साथ जिसे कोई भी सत्यापित कर सके।') },
+  { key: 'century', name: L('A Century at the Bench', 'ए सेंचुरी एट द बेंच'), addr: 'lucknowbenchvoices.in', desc: L('An oral-history and photo archive of the Lucknow Bench and its Bar, convened by Ram Raj Singh.', 'लखनऊ पीठ और उसके अधिवक्ता-वर्ग का मौखिक-इतिहास और छायाचित्र संग्रह, राम राज सिंह द्वारा संयोजित।') }
+];
+
+const CONTACT = {
+  addr: '1, Moti Mahal Marg, Hazratganj, Lucknow, Uttar Pradesh',
+  phone: '+91 9450 72 7289',
+  hours: [
+    [L('Monday to Friday', 'सोमवार से शुक्रवार'), '6:30 PM to 9:00 PM'],
+    [L('Saturday', 'शनिवार'), '11:00 AM to 1:00 PM'],
+    [L('Sunday', 'रविवार'), '11:00 AM to 4:00 PM']
+  ],
+  map: 'https://www.google.com/maps/search/?api=1&query=1+Moti+Mahal+Marg+Hazratganj+Lucknow'
+};
+
+const NAV = [
+  ['practice', L('Practice', 'कार्यक्षेत्र')],
+  ['fora', L('Fora', 'न्यायालय-क्रम')],
+  ['people', L('People', 'जन')],
+  ['notes', L('Notes', 'टिप्पणियाँ')],
+  ['resources', L('Resources', 'संसाधन')],
+  ['contact', L('Contact', 'संपर्क')]
+];
+
+/* Data: lexicon of legal phrases and words of the kachahri */
+const LEX = [
+  { g: 'latin', t: 'Audi alteram partem', m: L('Hear the other side.', 'दूसरे पक्ष को भी सुनें।'), w: L('The first rule of natural justice: no order that affects a person should be passed without notice and a chance to answer.', 'नैसर्गिक न्याय का पहला नियम: किसी को प्रभावित करने वाला आदेश उसे सूचना और उत्तर का अवसर दिए बिना पारित नहीं होना चाहिए।') },
+  { g: 'latin', t: 'Nemo judex in causa sua', m: L('No one should be a judge in his own cause.', 'कोई अपने ही मामले में न्यायाधीश न हो।'), w: L('The rule against bias. A decision-maker with an interest in the outcome should not decide.', 'पक्षपात के विरुद्ध नियम। परिणाम में हित रखने वाला निर्णयकर्ता निर्णय न करे।') },
+  { g: 'latin', t: 'Ubi jus ibi remedium', m: L('Where there is a right, there is a remedy.', 'जहाँ अधिकार है, वहाँ उपचार है।'), w: L('Behind the idea that a legal wrong should have a forum.', 'इस विचार के पीछे कि विधिक अनुचित कार्य के लिए कोई मंच होना चाहिए।') },
+  { g: 'latin', t: 'Res judicata', m: L('A matter already decided.', 'पहले ही निर्णीत मामला।'), w: L('A court will not try again a matter directly and substantially in issue in an earlier suit between the same parties. See section 11 of the Code of Civil Procedure.', 'न्यायालय उस मामले का फिर विचारण नहीं करेगा जो उन्हीं पक्षों के पहले वाद में प्रत्यक्षतः और सारतः विवादित था। सिविल प्रक्रिया संहिता की धारा 11 देखें।') },
+  { g: 'latin', t: 'Lis pendens', m: L('A pending suit.', 'लंबित वाद।'), w: L('Section 52 of the Transfer of Property Act, 1882: a transfer of the property in suit during its pendency does not affect the rights decided in the suit.', 'संपत्ति अंतरण अधिनियम, 1882 की धारा 52: वाद-ग्रस्त संपत्ति का लंबन के दौरान अंतरण वाद में तय अधिकारों को प्रभावित नहीं करता।') },
+  { g: 'latin', t: 'Sub judice', m: L('Under judicial consideration.', 'न्यायिक विचाराधीन।'), w: L('A matter before a court and not yet decided.', 'न्यायालय के समक्ष मामला जो अभी तय नहीं हुआ।') },
+  { g: 'latin', t: 'Ultra vires', m: L('Beyond powers.', 'शक्तियों से परे।'), w: L('An act done beyond the authority the law gives. A common ground in writ petitions.', 'विधि द्वारा दिए अधिकार से परे किया गया कार्य। रिट याचिकाओं में सामान्य आधार।') },
+  { g: 'latin', t: 'Locus standi', m: L('A place to stand.', 'खड़े होने का स्थान।'), w: L('The right of a person to approach a court because his rights are affected.', 'किसी व्यक्ति का न्यायालय जाने का अधिकार क्योंकि उसके अधिकार प्रभावित हैं।') },
+  { g: 'latin', t: 'Prima facie', m: L('At first sight.', 'प्रथम दृष्टया।'), w: L('A case that stands unless contradicted. Used for interim orders: a prima facie case, balance of convenience and irreparable harm.', 'ऐसा मामला जो खंडन न होने तक टिकता है। अंतरिम आदेशों में: प्रथम दृष्टया मामला, सुविधा का संतुलन और अपूरणीय क्षति।') },
+  { g: 'latin', t: 'Mens rea', m: L('A guilty mind.', 'दोषी मन।'), w: L('The mental element of an offence, such as intention, knowledge or negligence.', 'अपराध का मानसिक तत्त्व, जैसे आशय, ज्ञान या उपेक्षा।') },
+  { g: 'latin', t: 'Actus reus', m: L('A guilty act.', 'दोषपूर्ण कृत्य।'), w: L('The physical element of an offence.', 'अपराध का शारीरिक तत्त्व।') },
+  { g: 'latin', t: 'Ex parte', m: L('From one side only.', 'केवल एक पक्ष की ओर से।'), w: L('An order passed in the absence of the other party. See section 209 of the UP Revenue Code for setting one aside in revenue matters.', 'दूसरे पक्ष की अनुपस्थिति में पारित आदेश। राजस्व मामलों में उसे अपास्त करने के लिए उ.प्र. राजस्व संहिता की धारा 209 देखें।') },
+  { g: 'latin', t: 'Ratio decidendi', m: L('The reason for the decision.', 'निर्णय का कारण।'), w: L('The principle of law on which a case is decided. It binds as precedent.', 'विधि का वह सिद्धांत जिस पर मामला तय होता है। यह नज़ीर के रूप में बाध्यकारी होता है।') },
+  { g: 'latin', t: 'Obiter dictum', m: L('A thing said in passing.', 'प्रसंगवश कही गई बात।'), w: L('Remarks in a judgment that were not necessary to the decision. They may persuade but do not bind.', 'निर्णय की वे टिप्पणियाँ जो निर्णय के लिए आवश्यक नहीं थीं। वे प्रेरक हो सकती हैं, बाध्यकारी नहीं।') },
+  { g: 'latin', t: 'Stare decisis', m: L('To stand by what has been decided.', 'जो तय हो चुका उस पर टिके रहना।'), w: L('The doctrine of precedent. Under Article 141 the law declared by the Supreme Court binds all courts.', 'नज़ीर का सिद्धांत। अनुच्छेद 141 के अधीन सर्वोच्च न्यायालय द्वारा घोषित विधि सभी न्यायालयों पर बाध्यकारी है।') },
+  { g: 'latin', t: 'Per incuriam', m: L('Through lack of care.', 'असावधानी से।'), w: L('A decision given in ignorance of a binding statute or precedent, which may not be followed.', 'बाध्यकारी कानून या नज़ीर की अनदेखी में दिया गया निर्णय, जिसका अनुसरण आवश्यक नहीं।') },
+  { g: 'latin', t: 'Functus officio', m: L('Having discharged the office.', 'पद का कार्य पूर्ण कर चुका।'), w: L('Once a court has finally decided, it cannot ordinarily reopen the matter except as the law allows, as by review.', 'एक बार अंतिम निर्णय देने के बाद न्यायालय सामान्यतः मामला नहीं खोल सकता, सिवाय जैसा विधि अनुमति दे, जैसे पुनर्विलोकन।') },
+  { g: 'latin', t: 'Bona fide', m: L('In good faith.', 'सद्भाव से।'), w: L('Section 14 of the Limitation Act excludes time spent bona fide in a wrong court.', 'परिसीमा अधिनियम की धारा 14 गलत न्यायालय में सद्भाव से लगे समय को अपवर्जित करती है।') },
+  { g: 'latin', t: 'Mutatis mutandis', m: L('With the necessary changes.', 'आवश्यक परिवर्तनों सहित।'), w: L('Used when a rule is applied to another case with the changes the new case needs.', 'जब किसी नियम को दूसरे मामले पर आवश्यक परिवर्तनों के साथ लागू किया जाए।') },
+  { g: 'latin', t: 'Ejusdem generis', m: L('Of the same kind.', 'उसी प्रकार का।'), w: L('General words after a list of specific things are read as covering things of the same kind.', 'विशिष्ट वस्तुओं की सूची के बाद के सामान्य शब्द उसी प्रकार की वस्तुओं को ही समाविष्ट करते हैं।') },
+  { g: 'latin', t: 'Amicus curiae', m: L('Friend of the court.', 'न्यायालय का मित्र।'), w: L('A person who assists the court on a question without being a party.', 'वह व्यक्ति जो पक्षकार बने बिना किसी प्रश्न पर न्यायालय की सहायता करता है।') },
+  { g: 'latin', t: 'Suo motu', m: L('On its own motion.', 'स्वप्रेरणा से।'), w: L('Action taken by a court without a petition being filed.', 'याचिका दाखिल हुए बिना न्यायालय द्वारा की गई कार्रवाई।') },
+  { g: 'latin', t: 'Status quo ante', m: L('The position as it was before.', 'पहले की स्थिति।'), w: L('An interim direction to restore or keep the earlier position.', 'पहले की स्थिति बहाल करने या बनाए रखने का अंतरिम निर्देश।') },
+  { g: 'writ', t: 'Habeas corpus', m: L('You shall have the body.', 'तुम शरीर प्रस्तुत करो।'), w: L('A writ to produce a detained person and justify the detention. Articles 32 and 226.', 'निरुद्ध व्यक्ति को प्रस्तुत करने और निरुद्धि का औचित्य बताने की रिट। अनुच्छेद 32 और 226।') },
+  { g: 'writ', t: 'Mandamus', m: L('We command.', 'हम आदेश देते हैं।'), w: L('A writ directing a public authority to perform a public duty.', 'लोक प्राधिकारी को लोक कर्तव्य निभाने का निर्देश देने वाली रिट।') },
+  { g: 'writ', t: 'Certiorari', m: L('To be informed.', 'सूचित होने के लिए।'), w: L('A writ to call up and quash the order of a lower court or tribunal for jurisdictional or legal error.', 'क्षेत्राधिकार या विधि की त्रुटि पर निचले न्यायालय या अधिकरण के आदेश को मँगाकर रद्द करने की रिट।') },
+  { g: 'writ', t: 'Prohibition', m: L('A bar.', 'निषेध।'), w: L('A writ to stop a lower court or tribunal from exceeding its jurisdiction.', 'निचले न्यायालय या अधिकरण को क्षेत्राधिकार से बाहर जाने से रोकने की रिट।') },
+  { g: 'writ', t: 'Quo warranto', m: L('By what authority.', 'किस अधिकार से।'), w: L('A writ to ask a person holding a public office by what authority he holds it.', 'लोक पद धारण करने वाले से पूछने की रिट कि वह किस अधिकार से पद धारण करता है।') },
+  { g: 'kachahri', t: 'Vakalatnama', m: L('The document by which a client authorises an advocate to act.', 'वह दस्तावेज़ जिससे मुवक्किल अधिवक्ता को कार्य करने का अधिकार देता है।'), w: L('Signed and filed with the first appearance in a case.', 'मामले में पहली उपस्थिति के साथ हस्ताक्षरित होकर दाखिल होता है।') },
+  { g: 'kachahri', t: 'Peshi', m: L('A hearing date; appearance before the court.', 'सुनवाई की तिथि; न्यायालय के समक्ष उपस्थिति।'), w: L('“Peshi hai” means the matter is listed on that day.', '“पेशी है” का अर्थ है कि मामला उस दिन सूचीबद्ध है।') },
+  { g: 'kachahri', t: 'Peshkar', m: L('The court clerk who keeps the case record and calls the matter.', 'न्यायालय का लिपिक जो मामले का अभिलेख रखता और मामला पुकारता है।'), w: L('Revenue and civil courts both have one.', 'राजस्व और दीवानी दोनों न्यायालयों में होता है।') },
+  { g: 'kachahri', t: 'Naqal', m: L('A copy, especially a certified copy of an order or record.', 'प्रति, विशेषकर आदेश या अभिलेख की प्रमाणित प्रति।'), w: L('Time taken to obtain one is excluded when counting limitation for an appeal (section 12, Limitation Act).', 'अपील की परिसीमा गिनते समय इसे पाने में लगा समय अपवर्जित होता है (परिसीमा अधिनियम, धारा 12)।') },
+  { g: 'kachahri', t: 'Tarikh', m: L('The next date fixed in a case.', 'मामले में नियत अगली तिथि।'), w: L('“Next tarikh” is the date on which the court will take up the matter again.', '“अगली तारीख़” वह दिन है जब न्यायालय मामले को फिर उठाएगा।') },
+  { g: 'kachahri', t: 'Khatauni', m: L('The record of rights of a village.', 'गाँव का अधिकार-अभिलेख।'), w: L('Maintained under section 31 of the UP Revenue Code, 2006.', 'उ.प्र. राजस्व संहिता, 2006 की धारा 31 के अधीन रखा जाता है।') },
+  { g: 'kachahri', t: 'Khasra', m: L('The field book listing each plot with its number, area and use.', 'खेत-बही जिसमें हर भूखंड का नंबर, क्षेत्रफल और उपयोग दर्ज होता है।'), w: L('Read together with the khatauni and the map.', 'खतौनी और नक़्शे के साथ पढ़ा जाता है।') },
+  { g: 'kachahri', t: 'Dakhil-kharij', m: L('Mutation: entering a new name and striking out the old.', 'दाखिल-खारिज: नया नाम दर्ज करना और पुराना काटना।'), w: L('Sections 33 to 35 of the UP Revenue Code, 2006.', 'उ.प्र. राजस्व संहिता, 2006 की धाराएँ 33 से 35।') },
+  { g: 'kachahri', t: 'Hazri', m: L('Presence; marking of appearance.', 'उपस्थिति; उपस्थिति दर्ज करना।'), w: L('An advocate marks hazri when a matter is called.', 'मामला पुकारे जाने पर अधिवक्ता हाज़िरी दर्ज कराता है।') }
+];
+const LEX_G = [['all', L('All', 'सभी')], ['latin', L('Phrases', 'पदावली')], ['writ', L('Writs', 'रिट')], ['kachahri', L('Words of the kachahri', 'कचहरी के शब्द')]];
+const S_lex = { q: '', g: 'all' };
+function lexRows() {
+  const q = S_lex.q.trim().toLowerCase();
+  return LEX.filter(x => (S_lex.g === 'all' || x.g === S_lex.g) && (!q || (x.t + ' ' + x.m.en + ' ' + x.m.hi + ' ' + x.w.en).toLowerCase().includes(q)));
+}
+function lexGrid() {
+  const rows = lexRows();
+  if (!rows.length) return `<div class="frame"><b>${esc(t(L('No match', 'कोई मेल नहीं')))}</b>${esc(t(L('Try one word of the term or its meaning.', 'शब्द या उसके अर्थ का एक शब्द आज़माएँ।')))}</div>`;
+  return `<div class="notes">${rows.map(x => `<div class="note" style="cursor:default"><small>${esc(t((LEX_G.find(g => g[0] === x.g) || [0, L('', '')])[1]))}</small><h3>${esc(x.t)}</h3><span><b>${esc(t(x.m))}</b></span><span style="color:var(--fg2);font-size:15.5px">${esc(t(x.w))}</span></div>`).join('')}</div>`;
+}
+function vLexicon() {
+  return runhead([['home', L('Home', 'मुख्य')], [null, L('Lexicon', 'शब्दकोश')]], true) + report(`
+  <h1 class="page-title">${esc(t(L('Lexicon', 'शब्दकोश')))}</h1>
+  <div class="headnote"><b>${esc(t(L('Headnote', 'सारांश')))}</b><p>${esc(t(L('Legal phrases, the five writs and the words heard in the kachahri, each with its meaning and where it meets the statute.', 'विधिक पदावली, पाँच रिट और कचहरी में सुने जाने वाले शब्द, हर एक अपने अर्थ और कानून से संबंध सहित।')))}</p></div>
+  <div class="ltools"><input id="lexq" type="search" placeholder="${esc(t(L('Search: res judicata, naqal, writ…', 'खोजें: रेस ज्यूडिकेटा, नक़ल, रिट…')))}" value="${esc(S_lex.q)}" aria-label="${esc(t(L('Search the lexicon', 'शब्दकोश में खोजें')))}"></div>
+  <div class="streams" role="group">${LEX_G.map(([k, l]) => `<button class="chip" data-act="lexg" data-arg="${k}" aria-pressed="${S_lex.g === k}">${esc(t(l))}</button>`).join('')}</div>
+  <div id="lexgrid">${lexGrid()}</div>`, mg(L('About this page', 'इस पृष्ठ के बारे में'), `<p>${esc(t(L('Meanings are general. Where a term depends on a statute, the section is named.', 'अर्थ सामान्य हैं। जहाँ कोई शब्द किसी कानून पर निर्भर है, वहाँ धारा का नाम दिया गया है।')))}</p>`));
+}
+
+/* State, helpers and views */
+const S = { lang: 'en', route: 'home', stream: 'civil', rung: 0, limArea: 'all', limQ: '', quiz: { i: 0, ans: null, score: 0, done: false }, pp: 0, menu: false, preview: '' };
+try { const sl = localStorage.getItem('ieq-lang'); if (sl === 'hi' || sl === 'en') S.lang = sl; } catch (e) {}
+const t = o => (o && typeof o === 'object' && !Array.isArray(o)) ? (o[S.lang] ?? o.en) : o;
+const esc = s => String(s).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+const MONTHS = { en: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'], hi: ['जनवरी', 'फ़रवरी', 'मार्च', 'अप्रैल', 'मई', 'जून', 'जुलाई', 'अगस्त', 'सितंबर', 'अक्टूबर', 'नवंबर', 'दिसंबर'] };
+const fmtDate = d => { const [y, m, dd] = d.split('-').map(Number); return `${dd} ${MONTHS[S.lang][m - 1]} ${y}`; };
+const DRAFT = L('Draft for partner review', 'भागीदारों की समीक्षा हेतु प्रारूप');
+const ROUTES = ['home', 'about', 'practice', ...PRACTICE.map(p => 'practice-' + p.slug), 'fora', 'limitation', 'lexicon', 'people', ...PEOPLE.map(p => 'person-' + p.slug), 'notes', ...NOTES.map(n => 'note-' + n.slug), 'resources', 'clientroom', 'contact', 'notices'];
+
+const frame = (title, text) => `<div class="frame"><b>${esc(title)}</b>${esc(text)}</div>`;
+const chips = arr => `<div class="chips">${arr.map(x => `<span class="chip">${esc(t(x))}</span>`).join('')}</div>`;
+const report = (main, marg) => `<div class="wrap report"><div class="main">${main}</div>${marg ? `<aside class="marg" aria-label="${esc(t(L('Marginal notes', 'पार्श्व टिप्पणियाँ')))}">${marg}</aside>` : ''}</div>`;
+const mg = (h, body) => `<div><h4>${esc(t(h))}</h4>${body}</div>`;
+const link = (route, label, cls = '') => `<button class="btn ${cls}" data-go="${route}">${esc(t(label))}</button>`;
+
+/* ---------- header / footer ---------- */
+function header() {
+  return `<a class="skip" href="#main" data-act="skip">${esc(t(L('Skip to main content', 'मुख्य सामग्री पर जाएँ')))}</a>
+  <header class="hdr"><div class="wrap hdr-in">
+    <button class="brand" data-go="home" aria-label="Ink &amp; Equity"><span class="mark">Ink <i>&amp;</i> Equity</span><small>${esc(t(L('LUCKNOW', 'लखनऊ')))}</small></button>
+    <nav class="nav${S.menu ? ' open' : ''}" id="nav" aria-label="${esc(t(L('Main', 'मुख्य')))}">
+      ${NAV.map(([r, l]) => `<button data-go="${r}"${S.route === r || S.route.startsWith(r.slice(0, -1) + '-') && r !== 'fora' ? ' aria-current="page"' : ''}>${esc(t(l))}</button>`).join('')}
+    </nav>
+    <div class="tools">
+      <button class="tbtn" data-act="palette" aria-label="${esc(t(L('Search the site', 'साइट में खोजें')))}">${esc(t(L('Search', 'खोजें')))} <span aria-hidden="true">⌘K</span></button>
+      <button class="tbtn" data-act="lang" aria-label="${esc(t(L('Switch language', 'भाषा बदलें')))}">${S.lang === 'en' ? 'हिं' : 'EN'}</button>
+      <button class="tbtn" data-act="theme" aria-label="${esc(t(L('Switch light or dark', 'हल्का या गहरा बदलें')))}">${esc(t(L('Theme', 'थीम')))}</button>
+    </div>
+    <button class="tbtn menu-btn" data-act="menu" aria-expanded="${S.menu}" aria-controls="nav">${esc(t(L('Menu', 'मेनू')))}</button>
+  </div><div class="prog" id="prog"></div></header>`;
+}
+function footer() {
+  return `<footer class="ftr"><div class="wrap">
+    <div class="cols">
+      <div><div class="brand"><span class="mark">Ink <i>&amp;</i> Equity</span></div>
+        <p style="margin-top:12px">${esc(CONTACT.addr)}</p>
+        <p>${esc(CONTACT.phone)}</p>
+        <p><a href="${CONTACT.map}" target="_blank" rel="noopener">${esc(t(L('Open in Google Maps', 'गूगल मैप्स में खोलें')))}</a></p></div>
+      <div><h4>${esc(t(L('Pages', 'पृष्ठ')))}</h4><ul>
+        ${[['practice', L('Practice areas', 'कार्यक्षेत्र')], ['fora', L('Fora', 'न्यायालय-क्रम')], ['limitation', L('Limitation reference', 'परिसीमा संदर्भ')], ['lexicon', L('Lexicon', 'शब्दकोश')], ['people', L('People', 'जन')], ['notes', L('Notes', 'टिप्पणियाँ')], ['about', L('About the firm', 'फर्म के बारे में')]].map(([r, l]) => `<li><button class="lnk" data-go="${r}">${esc(t(l))}</button></li>`).join('')}
+      </ul></div>
+      <div><h4>${esc(t(L('Resources', 'संसाधन')))}</h4><ul>
+        ${FAMILY.map(f => `<li><button class="lnk" data-go="resources">${esc(t(f.name))}</button></li>`).join('')}
+        <li><button class="lnk" data-go="clientroom">${esc(t(L('Client Room (phase 2)', 'क्लाइंट रूम (चरण 2)')))}</button></li>
+      </ul></div>
+      <div><h4>${esc(t(L('Notices', 'सूचनाएँ')))}</h4><ul>
+        <li><button class="lnk" data-go="notices">${esc(t(L('Information notice', 'सूचना-पत्र')))}</button></li>
+        <li><button class="lnk" data-go="notices">${esc(t(L('Privacy notice', 'गोपनीयता सूचना')))}</button></li>
+        <li><button class="lnk" data-go="notices">${esc(t(L('Use of AI', 'एआई का उपयोग')))}</button></li>
+        <li><button class="lnk" data-go="notices">${esc(t(L('Grievance contact', 'शिकायत संपर्क')))}</button></li>
+      </ul></div>
+    </div>
+    <p class="fine">${esc(t(L(
+      'This website is for general information only. It does not advertise or solicit work for any advocate, in keeping with Rule 36 of the Bar Council of India Rules, and nothing on it is legal advice. Sending a message to the firm does not create an advocate-client relationship. Where AI has materially helped in preparing a page, the page says so.',
+      'यह वेबसाइट केवल सामान्य जानकारी के लिए है। यह भारतीय विधिज्ञ परिषद नियमों के नियम 36 के अनुरूप किसी अधिवक्ता के कार्य का विज्ञापन या याचना नहीं करती, और इस पर कुछ भी विधिक सलाह नहीं है। फर्म को संदेश भेजने से अधिवक्ता-मुवक्किल संबंध नहीं बनता। जहाँ किसी पृष्ठ की तैयारी में एआई ने सारभूत सहायता की है, वहाँ पृष्ठ यह बताता है।')))}</p>
+  </div></footer>`;
+}
+function runhead(crumbs, draft) {
+  return `<div class="wrap runhead"><div class="path">${crumbs.map(([r, l], i) => (i ? ' / ' : '') + (r ? `<button data-go="${r}">${esc(t(l))}</button>` : `<span>${esc(t(l))}</span>`)).join('')}</div>${draft ? `<span class="status">${esc(t(DRAFT))}</span>` : '<span></span>'}</div>`;
+}
+
+/* ---------- home ---------- */
+function heroAmp() {
+  return `<svg class="hero-amp" viewBox="0 0 600 600" role="img" aria-label="${esc(t(L('A large ampersand, the mark of Ink and Equity', 'इंक एंड इक्विटी का चिह्न, एक बड़ा ऐम्परसैंड')))}">
+  <defs><filter id="inkf" x="-20%" y="-20%" width="140%" height="140%"><feTurbulence type="fractalNoise" baseFrequency="0.016" numOctaves="3" seed="7" result="n"/><feDisplacementMap id="inkdisp" in="SourceGraphic" in2="n" scale="0" xChannelSelector="R" yChannelSelector="G"/></filter></defs>
+  <circle cx="300" cy="300" r="284" fill="none" style="stroke:var(--gold-deco)" stroke-width="1"/>
+  <circle cx="300" cy="300" r="274" fill="none" style="stroke:var(--rule)" stroke-width="1" stroke-dasharray="2 7"/>
+  <g filter="url(#inkf)">
+    <text x="291" y="470" text-anchor="middle" font-size="520" style="fill:var(--teal)" opacity=".6">&amp;</text>
+    <text x="300" y="463" text-anchor="middle" font-size="520" style="fill:var(--gold-deco)">&amp;</text>
+  </g>
+  <text x="300" y="540" text-anchor="middle" font-size="26" letter-spacing="9" style="fill:var(--fg2);font-family:Jost,sans-serif;font-style:normal">${esc(t(L('LUCKNOW', 'लखनऊ')))}</text>
+</svg>`;
+}
+function vHome() {
+  const lines = S.lang === 'en' ? ['Justice,', 'argued with', 'conviction.'] : ['न्याय,', 'पूरी दृढ़ता से', 'प्रस्तुत।'];
+  const ppl = PRACTICE;
+  const cur = ppl[S.pp];
+  return `<main id="main">
+  <section class="wrap hero">
+    <div><h1>${lines.map((l, i) => `<span class="ln"><span>${i === 2 ? `<em>${l}</em>` : l}</span></span>`).join('')}</h1>
+      <p class="lede">${esc(t(L(
+        'Ink & Equity is a firm of advocates at Lucknow. This site describes what we practise, by law and by forum, and publishes dated, sourced notes on the law. It does not advertise results.',
+        'इंक एंड इक्विटी लखनऊ में अधिवक्ताओं की फर्म है। यह साइट बताती है कि हम किन विधियों और किन न्यायालयों में कार्य करते हैं, और विधि पर दिनांकित, स्रोत-सहित टिप्पणियाँ प्रकाशित करती है। यह परिणामों का विज्ञापन नहीं करती।')))}</p>
+      <div class="ctas">${link('practice', L('See the practice areas', 'कार्यक्षेत्र देखें'))}${link('notes', L('Read the notes', 'टिप्पणियाँ पढ़ें'), 'ghost')}</div></div>
+    ${heroAmp()}
+  </section>
+  <div class="wrap fora-strip" aria-label="${esc(t(L('Fora', 'न्यायालय')))}">
+    ${[L('Supreme Court of India', 'भारत का सर्वोच्च न्यायालय'), L('Delhi High Court', 'दिल्ली उच्च न्यायालय'), L('Allahabad High Court, Lucknow', 'इलाहाबाद उच्च न्यायालय, लखनऊ'), L('Allahabad High Court, Prayagraj', 'इलाहाबाद उच्च न्यायालय, प्रयागराज'), L('Civil and revenue courts of Uttar Pradesh', 'उत्तर प्रदेश के दीवानी और राजस्व न्यायालय'), L('Tribunals', 'अधिकरण')].map(x => `<span><b>${esc(t(x))}</b></span>`).join('')}
+  </div>
+
+  <section class="wrap sec"><div class="sec-h"><h2>${esc(t(L('The name', 'नाम')))}</h2><p>${esc(t(L('Ink is the craft of legal writing. Equity is the conviction that justice is a fundamental right. The firm succeeds Rishabh Raj & Associates, which began in 2024.', 'इंक विधिक लेखन की कारीगरी है। इक्विटी वह दृढ़ विश्वास है कि न्याय मौलिक अधिकार है। यह फर्म ऋषभ राज एंड एसोसिएट्स की उत्तराधिकारी है, जो 2024 में आरंभ हुई।')))}</p></div></section>
+
+  <section class="wrap sec"><div class="sec-h"><h2>${esc(t(L('Twelve areas, by law and forum', 'बारह क्षेत्र, विधि और न्यायालय के अनुसार')))}</h2><p>${esc(t(L('Each page names the statutes, the courts and the course of a matter. None describes results.', 'हर पृष्ठ में कानून, न्यायालय और मामले की प्रक्रिया है। किसी में परिणामों का वर्णन नहीं।')))}</p></div>
+    <div class="pidx"><ol>${ppl.map((p, i) => `<li><button data-go="practice-${p.slug}" data-hpp="${i}" class="${i === S.pp ? 'on' : ''}">${esc(t(p.name))}<span>${esc(t(p.short))}</span></button></li>`).join('')}</ol>
+      <div class="pprev" id="pprev" aria-live="polite">${ppView(cur)}</div></div></section>
+
+  <section class="wrap sec"><div class="sec-h"><h2>${esc(t(L('Where a dispute goes', 'विवाद कहाँ जाता है')))}</h2><p>${esc(t(L('Every dispute has a ladder of courts. Choose the kind of matter and walk up it, rung by rung, with the provision behind each step.', 'हर विवाद के लिए न्यायालयों की एक सीढ़ी होती है। मामले का प्रकार चुनें और हर पायदान को उसके प्रावधान सहित देखें।')))}</p></div>
+    <div class="ctas">${link('fora', L('Open the forum ladders', 'न्यायालय-क्रम खोलें'))}${link('limitation', L('Limitation reference', 'परिसीमा संदर्भ'), 'ghost')}</div></section>
+
+  <section class="wrap sec"><div class="sec-h"><h2>${esc(t(L('People', 'जन')))}</h2><p>${esc(t(L('Details are limited to name, role, qualifications, areas of practice and bar memberships.', 'विवरण नाम, भूमिका, योग्यता, कार्यक्षेत्र और बार सदस्यता तक सीमित हैं।')))}</p></div>
+    <div class="ppl">${PEOPLE.map(pe => `<button class="person" data-go="person-${pe.slug}"><span class="mono">${pe.ini}</span><h3>${esc(pe.name)}</h3><small>${esc(t(pe.role))}</small></button>`).join('')}</div></section>
+
+  <section class="wrap sec"><div class="sec-h"><h2>${esc(t(L('Notes', 'टिप्पणियाँ')))}</h2><p>${esc(t(L('Dated, sourced and marked with their review status.', 'दिनांकित, स्रोत-सहित और समीक्षा स्थिति के साथ।')))}</p></div>
+    ${notesList(3)}</section>
+
+  <section class="wrap sec"><div class="sec-h"><h2>${esc(t(L('Resources from the firm', 'फर्म के संसाधन')))}</h2><p>${esc(t(L('Four companion sites carry the longer teaching and reference work.', 'चार सहयोगी साइटें लंबा शिक्षण और संदर्भ कार्य रखती हैं।')))}</p></div>
+    ${familyGrid()}</section>
+  </main>`;
+}
+function ppView(p) {
+  return `<h3>${esc(t(p.name))}</h3><p>${esc(t(p.head))}</p>${chips(p.laws.slice(0, 3).map(l => L(l[0] + ' ' + l[1], l[0] + ' ' + l[1])))}<div class="ctas">${link('practice-' + p.slug, L('Open this area', 'यह क्षेत्र खोलें'))}</div>`;
+}
+function notesList(n) {
+  const list = n ? NOTES.slice(0, n) : NOTES;
+  return `<div class="notes">${list.map(x => `<button class="note" data-go="note-${x.slug}"><small>${esc(fmtDate(x.date))} · ${esc(t(PBY[x.area].name))}</small><h3>${esc(t(x.title))}</h3><span>${esc(t(x.dek))}</span><small><span class="status">${esc(t(DRAFT))}</span></small></button>`).join('')}</div>`;
+}
+function familyGrid() {
+  return `<div class="fam">${FAMILY.map(f => `<div class="famc"><h3>${esc(t(f.name))}</h3><p>${esc(t(f.desc))}</p>${LINKS[f.key] ? `<a class="btn ghost" href="${LINKS[f.key]}" target="_blank" rel="noopener">${esc(t(L('Open the preview', 'पूर्वावलोकन खोलें')))}</a>` : ''}<small>${esc(t(L('Planned address', 'प्रस्तावित पता')))}: ${esc(f.addr)} (${esc(t(L('availability unchecked', 'उपलब्धता अजाँची')))})</small></div>`).join('')}</div>`;
+}
+
+/* ---------- about ---------- */
+function vAbout() {
+  return runhead([['home', L('Home', 'मुख्य')], [null, L('About the firm', 'फर्म के बारे में')]], true) + report(`
+  <h1 class="page-title">${esc(t(L('About the firm', 'फर्म के बारे में')))}</h1>
+  <div class="headnote"><b>${esc(t(L('Headnote', 'सारांश')))}</b><p>${esc(t(L('Ink & Equity is a Lucknow firm of advocates founded by Rishabh Raj and Vedant Bhargav. It succeeds Rishabh Raj & Associates, which began in 2024.', 'इंक एंड इक्विटी लखनऊ की अधिवक्ताओं की फर्म है, जिसकी स्थापना ऋषभ राज और वेदांत भार्गव ने की। यह ऋषभ राज एंड एसोसिएट्स की उत्तराधिकारी है, जो 2024 में आरंभ हुई।')))}</p></div>
+  <h2 class="h3">${esc(t(L('The two words', 'दो शब्द')))}</h2>
+  <p>${esc(t(L('Ink stands for the meticulous craft of legal writing: pleadings, opinions and orders are read closely, and what goes out is written to be read. Equity stands for the conviction that justice is a fundamental right.', 'इंक विधिक लेखन की सावधान कारीगरी का प्रतीक है: अभिवचन, राय और आदेश ध्यान से पढ़े जाते हैं, और जो बाहर जाता है वह पढ़े जाने के लिए लिखा जाता है। इक्विटी इस दृढ़ विश्वास का प्रतीक है कि न्याय मौलिक अधिकार है।')))}</p>
+  <h2 class="h3">${esc(t(L('Where we appear', 'हम कहाँ उपस्थित होते हैं')))}</h2>
+  ${chips([L('Supreme Court of India', 'भारत का सर्वोच्च न्यायालय'), L('Delhi High Court', 'दिल्ली उच्च न्यायालय'), L('Allahabad High Court, Lucknow and Prayagraj', 'इलाहाबाद उच्च न्यायालय, लखनऊ और प्रयागराज'), L('UP civil and revenue courts', 'उ.प्र. के दीवानी और राजस्व न्यायालय'), L('Tribunals', 'अधिकरण')])}
+  <h2 class="h3">${esc(t(L('How this site is kept', 'यह साइट कैसे रखी जाती है')))}</h2>
+  <ol class="steps">
+    <li><b>${esc(t(L('Only permitted facts', 'केवल अनुमत तथ्य')))}</b>${esc(t(L('Name, address, contact details, qualifications, areas of practice and bar memberships.', 'नाम, पता, संपर्क विवरण, योग्यता, कार्यक्षेत्र और बार सदस्यता।')))}</li>
+    <li><b>${esc(t(L('Every note carries its sources', 'हर टिप्पणी अपने स्रोत देती है')))}</b>${esc(t(L('And a review status, so a reader can see whether a partner has signed it off.', 'और समीक्षा स्थिति, ताकि पाठक देख सके कि किसी भागीदार ने उसे अनुमोदित किया है या नहीं।')))}</li>
+    <li><b>${esc(t(L('No testimonials, no case lists, no offers', 'न प्रशंसापत्र, न मामलों की सूची, न प्रस्ताव')))}</b>${esc(t(L('Rule 36 of the Bar Council of India Rules and the Council’s circular of 17 July 2026 draw that line.', 'भारतीय विधिज्ञ परिषद नियमों का नियम 36 और परिषद का 17 जुलाई 2026 का परिपत्र यह रेखा खींचते हैं।')))}</li>
+    <li><b>${esc(t(L('AI is disclosed', 'एआई का प्रकटीकरण')))}</b>${esc(t(L('See the notices page.', 'सूचना पृष्ठ देखें।')))}</li>
+  </ol>`, mg(L('Contact', 'संपर्क'), `<p>${esc(CONTACT.addr)}</p><p>${esc(CONTACT.phone)}</p>${link('contact', L('Write to the firm', 'फर्म को लिखें'), 'ghost')}`));
+}
+
+/* ---------- practice ---------- */
+function vPractice() {
+  return runhead([['home', L('Home', 'मुख्य')], [null, L('Practice', 'कार्यक्षेत्र')]], true) + report(`
+  <h1 class="page-title">${esc(t(L('Practice areas', 'कार्यक्षेत्र')))}</h1>
+  <div class="headnote"><b>${esc(t(L('Headnote', 'सारांश')))}</b><p>${esc(t(L('Twelve areas, each described by the law that governs it and the courts that hear it.', 'बारह क्षेत्र, हर एक का वर्णन उसे शासित करने वाली विधि और उसे सुनने वाले न्यायालयों के आधार पर।')))}</p></div>
+  <div class="pidx" style="grid-template-columns:1fr"><ol>${PRACTICE.map(p => `<li><button data-go="practice-${p.slug}">${esc(t(p.name))}<span>${esc(t(p.short))}</span></button></li>`).join('')}</ol></div>`,
+  mg(L('Note', 'टिप्पणी'), `<p>${esc(t(L('The list of twelve areas is under confirmation by the partners.', 'बारह क्षेत्रों की सूची भागीदारों द्वारा पुष्टि के अधीन है।')))}</p>`) + mg(L('See also', 'यह भी देखें'), `<p><button class="lnk" style="all:unset;cursor:pointer;color:var(--teal-ink);text-decoration:underline" data-go="fora">${esc(t(L('Forum ladders', 'न्यायालय-क्रम')))}</button></p><p><button style="all:unset;cursor:pointer;color:var(--teal-ink);text-decoration:underline" data-go="limitation">${esc(t(L('Limitation reference', 'परिसीमा संदर्भ')))}</button></p>`));
+}
+function vPracticeOne(slug) {
+  const p = PBY[slug];
+  const extra = [];
+  if (p.library) extra.push(`<p>${esc(t(L('Hindi-first guides to this area are in the Land and Revenue Library.', 'इस क्षेत्र की हिंदी-प्रथम मार्गदर्शिकाएँ भूमि एवं राजस्व पुस्तकालय में हैं।')))}</p>${link('resources', L('See the library', 'पुस्तकालय देखें'), 'ghost')}`);
+  if (p.decoder) extra.push(`<p>${esc(t(L('The Notice Decoder maps a notice to the right Act and the appeal route.', 'नोटिस डिकोडर नोटिस को सही अधिनियम और अपील के मार्ग से जोड़ता है।')))}</p>${link('resources', L('See the decoder', 'डिकोडर देखें'), 'ghost')}`);
+  const i = PRACTICE.indexOf(p), prev = PRACTICE[(i + 11) % 12], next = PRACTICE[(i + 1) % 12];
+  return runhead([['home', L('Home', 'मुख्य')], ['practice', L('Practice', 'कार्यक्षेत्र')], [null, p.name]], true) + report(`
+  <h1 class="page-title">${esc(t(p.name))}</h1>
+  <div class="headnote"><b>${esc(t(L('Headnote', 'सारांश')))}</b><p>${esc(t(p.head))}</p></div>
+  <h2 class="h3">${esc(t(L('Provisions', 'प्रावधान')))}</h2>
+  <div class="table-scroll"><table class="prov"><tbody>${p.laws.map(l => `<tr><th scope="row">${esc(l[0])}</th><td>${esc(l[1])}<small>${esc(t(l[2]))}</small></td></tr>`).join('')}</tbody></table></div>
+  <h2 class="h3">${esc(t(L('Fora', 'न्यायालय')))}</h2>
+  ${chips(p.fora)}
+  <h2 class="h3">${esc(t(L('The course of a matter', 'मामले का क्रम')))}</h2>
+  <ol class="steps">${p.steps.map(s => `<li>${esc(t(s))}</li>`).join('')}</ol>
+  <h2 class="h3">${esc(t(L('Time', 'समय')))}</h2><p>${esc(t(p.time))}</p>
+  <div class="ctas">${link('fora', L('See the forum ladder', 'न्यायालय-क्रम देखें'))}${link('limitation', L('Limitation reference', 'परिसीमा संदर्भ'), 'ghost')}</div>
+  <div class="ctas" style="margin-top:40px">${link('practice-' + prev.slug, { en: '← ' + prev.name.en, hi: '← ' + prev.name.hi }, 'ghost')}${link('practice-' + next.slug, { en: next.name.en + ' →', hi: next.name.hi + ' →' }, 'ghost')}</div>`,
+  mg(L('General information', 'सामान्य जानकारी'), `<p>${esc(t(L('This page describes the area of law and the courts. It is not advice on any matter.', 'यह पृष्ठ विधि के क्षेत्र और न्यायालयों का वर्णन करता है। यह किसी मामले पर सलाह नहीं है।')))}</p>`) +
+  (extra.length ? mg(L('Related', 'संबद्ध'), extra.join('')) : '') +
+  mg(L('Status', 'स्थिति'), `<p>${esc(t(L('Awaiting partner review. Statute references are to be checked against current text before release.', 'भागीदार की समीक्षा लंबित। प्रकाशन से पहले कानून-संदर्भ वर्तमान पाठ से मिलाए जाएँगे।')))}</p>`));
+}
+
+/* ---------- fora ---------- */
+function vFora() {
+  const st = STREAMS.find(s => s.id === S.stream) || STREAMS[0];
+  if (S.rung >= st.rungs.length) S.rung = 0;
+  return runhead([['home', L('Home', 'मुख्य')], [null, L('Fora', 'न्यायालय-क्रम')]], true) + report(`
+  <h1 class="page-title">${esc(t(L('Where a dispute goes', 'विवाद कहाँ जाता है')))}</h1>
+  <div class="headnote"><b>${esc(t(L('Headnote', 'सारांश')))}</b><p>${esc(t(L('Choose the kind of matter. The ladder reads from the first forum at the bottom to the last at the top. Select a rung for what it hears and the provision behind it.', 'मामले का प्रकार चुनें। सीढ़ी नीचे पहले मंच से ऊपर अंतिम मंच तक पढ़ी जाती है। किसी पायदान को चुनें और देखें कि वह क्या सुनता है और उसका प्रावधान क्या है।')))}</p></div>
+  <div class="streams" role="group" aria-label="${esc(t(L('Kind of matter', 'मामले का प्रकार')))}">${STREAMS.map(s => `<button class="chip" data-act="stream" data-arg="${s.id}" aria-pressed="${s.id === st.id}">${esc(t(s.name))}</button>`).join('')}</div>
+  <div class="ladder"><ol class="rungs">${st.rungs.map((r, i) => `<li><button data-act="rung" data-arg="${i}" aria-pressed="${i === S.rung}"><b>${esc(t(r.n))}</b><span>${esc(r.src)}</span></button></li>`).join('')}</ol>
+    <div class="rung-detail" aria-live="polite"><span class="pill">${esc(t(L('Rung', 'पायदान')))} ${S.rung + 1} / ${st.rungs.length}</span><h3 style="margin-top:12px">${esc(t(st.rungs[S.rung].n))}</h3><p>${esc(t(st.rungs[S.rung].t))}</p><p><small>${esc(st.rungs[S.rung].src)}</small></p>
+    ${S.rung < st.rungs.length - 1 ? `<button class="btn ghost" data-act="rung" data-arg="${S.rung + 1}">${esc(t(L('Next forum up', 'अगला ऊपरी मंच')))}</button>` : `<p>${esc(t(L('This is the last forum in this ladder.', 'यह इस सीढ़ी का अंतिम मंच है।')))}</p>`}</div></div>`,
+  mg(L('Read this first', 'पहले यह पढ़ें'), `<p>${esc(t(L('Appeal periods are counted from the date the Act says, not always from the date of the order. Check the limitation reference.', 'अपील की अवधि उस तिथि से गिनी जाती है जो अधिनियम में कही गई है, हमेशा आदेश की तिथि से नहीं। परिसीमा संदर्भ देखें।')))}</p>`) +
+  mg(L('Practice areas on this ladder', 'इस सीढ़ी के क्षेत्र'), `<p>${PRACTICE.filter(p => p.stream === st.id || (st.id === 'gst' && p.slug === 'tax')).map(p => `<button style="all:unset;cursor:pointer;color:var(--teal-ink);text-decoration:underline;display:block" data-go="practice-${p.slug}">${esc(t(p.name))}</button>`).join('') || esc(t(L('See the practice index.', 'कार्यक्षेत्र सूची देखें।')))}</p>`));
+}
+
+/* ---------- limitation ---------- */
+function limRows() {
+  const q = S.limQ.trim().toLowerCase();
+  return LIM.filter(r => (S.limArea === 'all' || r.area === S.limArea) && (!q || (r.ref + ' ' + r.what.en + ' ' + r.what.hi + ' ' + r.per.en).toLowerCase().includes(q)));
+}
+function limTable() {
+  const rows = limRows();
+  if (!rows.length) return `<div class="frame"><b>${esc(t(L('No match', 'कोई मेल नहीं')))}</b>${esc(t(L('Try a shorter word, such as “appeal” or “possession”, or choose All.', 'छोटा शब्द आज़माएँ, जैसे “अपील” या “कब्ज़ा”, या सभी चुनें।')))}</div>`;
+  return `<div class="table-scroll"><table class="prov"><thead><tr><th>${esc(t(L('Proceeding', 'कार्यवाही')))}</th><th>${esc(t(L('Period and starting point', 'अवधि और आरंभ बिंदु')))}</th></tr></thead><tbody>${rows.map(r => `<tr><th scope="row" style="font-size:17px">${esc(t(r.what))}<small style="font-family:var(--f-body)">${esc(r.ref)}</small></th><td><b>${esc(t(r.per))}</b><small>${esc(t(r.from))}</small></td></tr>`).join('')}</tbody></table></div>`;
+}
+function quizBlock() {
+  const Q = S.quiz;
+  if (Q.done) return `<div class="q"><h3>${esc(t(L('Finished', 'पूर्ण')))}: ${Q.score} / ${QUIZ.length}</h3><p>${esc(t(L('Each answer above names its provision. Read the table again for any you missed.', 'ऊपर हर उत्तर अपना प्रावधान बताता है। जो छूटे उनके लिए तालिका फिर पढ़ें।')))}</p><button class="btn" data-act="quizreset">${esc(t(L('Start again', 'फिर शुरू करें')))}</button></div>`;
+  const q = QUIZ[Q.i];
+  return `<div class="q" aria-live="polite"><span class="pill">${Q.i + 1} / ${QUIZ.length}</span><h3 style="margin-top:10px">${esc(t(q.q))}</h3><div class="opts">${q.o.map((o, k) => `<button data-act="quizans" data-arg="${k}" ${Q.ans !== null ? 'disabled' : ''} class="${Q.ans !== null ? (k === q.a ? 'ok' : (k === Q.ans ? 'no' : '')) : ''}">${esc(t(o))}</button>`).join('')}</div>
+  ${Q.ans !== null ? `<p class="why"><b>${Q.ans === q.a ? esc(t(L('Correct.', 'सही।'))) : esc(t(L('Not quite.', 'पूरी तरह नहीं।')))}</b> ${esc(t(q.w))} <em>${esc(q.s)}</em></p><button class="btn" data-act="quiznext">${Q.i === QUIZ.length - 1 ? esc(t(L('See result', 'परिणाम देखें'))) : esc(t(L('Next question', 'अगला प्रश्न')))}</button>` : ''}</div>`;
+}
+function vLimitation() {
+  return runhead([['home', L('Home', 'मुख्य')], [null, L('Limitation reference', 'परिसीमा संदर्भ')]], true) + report(`
+  <h1 class="page-title">${esc(t(L('Limitation reference', 'परिसीमा संदर्भ')))}</h1>
+  <div class="headnote"><b>${esc(t(L('Headnote', 'सारांश')))}</b><p>${esc(t(L('Common periods of limitation for civil, revenue, tax and other proceedings, each with its provision. A period is only the starting point: the facts decide the date from which it runs.', 'दीवानी, राजस्व, कर और अन्य कार्यवाहियों की सामान्य परिसीमा अवधियाँ, हर एक अपने प्रावधान सहित। अवधि केवल आरंभ बिंदु है: कौन सी तिथि से गणना होगी, यह तथ्य तय करते हैं।')))}</p></div>
+  <div class="ltools"><input id="limq" type="search" placeholder="${esc(t(L('Search: appeal, possession, mutation…', 'खोजें: अपील, कब्ज़ा, दाखिल-खारिज…')))}" value="${esc(S.limQ)}" aria-label="${esc(t(L('Search limitation periods', 'परिसीमा अवधियाँ खोजें')))}"></div>
+  <div class="streams" role="group">${LIM_AREAS.map(([k, l]) => `<button class="chip" data-act="limarea" data-arg="${k}" aria-pressed="${S.limArea === k}">${esc(t(l))}</button>`).join('')}</div>
+  <div id="limtable">${limTable()}</div>
+  <h2 class="h3">${esc(t(L('Five provisions that change the count', 'पाँच प्रावधान जो गणना बदलते हैं')))}</h2>
+  <table class="prov"><tbody>${LIM_PRINCIPLES.map(r => `<tr><th scope="row">${esc(r.ref)}</th><td>${esc(t(r.t))}</td></tr>`).join('')}</tbody></table>
+  <h2 class="h3">${esc(t(L('Test yourself', 'स्वयं परखें')))}</h2><div id="quiz">${quizBlock()}</div>`,
+  mg(L('Source and status', 'स्रोत और स्थिति'), `<p>${esc(t(L('Periods are drawn from the Schedule to the Limitation Act, 1963 and the statutes named in each row. Awaiting partner review; confirm against current text before relying on any row.', 'अवधियाँ परिसीमा अधिनियम, 1963 की अनुसूची और हर पंक्ति में नामित कानूनों से ली गई हैं। भागीदार की समीक्षा लंबित; किसी पंक्ति पर भरोसा करने से पहले वर्तमान पाठ से मिलाएँ।')))}</p>`));
+}
+
+/* ---------- people ---------- */
+function vPeople() {
+  return runhead([['home', L('Home', 'मुख्य')], [null, L('People', 'जन')]], true) + report(`
+  <h1 class="page-title">${esc(t(L('People', 'जन')))}</h1>
+  <div class="headnote"><b>${esc(t(L('Headnote', 'सारांश')))}</b><p>${esc(t(L('Name, role, qualifications, areas of practice and bar memberships. Where text is awaited from a partner, the page shows an open frame.', 'नाम, भूमिका, योग्यता, कार्यक्षेत्र और बार सदस्यता। जहाँ भागीदार का पाठ अपेक्षित है, पृष्ठ खुला फ़्रेम दिखाता है।')))}</p></div>
+  <div class="ppl">${PEOPLE.map(pe => `<button class="person" data-go="person-${pe.slug}"><span class="mono">${pe.ini}</span><h3>${esc(pe.name)}</h3><small>${esc(t(pe.role))}</small><span>${esc(t(pe.line))}</span></button>`).join('')}</div>`, null);
+}
+function vPerson(slug) {
+  const p = PBYSLUG[slug];
+  return runhead([['home', L('Home', 'मुख्य')], ['people', L('People', 'जन')], [null, { en: p.name, hi: p.name }]], true) + report(`
+  <div style="display:flex;gap:22px;align-items:center;flex-wrap:wrap"><span class="mono" style="width:104px;height:104px;font-size:48px">${p.ini}</span><div><h1 class="page-title" style="margin:0">${esc(p.name)}</h1><p style="margin:6px 0 0;color:var(--fg2)">${esc(t(p.role))}, Ink &amp; Equity</p></div></div>
+  <div class="headnote"><b>${esc(t(L('Headnote', 'सारांश')))}</b><p>${esc(t(p.line))}</p></div>
+  <h2 class="h3">${esc(t(L('Areas of practice', 'कार्यक्षेत्र')))}</h2>${chips(p.areas)}
+  <h2 class="h3">${esc(t(L('Qualifications', 'योग्यता')))}</h2>
+  ${p.quals.length ? `<ul>${p.quals.map(q => `<li>${esc(q)}</li>`).join('')}</ul>` : frame(t(L('Awaiting text', 'पाठ की प्रतीक्षा')), t(L('Qualifications, in the words approved by ' + p.name + '.', p.name + ' द्वारा अनुमोदित शब्दों में योग्यता।')))}
+  <h2 class="h3">${esc(t(L('Bar memberships', 'बार सदस्यता')))}</h2>
+  ${p.bars.length ? `<ul>${p.bars.map(q => `<li>${esc(q)}</li>`).join('')}</ul>` : frame(t(L('Awaiting text', 'पाठ की प्रतीक्षा')), t(L('Bar memberships, in the words approved by ' + p.name + '.', p.name + ' द्वारा अनुमोदित शब्दों में बार सदस्यता।')))}
+  <h2 class="h3">${esc(t(L('Writing', 'लेखन')))}</h2>${frame(t(L('Bylines are assigned by the partners', 'बायलाइन भागीदार तय करेंगे')), t(L('When a note is signed off, its author appears here.', 'जब कोई टिप्पणी अनुमोदित होगी, उसका लेखक यहाँ दिखेगा।')))}`,
+  mg(L('Contact the firm', 'फर्म से संपर्क'), `<p>${esc(CONTACT.phone)}</p>${link('contact', L('Write to the firm', 'फर्म को लिखें'), 'ghost')}`) +
+  mg(L('Status', 'स्थिति'), `<p>${esc(t(L('This profile goes live only after ' + p.name + ' signs it off.', 'यह प्रोफ़ाइल ' + p.name + ' के अनुमोदन के बाद ही प्रकाशित होगी।')))}</p>`));
+}
+
+/* ---------- notes ---------- */
+function vNotes() {
+  return runhead([['home', L('Home', 'मुख्य')], [null, L('Notes', 'टिप्पणियाँ')]], true) + report(`
+  <h1 class="page-title">${esc(t(L('Ink & Equity Notes', 'इंक एंड इक्विटी टिप्पणियाँ')))}</h1>
+  <div class="headnote"><b>${esc(t(L('Headnote', 'सारांश')))}</b><p>${esc(t(L('Short notes on the law, with their sources. Each shows a date and a review status; bylines are added when a partner signs a note off.', 'विधि पर छोटी टिप्पणियाँ, स्रोतों सहित। हर एक में तिथि और समीक्षा स्थिति है; किसी भागीदार द्वारा अनुमोदन पर बायलाइन जोड़ी जाती है।')))}</p></div>
+  ${notesList(0)}`, null);
+}
+function vNote(slug) {
+  const n = NOTES.find(x => x.slug === slug);
+  const i = NOTES.indexOf(n), prev = NOTES[(i + NOTES.length - 1) % NOTES.length], next = NOTES[(i + 1) % NOTES.length];
+  const cite = `Ink & Equity Notes, “${n.title.en}” (${fmtDate(n.date)}, draft)`;
+  return runhead([['home', L('Home', 'मुख्य')], ['notes', L('Notes', 'टिप्पणियाँ')], [null, n.title]], true) + report(`
+  <article class="article"><p style="color:var(--fg2);margin-bottom:6px">${esc(fmtDate(n.date))} · ${esc(t(PBY[n.area].name))}</p>
+  <h1 class="page-title">${esc(t(n.title))}</h1>
+  <div class="headnote"><b>${esc(t(L('In brief', 'संक्षेप में')))}</b><p>${esc(t(n.dek))}</p></div>
+  ${n.body.map(b => `<p>${esc(t(b))}</p>`).join('')}
+  <div class="cite"><b>${esc(t(L('Sources', 'स्रोत')))}</b><ul>${n.src.map(s => `<li>${s[1] ? `<a href="${s[1]}" target="_blank" rel="noopener">${esc(s[0])}</a>` : esc(s[0])}</li>`).join('')}</ul></div>
+  <div class="cite"><b>${esc(t(L('Cite as', 'उद्धरण')))}</b><p style="margin:6px 0 10px">${esc(cite)}</p><button class="btn ghost" data-act="copy" data-arg="${esc(cite)}">${esc(t(L('Copy citation', 'उद्धरण कॉपी करें')))}</button></div>
+  <div class="ctas"><button class="btn ghost" data-go="note-${prev.slug}">← ${esc(t(prev.title))}</button><button class="btn ghost" data-go="note-${next.slug}">${esc(t(next.title))} →</button></div></article>`,
+  mg(L('Review status', 'समीक्षा स्थिति'), `<p>${esc(t(L('Draft. Byline and partner sign-off are pending. Cases and sections are to be checked against the reports and current text before release.', 'प्रारूप। बायलाइन और भागीदार का अनुमोदन लंबित। प्रकाशन से पहले निर्णय और धाराएँ रिपोर्टों और वर्तमान पाठ से मिलाई जाएँगी।')))}</p>`) +
+  mg(L('Not advice', 'सलाह नहीं'), `<p>${esc(t(L('This note explains the law in general terms. It is not advice on any matter.', 'यह टिप्पणी विधि को सामान्य शब्दों में समझाती है। यह किसी मामले पर सलाह नहीं है।')))}</p>`) +
+  mg(L('Related area', 'संबद्ध क्षेत्र'), `<p><button style="all:unset;cursor:pointer;color:var(--teal-ink);text-decoration:underline" data-go="practice-${n.area}">${esc(t(PBY[n.area].name))}</button></p>`));
+}
+
+/* ---------- resources / client room ---------- */
+function vResources() {
+  return runhead([['home', L('Home', 'मुख्य')], [null, L('Resources', 'संसाधन')]], true) + report(`
+  <h1 class="page-title">${esc(t(L('Resources from the firm', 'फर्म के संसाधन')))}</h1>
+  <div class="headnote"><b>${esc(t(L('Headnote', 'सारांश')))}</b><p>${esc(t(L('Companion sites that carry longer teaching and reference work. They share this site’s notices and its rule: information, not advertisement.', 'सहयोगी साइटें जो लंबा शिक्षण और संदर्भ कार्य रखती हैं। वे इस साइट की सूचनाएँ और इसका नियम साझा करती हैं: सूचना, विज्ञापन नहीं।')))}</p></div>
+  ${familyGrid()}`, mg(L('Sign-off', 'अनुमोदन'), `<p>${esc(t(L('Each companion site is approved by the partner or family member responsible for it before it goes live.', 'हर सहयोगी साइट प्रकाशन से पहले संबंधित भागीदार या परिवार के सदस्य द्वारा अनुमोदित होती है।')))}</p>`));
+}
+function vClientRoom() {
+  return runhead([['home', L('Home', 'मुख्य')], [null, L('Client Room', 'क्लाइंट रूम')]], true) + report(`
+  <h1 class="page-title">${esc(t(L('Client Room', 'क्लाइंट रूम')))}</h1>
+  <div class="headnote"><b>${esc(t(L('Phase 2. Not live.', 'चरण 2। अभी उपलब्ध नहीं।')))}</b><p>${esc(t(L('A sign-in for existing clients to see next dates, documents and invoices from the firm’s case manager, hosted on the firm’s own server. The layout below is the plan, not a working page.', 'मौजूदा मुवक्किलों के लिए साइन-इन, जिसमें फर्म के केस मैनेजर से अगली तिथियाँ, दस्तावेज़ और चालान दिखेंगे, और जो फर्म के अपने सर्वर पर होगा। नीचे का लेआउट योजना है, कार्यरत पृष्ठ नहीं।')))}</p></div>
+  <div class="room"><div class="login"><b style="font-family:var(--f-display);font-size:24px;font-weight:500">${esc(t(L('Sign in with a one-time code', 'एक-बार कोड से साइन इन')))}</b><input aria-label="${esc(t(L('Mobile number', 'मोबाइल नंबर')))}" placeholder="${esc(t(L('Mobile number', 'मोबाइल नंबर')))}" disabled><button class="btn" disabled>${esc(t(L('Send code', 'कोड भेजें')))}</button><small>${esc(t(L('Opens in phase 2.', 'चरण 2 में खुलेगा।')))}</small></div>
+  <div class="panes">${frame(t(L('Next dates', 'अगली तिथियाँ')), t(L('Each matter’s next listing date will appear here.', 'हर मामले की अगली सूचीबद्ध तिथि यहाँ दिखेगी।')))}${frame(t(L('Documents', 'दस्तावेज़')), t(L('Pleadings and orders shared with the client.', 'मुवक्किल के साथ साझा अभिवचन और आदेश।')))}${frame(t(L('Invoices', 'चालान')), t(L('Fee notes and receipts.', 'शुल्क-पत्र और रसीदें।')))}</div></div>`, mg(L('Privacy', 'गोपनीयता'), `<p>${esc(t(L('Client data stays on the firm’s own server and out of public tools.', 'मुवक्किल का डेटा फर्म के अपने सर्वर पर रहेगा, सार्वजनिक उपकरणों से बाहर।')))}</p>`));
+}
+
+/* ---------- contact / notices ---------- */
+function vContact() {
+  return runhead([['home', L('Home', 'मुख्य')], [null, L('Contact', 'संपर्क')]], false) + report(`
+  <h1 class="page-title">${esc(t(L('Contact', 'संपर्क')))}</h1>
+  <div class="headnote"><b>${esc(t(L('Headnote', 'सारांश')))}</b><p>${esc(t(L('Write to the firm with a question about the firm itself or a matter you wish to bring. A message does not create an advocate-client relationship, and the firm gives no advice by email.', 'फर्म के बारे में प्रश्न, या ऐसे मामले के बारे में जिसे आप लाना चाहें, फर्म को लिखें। संदेश से अधिवक्ता-मुवक्किल संबंध नहीं बनता, और फर्म ईमेल पर सलाह नहीं देती।')))}</p></div>
+  <dl class="kv"><dt>${esc(t(L('Address', 'पता')))}</dt><dd>${esc(CONTACT.addr)}<br><a href="${CONTACT.map}" target="_blank" rel="noopener">${esc(t(L('Open in Google Maps', 'गूगल मैप्स में खोलें')))}</a></dd>
+  <dt>${esc(t(L('Phone', 'फ़ोन')))}</dt><dd>${esc(CONTACT.phone)} <button class="tbtn" data-act="copy" data-arg="${esc(CONTACT.phone)}">${esc(t(L('Copy', 'कॉपी')))}</button></dd>
+  <dt>${esc(t(L('Email', 'ईमेल')))}</dt><dd>${frame(t(L('Address to be added', 'पता जोड़ा जाएगा')), t(L('The firm’s email address is not published here yet.', 'फर्म का ईमेल पता यहाँ अभी प्रकाशित नहीं है।')))}</dd>
+  <dt>${esc(t(L('Office hours', 'कार्यालय समय')))}</dt><dd>${CONTACT.hours.map(h => `${esc(t(h[0]))}: ${esc(h[1])}`).join('<br>')}<br><small>${esc(t(L('By prior appointment.', 'पूर्व समय लेकर।')))}</small></dd></dl>
+  <h2 class="h3">${esc(t(L('Write to the firm', 'फर्म को लिखें')))}</h2>
+  <form class="form" id="cform" novalidate>
+    <label for="f-name">${esc(t(L('Your name', 'आपका नाम')))}<input id="f-name" autocomplete="name"><span class="err" id="e-name"></span></label>
+    <label for="f-phone">${esc(t(L('Phone', 'फ़ोन')))}<input id="f-phone" inputmode="tel" autocomplete="tel"></label>
+    <label for="f-email">${esc(t(L('Email', 'ईमेल')))}<input id="f-email" type="email" autocomplete="email"><span class="err" id="e-contact"></span></label>
+    <label for="f-topic">${esc(t(L('Area your message concerns', 'आपका संदेश किस क्षेत्र से संबंधित है')))}<select id="f-topic"><option value="">${esc(t(L('Not sure', 'पता नहीं')))}</option>${PRACTICE.map(p => `<option value="${p.slug}">${esc(t(p.name))}</option>`).join('')}</select></label>
+    <label for="f-msg">${esc(t(L('Message', 'संदेश')))}<textarea id="f-msg"></textarea><span class="err" id="e-msg"></span></label>
+    <label class="chk" for="f-consent"><input id="f-consent" type="checkbox"><span>${esc(t(L('I agree that Ink & Equity may use the details above only to reply to this message. I can withdraw this agreement at any time by writing to the grievance contact below.', 'मैं सहमत हूँ कि इंक एंड इक्विटी ऊपर दिए विवरण का उपयोग केवल इस संदेश का उत्तर देने के लिए करे। मैं नीचे दिए शिकायत संपर्क को लिखकर कभी भी यह सहमति वापस ले सकता/सकती हूँ।')))}</span></label><span class="err" id="e-consent"></span>
+    <div><button class="btn" type="submit">${esc(t(L('Prepare my message', 'मेरा संदेश तैयार करें')))}</button></div>
+  </form>
+  <div id="cpreview" aria-live="polite"></div>
+  <h2 class="h3">${esc(t(L('Grievance contact', 'शिकायत संपर्क')))}</h2>${frame(t(L('Name and address to be added', 'नाम और पता जोड़ा जाएगा')), t(L('The person who receives data-protection requests and complaints, as the data protection law requires.', 'वह व्यक्ति जो डेटा संरक्षण अनुरोध और शिकायतें प्राप्त करेगा, जैसा डेटा संरक्षण कानून अपेक्षित करता है।')))}`,
+  mg(L('How this form works', 'यह फ़ॉर्म कैसे काम करता है'), `<p>${esc(t(L('This page does not send your message to a server. It prepares the text for you to copy and send by phone or by email once the address is published.', 'यह पृष्ठ आपका संदेश किसी सर्वर को नहीं भेजता। यह पाठ तैयार करता है जिसे आप कॉपी करके फ़ोन या ईमेल से भेज सकते हैं, पता प्रकाशित होने पर।')))}</p>`) +
+  mg(L('No advice by email', 'ईमेल पर सलाह नहीं'), `<p>${esc(t(L('Please do not send confidential documents through this page.', 'कृपया इस पृष्ठ से गोपनीय दस्तावेज़ न भेजें।')))}</p>`));
+}
+function vNotices() {
+  return runhead([['home', L('Home', 'मुख्य')], [null, L('Notices', 'सूचनाएँ')]], true) + report(`
+  <h1 class="page-title">${esc(t(L('Notices', 'सूचनाएँ')))}</h1>
+  <h2 class="h3">${esc(t(L('Information notice', 'सूचना-पत्र')))}</h2>
+  <p>${esc(t(L('The Bar Council of India Rules do not allow advocates to solicit work or advertise, directly or indirectly. This website is a source of information. It lists name, address, contact details, qualifications, areas of practice and bar memberships, which the Rules permit, and publishes notes on the law. It carries no testimonials, claims of success or outcome guarantees. Nothing on it is legal advice.', 'भारतीय विधिज्ञ परिषद नियम अधिवक्ताओं को प्रत्यक्ष या अप्रत्यक्ष रूप से कार्य की याचना या विज्ञापन की अनुमति नहीं देते। यह वेबसाइट सूचना का स्रोत है। इसमें नाम, पता, संपर्क विवरण, योग्यता, कार्यक्षेत्र और बार सदस्यता हैं, जिनकी नियम अनुमति देते हैं, और विधि पर टिप्पणियाँ हैं। इसमें कोई प्रशंसापत्र, सफलता के दावे या परिणाम की गारंटी नहीं है। इस पर कुछ भी विधिक सलाह नहीं है।')))}</p>
+  <h2 class="h3">${esc(t(L('Privacy notice', 'गोपनीयता सूचना')))}</h2>
+  <p>${esc(t(L('This site sets no cookies and loads no advertising or analytics trackers. If you use the contact page, the details you type stay in your browser until you copy them. When the firm receives a message from you, it will use the details only to reply, and you may ask to see, correct or erase them, or withdraw your agreement, by writing to the grievance contact on the contact page.', 'यह साइट कोई कुकी नहीं लगाती और कोई विज्ञापन या विश्लेषण ट्रैकर नहीं चलाती। यदि आप संपर्क पृष्ठ का उपयोग करते हैं, तो आपके टाइप किए विवरण आपके ब्राउज़र में तब तक रहते हैं जब तक आप उन्हें कॉपी नहीं करते। जब फर्म को आपसे संदेश मिलेगा, वह विवरण का उपयोग केवल उत्तर देने के लिए करेगी, और आप संपर्क पृष्ठ पर शिकायत संपर्क को लिखकर उन्हें देखने, सुधारने या मिटाने का अनुरोध कर सकते हैं, या अपनी सहमति वापस ले सकते हैं।')))}</p>
+  <h2 class="h3">${esc(t(L('Use of AI', 'एआई का उपयोग')))}</h2>
+  <p>${esc(t(L('Where AI has materially helped in preparing a page, the page says so. This site carries no AI-generated image, voice or avatar of any advocate, judge or litigant.', 'जहाँ किसी पृष्ठ की तैयारी में एआई ने सारभूत सहायता की है, वहाँ पृष्ठ यह बताता है। इस साइट पर किसी अधिवक्ता, न्यायाधीश या पक्षकार की कोई एआई-निर्मित छवि, आवाज़ या अवतार नहीं है।')))}</p>
+  ${frame(t(L('Proposed firm policy, not yet adopted', 'प्रस्तावित फर्म नीति, अभी अपनाई नहीं गई')), t(L('Every citation in a draft is checked against a public report before it leaves the firm. Client documents are not entered into public AI tools. Material AI use is disclosed. The partners are to confirm or change this text.', 'प्रारूप का हर उद्धरण फर्म से बाहर जाने से पहले सार्वजनिक रिपोर्ट से मिलाया जाता है। मुवक्किल के दस्तावेज़ सार्वजनिक एआई उपकरणों में नहीं डाले जाते। सारभूत एआई उपयोग का प्रकटीकरण होता है। भागीदार इस पाठ की पुष्टि करेंगे या बदलेंगे।')))}
+  <h2 class="h3">${esc(t(L('Accessibility', 'सुगम्यता')))}</h2>
+  <p>${esc(t(L('The site works with a keyboard, respects reduced-motion settings, and offers light and dark themes and English and Hindi.', 'साइट कीबोर्ड से चलती है, कम-गति सेटिंग का सम्मान करती है, और हल्की व गहरी थीम तथा अंग्रेज़ी और हिंदी देती है।')))}</p>`, null);
+}
+
+function currentView() {
+  const r = S.route;
+  if (r === 'home') return vHome();
+  if (r === 'about') return vAbout();
+  if (r === 'practice') return vPractice();
+  if (r.startsWith('practice-')) return vPracticeOne(r.slice(9));
+  if (r === 'fora') return vFora();
+  if (r === 'limitation') return vLimitation();
+  if (r === 'lexicon') return vLexicon();
+  if (r === 'people') return vPeople();
+  if (r.startsWith('person-')) return vPerson(r.slice(7));
+  if (r === 'notes') return vNotes();
+  if (r.startsWith('note-')) return vNote(r.slice(5));
+  if (r === 'resources') return vResources();
+  if (r === 'clientroom') return vClientRoom();
+  if (r === 'contact') return vContact();
+  if (r === 'notices') return vNotices();
+  return vHome();
+}
+
+/* App: render, router, events, palette, hero animation */
+function render() {
+  const app = document.getElementById('app');
+  const v = currentView();
+  app.innerHTML = header() + (S.route === 'home' ? v : `<main id="main">${v}</main>`) + footer();
+  document.documentElement.lang = S.lang;
+  afterRender();
+}
+function rerender() { const y = window.scrollY; render(); window.scrollTo(0, y); }
+function afterRender() { if (S.route === 'home') inkIn(); onScroll(); }
+function go(route) {
+  if (!ROUTES.includes(route)) route = 'home';
+  S.route = route; S.menu = false;
+  render(); window.scrollTo(0, 0);
+  try { history.replaceState(null, '', '#' + route); } catch (e) {}
+}
+function setLang(l) {
+  S.lang = l === 'hi' ? 'hi' : 'en';
+  try { localStorage.setItem('ieq-lang', S.lang); } catch (e) {}
+  rerender();
+}
+window.go = go; window.setLang = setLang; window.__routes = ROUTES;
+
+function inkIn() {
+  const d = document.getElementById('inkdisp'); if (!d) return;
+  if (matchMedia('(prefers-reduced-motion: reduce)').matches) { d.setAttribute('scale', '0'); return; }
+  const dur = 2600; let st = null; d.setAttribute('scale', '80');
+  const step = ts => { if (!st) st = ts; const k = Math.min(1, (ts - st) / dur); const e = 1 - Math.pow(1 - k, 3); d.setAttribute('scale', String(80 * (1 - e))); if (k < 1) requestAnimationFrame(step); };
+  requestAnimationFrame(step);
+}
+function onScroll() {
+  const p = document.getElementById('prog'); if (!p) return;
+  const h = document.documentElement.scrollHeight - window.innerHeight;
+  p.style.width = (h > 0 ? Math.min(100, window.scrollY / h * 100) : 0) + '%';
+}
+window.addEventListener('scroll', onScroll, { passive: true });
+
+let toastT;
+function toast(msg) {
+  const el = document.getElementById('toast'); el.textContent = msg; el.hidden = false;
+  clearTimeout(toastT); toastT = setTimeout(() => { el.hidden = true; }, 2200);
+}
+function copyText(txt) {
+  const done = () => toast(t(L('Copied', 'कॉपी हुआ')));
+  const fail = () => toast(t(L('Copy did not work. Select the text and copy it.', 'कॉपी नहीं हुआ। पाठ चुनकर कॉपी करें।')));
+  try { navigator.clipboard.writeText(txt).then(done, fail); } catch (e) { fail(); }
+}
+
+/* ---------- palette ---------- */
+let palSel = 0, palList = [];
+function palItems() {
+  const items = [], add = (r, l, sub) => items.push({ r, l: t(l), sub: t(sub || '') });
+  add('home', L('Home', 'मुख्य')); add('about', L('About the firm', 'फर्म के बारे में')); add('practice', L('Practice areas', 'कार्यक्षेत्र'));
+  PRACTICE.forEach(p => add('practice-' + p.slug, p.name, p.short));
+  add('fora', L('Forum ladders', 'न्यायालय-क्रम')); add('limitation', L('Limitation reference', 'परिसीमा संदर्भ')); add('lexicon', L('Lexicon', 'शब्दकोश'));
+  LEX.forEach(x => add('lexicon', { en: x.t, hi: x.t }, x.m));
+  LIM.forEach(r => add('limitation', r.what, { en: r.ref + ' · ' + r.per.en, hi: r.ref + ' · ' + r.per.hi }));
+  PEOPLE.forEach(p => add('person-' + p.slug, { en: p.name, hi: p.name }, p.role));
+  NOTES.forEach(n => add('note-' + n.slug, n.title, L('Note', 'टिप्पणी')));
+  add('resources', L('Resources', 'संसाधन')); add('clientroom', L('Client Room', 'क्लाइंट रूम')); add('contact', L('Contact', 'संपर्क')); add('notices', L('Notices', 'सूचनाएँ'));
+  return items;
+}
+function palFilter() {
+  const q = document.getElementById('palq').value.trim().toLowerCase().split(/\s+/).filter(Boolean);
+  palList = palItems().filter(i => q.every(w => (i.l + ' ' + i.sub).toLowerCase().includes(w))).slice(0, 14);
+  palSel = 0; palDraw();
+}
+function palDraw() {
+  document.getElementById('pall').innerHTML = palList.length ? palList.map((i, k) => `<li><button class="${k === palSel ? 'on' : ''}" data-pal="${k}"><span>${esc(i.l)}</span><small>${esc(i.sub)}</small></button></li>`).join('') : `<li style="padding:14px;color:var(--fg2)">${esc(t(L('Nothing matches. Try one word, such as “mutation” or “bail”.', 'कुछ नहीं मिला। एक शब्द आज़माएँ, जैसे “दाखिल-खारिज” या “जमानत”।')))}</li>`;
+}
+function openPal() {
+  const bg = document.getElementById('palbg'); bg.classList.add('open');
+  const q = document.getElementById('palq'); q.value = ''; q.placeholder = t(L('Search pages, practice areas, periods, notes', 'पृष्ठ, कार्यक्षेत्र, अवधियाँ, टिप्पणियाँ खोजें')); palFilter(); q.focus();
+}
+function closePal() { document.getElementById('palbg').classList.remove('open'); }
+function palGo(k) { const it = palList[k]; if (!it) return; closePal(); go(it.r); }
+
+/* ---------- events ---------- */
+document.addEventListener('click', e => {
+  if (e.target.id === 'palbg') { closePal(); return; }
+  const pb = e.target.closest('[data-pal]'); if (pb) { palGo(+pb.dataset.pal); return; }
+  const el = e.target.closest('[data-go],[data-act]'); if (!el) return;
+  if (el.dataset.go) { go(el.dataset.go); return; }
+  const a = el.dataset.act, arg = el.dataset.arg;
+  if (a === 'lang') setLang(S.lang === 'en' ? 'hi' : 'en');
+  else if (a === 'theme') {
+    const r = document.documentElement;
+    const dark = r.dataset.theme === 'dark' || (!r.dataset.theme && matchMedia('(prefers-color-scheme: dark)').matches);
+    r.dataset.theme = dark ? 'light' : 'dark';
+  }
+  else if (a === 'menu') { S.menu = !S.menu; document.getElementById('nav').classList.toggle('open', S.menu); el.setAttribute('aria-expanded', S.menu); }
+  else if (a === 'palette') openPal();
+  else if (a === 'skip') { e.preventDefault(); const m = document.getElementById('main'); if (m) { m.setAttribute('tabindex', '-1'); m.focus(); } }
+  else if (a === 'stream') { S.stream = arg; S.rung = 0; rerender(); }
+  else if (a === 'rung') { S.rung = +arg; rerender(); }
+  else if (a === 'limarea') { S.limArea = arg; rerender(); }
+  else if (a === 'quizans') { const Q = S.quiz; if (Q.ans === null) { Q.ans = +arg; if (Q.ans === QUIZ[Q.i].a) Q.score++; document.getElementById('quiz').innerHTML = quizBlock(); } }
+  else if (a === 'quiznext') { const Q = S.quiz; if (Q.i === QUIZ.length - 1) Q.done = true; else { Q.i++; Q.ans = null; } document.getElementById('quiz').innerHTML = quizBlock(); }
+  else if (a === 'quizreset') { S.quiz = { i: 0, ans: null, score: 0, done: false }; document.getElementById('quiz').innerHTML = quizBlock(); }
+  else if (a === 'lexg') { S_lex.g = arg; rerender(); }
+  else if (a === 'copy') copyText(arg);
+});
+document.addEventListener('input', e => {
+  if (e.target.id === 'limq') { S.limQ = e.target.value; document.getElementById('limtable').innerHTML = limTable(); }
+  if (e.target.id === 'lexq') { S_lex.q = e.target.value; document.getElementById('lexgrid').innerHTML = lexGrid(); }
+  if (e.target.id === 'palq') palFilter();
+});
+function hoverPP(e) {
+  const b = e.target.closest('[data-hpp]'); if (!b) return;
+  const i = +b.dataset.hpp; if (i === S.pp) return; S.pp = i;
+  document.getElementById('pprev').innerHTML = ppView(PRACTICE[i]);
+  document.querySelectorAll('[data-hpp]').forEach(x => x.classList.toggle('on', +x.dataset.hpp === i));
+}
+document.addEventListener('mouseover', hoverPP);
+document.addEventListener('focusin', hoverPP);
+document.addEventListener('keydown', e => {
+  if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === 'k') { e.preventDefault(); openPal(); return; }
+  const open = document.getElementById('palbg').classList.contains('open');
+  if (!open) return;
+  if (e.key === 'Escape') closePal();
+  else if (e.key === 'ArrowDown') { e.preventDefault(); palSel = Math.min(palList.length - 1, palSel + 1); palDraw(); }
+  else if (e.key === 'ArrowUp') { e.preventDefault(); palSel = Math.max(0, palSel - 1); palDraw(); }
+  else if (e.key === 'Enter') { e.preventDefault(); palGo(palSel); }
+});
+document.addEventListener('submit', e => {
+  if (e.target.id !== 'cform') return;
+  e.preventDefault();
+  const v = id => document.getElementById(id).value.trim();
+  const set = (id, m) => { document.getElementById(id).textContent = m; };
+  const name = v('f-name'), phone = v('f-phone'), email = v('f-email'), msg = v('f-msg'), topic = document.getElementById('f-topic').value;
+  const ok = document.getElementById('f-consent').checked;
+  let bad = false;
+  set('e-name', ''); set('e-contact', ''); set('e-msg', ''); set('e-consent', '');
+  if (!name) { set('e-name', t(L('Enter your name.', 'अपना नाम लिखें।'))); bad = true; }
+  if (!phone && !email) { set('e-contact', t(L('Enter a phone number or an email so the firm can reply.', 'उत्तर के लिए फ़ोन नंबर या ईमेल लिखें।'))); bad = true; }
+  if (email && !/^\S+@\S+\.\S+$/.test(email)) { set('e-contact', t(L('That email looks incomplete.', 'यह ईमेल अधूरा लगता है।'))); bad = true; }
+  if (!msg) { set('e-msg', t(L('Write a few lines about your message.', 'अपने संदेश के बारे में कुछ पंक्तियाँ लिखें।'))); bad = true; }
+  if (!ok) { set('e-consent', t(L('Tick the box to agree before preparing the message.', 'संदेश तैयार करने से पहले सहमति के लिए बॉक्स पर टिक करें।'))); bad = true; }
+  if (bad) return;
+  const txt = `${t(L('To Ink & Equity, Lucknow', 'इंक एंड इक्विटी, लखनऊ को'))}\n${t(L('Name', 'नाम'))}: ${name}\n${t(L('Phone', 'फ़ोन'))}: ${phone || '-'}\n${t(L('Email', 'ईमेल'))}: ${email || '-'}\n${t(L('Area', 'क्षेत्र'))}: ${topic ? t(PBY[topic].name) : '-'}\n\n${msg}\n\n${t(L('I agree that the firm may use these details only to reply to this message.', 'मैं सहमत हूँ कि फर्म इन विवरणों का उपयोग केवल इस संदेश का उत्तर देने के लिए करे।'))}`;
+  S.preview = txt;
+  document.getElementById('cpreview').innerHTML = `<div class="preview">${esc(txt)}</div><p style="margin-top:12px"><button class="btn ghost" data-act="copy" data-arg="${esc(txt).replace(/\n/g, '&#10;')}">${esc(t(L('Copy message', 'संदेश कॉपी करें')))}</button></p><p class="why">${esc(t(L('Nothing has been sent. Copy this and send it by phone or email once the firm’s email address is published.', 'कुछ भी भेजा नहीं गया है। इसे कॉपी करें और फर्म का ईमेल पता प्रकाशित होने पर फ़ोन या ईमेल से भेजें।')))}</p>`;
+});
+
+/* ---------- boot ---------- */
+(function boot() {
+  const h = (location.hash || '').replace('#', '');
+  if (ROUTES.includes(h)) S.route = h;
+  render();
+})();
+
+</script>
+</body>
+</html>
